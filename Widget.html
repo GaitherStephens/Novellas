@@ -1,25 +1,63 @@
+<!--Novellas by SPQRGuyMontag
+Based on Metro-UI-CSS by Sergey Pimenov
+Built on the work of JunesiPhone and Matchstic-->
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
-    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
-
-    <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
-    <title>Tiles examples :: Start Screen :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
+  <head>
+    <title>Novellas by SPQRGuyMontag</title>
 
     <link href="css/metro.css" rel="stylesheet">
     <link href="css/metro-icons.css" rel="stylesheet">
     <link href="css/metro-responsive.css" rel="stylesheet">
-
+    <script src="js/prettify/run_prettify.js"></script>
     <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/clock1.0.3.1.js"></script>
     <script src="js/metro.js"></script>
-    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <style>
+        #twitter {
+          position: relative;
+          left: 5px;
+        }
+
+        #phone-count {
+          position: absolute;
+          top: 87px;
+          left: 12px;
+          height: 100%;
+          font-size: 2em;
+        }
+
+        #sms-count {
+          position: absolute;
+          top: 87px;
+          left: 12px;
+          height: 100%;
+          font-size: 2em;
+        }
+
+        #mail-count {
+          position: absolute;
+          top: 87px;
+          left: 12px;
+          height: 100%;
+          font-size: 2em;
+        }
+
+        #settings img {
+          display: block;
+          height: 100%;
+          margin: 0 auto;
+        }
+
+        #wxContainer {
+          background-position: top;
+          background-size: 250px;
+          background-image: url('images/3.jpg');
+          width: 250px;
+          height: 250px;
+        }
+
         .tile-area-controls {
             position: fixed;
             right: 40px;
@@ -34,10 +72,6 @@
             opacity: 0;
             -webkit-transform: scale(.8);
             transform: scale(.8);
-        }
-
-        #charmSettings .button {
-            margin: 5px;
         }
 
         .schemeButtons {
@@ -64,25 +98,6 @@
 
         }
     </style>
-
-    <script>
-
-        /*
-         * Do not use this is a google analytics fro Metro UI CSS
-         * */
-        if (window.location.hostname !== 'localhost') {
-
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-58849249-3', 'auto');
-            ga('send', 'pageview');
-
-        }
-
-    </script>
 
     <script>
         (function($) {
@@ -146,23 +161,6 @@
             });
         });
 
-        function showCharms(id){
-            var  charm = $(id).data("charm");
-            if (charm.element.data("opened") === true) {
-                charm.close();
-            } else {
-                charm.open();
-            }
-        }
-
-        function setSearchPlace(el){
-            var a = $(el);
-            var text = a.text();
-            var toggle = a.parents('label').children('.dropdown-toggle');
-
-            toggle.text(text);
-        }
-
         $(function(){
             var current_tile_area_scheme = localStorage.getItem('tile-area-scheme') || "tile-area-scheme-dark";
             $(".tile-area").removeClass (function (index, css) {
@@ -183,177 +181,147 @@
                         }).addClass(current_tile_area_scheme);
                     }
             );
-
-            $(".schemeButtons .button").on("click", function(){
-                var b = $(this);
-                var scheme = "tile-area-scheme-" +  b.data('scheme');
-
-                $(".tile-area").removeClass (function (index, css) {
-                    return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                }).addClass(scheme);
-
-                current_tile_area_scheme = scheme;
-                localStorage.setItem('tile-area-scheme', scheme);
-
-                showSettings();
-            });
-        });
-
-        var weather_icons = {
-            'clear-day': 'mif-sun',
-            'clear-night': 'mif-moon2',
-            'rain': 'mif-rainy',
-            'snow': 'mif-snowy3',
-            'sleet': 'mif-weather4',
-            'wind': 'mif-wind',
-            'fog': 'mif-cloudy2',
-            'cloudy': 'mif-cloudy',
-            'partly-cloudy-day': 'mif-cloudy3',
-            'partly-cloudy-night': 'mif-cloud5'
-        };
-
-        var api_key = 'AIzaSyDPfgE0qhVmCcy-FNRLBjO27NbVrFM2abg';
-
-        $(function(){
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position){
-                    var lat = position.coords.latitude, lon = position.coords.longitude;
-                    var pos = lat+','+lon;
-                    var latlng = new google.maps.LatLng(lat, lon);
-                    var geocoder = new google.maps.Geocoder();
-                    $.ajax({
-                        url: '//api.forecast.io/forecast/219588ba41dedc2f1019684e8ac393ad/'+pos+'?units=si',
-                        dataType: 'jsonp',
-                        success: function(data){
-                            //do whatever you want with the data here
-                            geocoder.geocode({latLng: latlng}, function(result, status){
-                                console.log(result[3]);
-                                $("#city_name").html(result[3].formatted_address);
-                            });
-                            var current = data.currently;
-                            //$('#city_name').html(response.city+", "+response.country);
-                            $("#city_temp").html(Math.round(current.temperature)+" &deg;C");
-                            $("#city_weather").html(current.summary);
-                            $("#city_weather_daily").html(data.daily.summary);
-                            $("#weather_icon").addClass(weather_icons[current.icon]);
-                            $("#pressure").html(current.pressure);
-                            $("#ozone").html(current.ozone);
-                            $("#wind_bearing").html(current.windBearing);
-                            $("#wind_speed").html(current.windSpeed);
-                            $("#weather_bg").css({
-                                'background-image': 'url(images/'+current.icon+'.jpg'+')'
-                            });
-                        }
-                    });
-                });
-            }
         });
     </script>
-
 </head>
 <body style="overflow-y: hidden;">
+  <div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
+    <div class="tile-group triple">
+        <span class="tile-group-title">System</span>
+        <div class="tile-container">
+      <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
+          <div class="tile-content iconic">
+              <img id="phone-signal" src="images/system/loading.svg" style="width: 35px;"/>
+          </div>
+      </div>
+      <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
+              <img id="wifi-signal" src="images/system/loading.svg" style="width: 30px;"/>
+      </div>
+      <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
+          <div class="tile-content iconic">
+              <img id="battery" src="images/system/loading.svg" style="width: 30px;"/>
+          </div>
+      </div>
+      <div class="tile-small bg-darkGray fg-white" data-role="tile">
+          <div class="tile-content iconic">
+              <span class="icon mif-cogs"></span>
+          </div>
+      </div>
 
-    <div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
+    </div>
+  </div>
+    <div class="tile-group triple">
+      <span class="tile-group-title">Messaging</span>
+        <div class="tile-container">
+          <a href="http://calendar.google.com" class="tile bg-darkGreen fg-white" data-role="tile">
+            <div class="tile-content iconic">
+                <span class="icon mif-phone"></span>
+            </div>
+            <div id="phone-count"></div>
+          </a>
 
-        <div class="tile-group triple">
-            <span class="tile-group-title">General</span>
+            <div class="tile bg-cyan fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+              <div class="tile-content iconic">
+                <span class="icon mif-bubbles"></span>
+              </div>
+                <div id="sms-count"></div>
+            </div>
+            <div class="tile bg-darkBlue fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+              <div class="tile-content iconic">
+                <span class="icon mif-envelop"></span>
+              </div>
+                <div id="mail-count"></div>
+            </div>
 
-            <div class="tile-container">
+          <div class="tile-large fg-white" data-role="tile">
+            <div class="tile-content" id="wxContainer">
+              <div class="padding10">
+                <h1 id="weather_icon" style="font-size: 6em;position: absolute; top: 10px; right: 10px;"></h1>
+                <h1 id="city_temp">HELLO</h1>
+                <h2 id="city_name" class="text-light"></h2>
+                <h4 id="city_weather"></h4>
+                <p id="city_weather_daily"></p>
 
-                <a href="http://calendar.google.com" class="tile bg-indigo fg-white" data-role="tile">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-calendar"></span>
-                    </div>
-                    <span class="tile-label">Calendar</span>
-                </a>
-
-                <div class="tile bg-darkBlue fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-envelop"></span>
-                    </div>
-                    <span class="tile-label">Inbox</span>
+                <p class="no-margin text-shadow">Pressure: <span class="text-bold" id="pressure"></span> mm</p>
+                <p class="no-margin text-shadow">Ozone: <span class="text-bold" id="ozone"></span></p>
+                <p class="no-margin text-shadow">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
+                <p class="no-margin text-shadow">Wind speed: <span class="text-bold" id="wind_speed">0</span> m/s</p>
+              </div>
+            </div>
+              <span class="tile-label">Weather</span>
+          </div>
+          <div class="tile bg-darkRed fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+            <div class="tile-content iconic">
+              <span class="icon mif-earth2"></span>
+            </div>
+            <span class="tile-label">www</span>
+          </div>
+          <div class="tile bg-darkPink fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+            <div class="tile-content iconic">
+              <span class="icon mif-apps"></span>
+            </div>
+            <span class="tile-label">Apps</span>
+          </div>
+        </div>
+    </div>
+    <div class="tile-group triple">
+        <span class="tile-group-title">Images</span>
+        <div class="tile-container">
+            <div class="tile-wide" data-role="tile" data-effect="slideLeft">
+                <div class="tile-content">
+                    <a href="http://google.com/search?q=bear" class="live-slide"><img src="images/1.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a href="http://google.com/search?q=cat" class="live-slide"><img src="images/2.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a href="http://google.com/search?q=dog" class="live-slide"><img src="images/3.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a href="http://google.com/search?q=eagle" class="live-slide"><img src="images/4.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a href="http://google.com/search?q=fox" class="live-slide"><img src="images/5.jpg" data-role="fitImage" data-format="fill"></a>
                 </div>
-                <div class="tile bg-darkBlue fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-envelop"></span>
-                    </div>
-                    <span class="tile-label">Inbox</span>
+                <div class="tile-label">Gallery</div>
+            </div>
+            <div class="tile" data-role="tile" data-role="tile" data-effect="slideUpDown">
+                <div class="tile-content">
+                    <div class="live-slide"><img src="images/me.jpg" data-role="fitImage" data-format="fill"></div>
+                    <div class="live-slide"><img src="images/spface.jpg" data-role="fitImage" data-format="fill"></div>
                 </div>
-
-                <div class="tile-large bg-steel fg-white" data-role="tile" data-on-click="document.location.href='http://forecast.io'">
-                    <div class="tile-content" id="weather_bg" style="background: top left no-repeat; background-size: cover">
-                        <div class="padding10">
-                            <h1 id="weather_icon" style="font-size: 6em;position: absolute; top: 10px; right: 10px;"></h1>
-                            <h1 id="city_temp"></h1>
-                            <h2 id="city_name" class="text-light"></h2>
-                            <h4 id="city_weather"></h4>
-                            <p id="city_weather_daily"></p>
-
-                            <p class="no-margin text-shadow">Pressure: <span class="text-bold" id="pressure"></span> mm</p>
-                            <p class="no-margin text-shadow">Ozone: <span class="text-bold" id="ozone"></span></p>
-                            <p class="no-margin text-shadow">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
-                            <p class="no-margin text-shadow">Wind speed: <span class="text-bold" id="wind_speed">0</span> m/s</p>
-                        </div>
-                    </div>
-                    <span class="tile-label">Weather</span>
+                <div class="tile-label">Photos</div>
+            </div>
+          </div>
+          <div class="tile-group triple">
+              <span class="tile-group-title">Images</span>
+              <div class="tile-container">
+            <div class="tile-small bg-amber fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-video-camera"></span>
                 </div>
             </div>
-        </div>
-
-        <div class="tile-group double">
-            <span class="tile-group-title">Images</span>
-            <div class="tile-container">
-                <div class="tile-wide" data-role="tile" data-effect="slideLeft">
-                    <div class="tile-content">
-                        <a href="http://google.com/search?q=bear" class="live-slide"><img src="images/1.jpg" data-role="fitImage" data-format="fill"></a>
-                        <a href="http://google.com/search?q=cat" class="live-slide"><img src="images/2.jpg" data-role="fitImage" data-format="fill"></a>
-                        <a href="http://google.com/search?q=dog" class="live-slide"><img src="images/3.jpg" data-role="fitImage" data-format="fill"></a>
-                        <a href="http://google.com/search?q=eagle" class="live-slide"><img src="images/4.jpg" data-role="fitImage" data-format="fill"></a>
-                        <a href="http://google.com/search?q=fox" class="live-slide"><img src="images/5.jpg" data-role="fitImage" data-format="fill"></a>
-                    </div>
-                    <div class="tile-label">Gallery</div>
+            <div class="tile-small bg-green fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-gamepad"></span>
                 </div>
-                <div class="tile" data-role="tile" data-role="tile" data-effect="slideUpDown">
-                    <div class="tile-content">
-                        <div class="live-slide"><img src="images/me.jpg" data-role="fitImage" data-format="fill"></div>
-                        <div class="live-slide"><img src="images/spface.jpg" data-role="fitImage" data-format="fill"></div>
-                    </div>
-                    <div class="tile-label">Photos</div>
-                </div>
-                <div class="tile-small bg-amber fg-white" data-role="tile">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-video-camera"></span>
-                    </div>
-                </div>
-                <div class="tile-small bg-green fg-white" data-role="tile">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-gamepad"></span>
-                    </div>
-                </div>
-                <div class="tile-small bg-pink fg-white" data-role="tile">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-headphones"></span>
-                    </div>
-                </div>
-                <div class="tile-small bg-yellow fg-white" data-role="tile">
-                    <div class="tile-content iconic">
-                        <span class="icon mif-lock"></span>
-                    </div>
-                </div>
-
-                <div class="tile-wide bg-orange fg-white" data-role="tile">
-                    <div class="tile-content image-set">
-                        <img src="images/jeki_chan.jpg">
-                        <img src="images/shvarcenegger.jpg">
-                        <img src="images/vin_d.jpg">
-                        <img src="images/jolie.jpg">
-                        <img src="images/jek_vorobey.jpg">
-                    </div>
-                </div>
-
             </div>
-        </div>
+            <div class="tile-small bg-pink fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-headphones"></span>
+                </div>
+            </div>
+            <div class="tile-small bg-yellow fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-lock"></span>
+                </div>
+            </div>
 
+            <div class="tile-wide bg-orange fg-white" data-role="tile">
+                <div class="tile-content image-set">
+                    <img src="images/jeki_chan.jpg">
+                    <img src="images/shvarcenegger.jpg">
+                    <img src="images/vin_d.jpg">
+                    <img src="images/jolie.jpg">
+                    <img src="images/jek_vorobey.jpg">
+                </div>
+            </div>
+
+          </div>
+        </div>
+        <div id="twitter"><a class="twitter-timeline" data-width="250" data-height="400" data-theme="dark" data-link-color="#2B7BB9" href="https://twitter.com/SPQRGuyMontag">Tweets by SPQRGuyMontag</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
         <div class="tile-group one">
             <span class="tile-group-title">Office</span>
 
@@ -451,5 +419,97 @@
             </div>
         </div>
     </div>
-</body>
+    <script type="text/cycript">
+      //<![CDATA[
+      var widgetIdentifier = "com.gaitherstephens.novellas";
+      var phoneBundle = "com.apple.mobilephone";
+      var smsBundle = "com.apple.MobileSMS";
+      var mailBundle = "com.apple.mobilemail";
+      var wxRefresh = 10;
+      // Setup of widget
+      window.onload = function() {
+        [IS2Weather registerForWeatherUpdatesWithIdentifier:widgetIdentifier andCallback:^ void () {
+          updateWx();
+        }];
+        updateWx();
+
+        [IS2Weather setWeatherUpdateTimeInterval:wxRefresh forRequester:widgetIdentifier];
+
+        //registers widget for media updates
+        [IS2Media registerForNowPlayingNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
+            //updateMedia();
+        }];
+        [IS2Notifications registerForBulletinNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
+            updateNotifications();
+        }];
+        updateNotifications();
+        updateSystem();
+      }
+
+      // Make sure to de-register ourselves when removed from the user's screen.
+      window.onunload = function() {
+        [IS2Media unregisterForNotificationsWithIdentifier:widgetIdentifier];
+        [IS2Weather unregisterForUpdatesWithIdentifier:widgetIdentifier];
+        [IS2Weather removeRequesterForWeatherTimeInterval:widgetIdentifier];
+        [IS2Notifications unregisterForNotificationsWithIdentifier:widgetIdentifier];
+        return null;
+      };
+
+      function getNum(n){
+        if(n < 0){
+          return 0;
+        }else if(n >= 0 && n < 10){
+          return 1;
+        }else if(n >= 10 && n < 20){
+          return 2;
+        }else if(n >= 20 && n < 30){
+          return 3;
+        }else if(n >= 30 && n < 40){
+          return 4;
+        }else if(n >= 40 && n < 50){
+          return 5;
+        }else if(n >= 50 && n < 60){
+          return 6;
+        }else if(n >= 60 && n < 70){
+          return 7;
+        }else if(n >= 70 && n < 80){
+          return 8;
+        }else if(n >= 80 && n < 90){
+          return 9;
+        }else if(n >= 90 && n < 100){
+          return 10;
+        }else if(n >= 100){
+          return 10;
+        }
+      }
+
+      function updateWx(){
+        document.getElementById("city_temp").innerHTML = [IS2Weather currentTemperature];
+        document.getElementById("city_name").innerHTML = [IS2Weather currentLocation];
+        document.getElementById("city_weather").innerHTML = [IS2Weather currentConditionAsString];
+        document.getElementById("wxContainer")style.backgroundImage = "url(images/4.jpg)";
+      }
+
+      function updateSystem(){
+        document.getElementById("phone-signal").src = "images/system/signal-"+[IS2Telephony phoneSignalBars]+".svg";
+        document.getElementById("wifi-signal").src = "images/system/wifi-"+[IS2Telephony wifiSignalBars]+".svg";
+
+        if([IS2System batteryStateAsInteger] === 1){
+          document.getElementById("battery").src = "images/system/battery-"+getNum([IS2System batteryPercent])+".svg";
+        }else{
+          document.getElementById("battery").src = "images/system/batteryC-"+getNum([IS2System batteryPercent])+".svg";
+        }
+        setTimeout(updateSystem, 1000);
+      }
+
+      function updateNotifications(){
+        document.getElementById("phone-count").innerHTML = [IS2Notifications notificationCountForApplication:phoneBundle];
+        document.getElementById("sms-count").innerHTML = [IS2Notifications notificationCountForApplication:smsBundle];
+        document.getElementById("mail-count").innerHTML = [IS2Notifications notificationCountForApplication:mailBundle];
+
+      }
+
+      //]]>
+    </script>
+  </body>
 </html>
