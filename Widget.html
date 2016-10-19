@@ -16,6 +16,10 @@ Built on the work of JunesiPhone and Matchstic-->
     <script src="js/swipes.js"></script>
 
     <style>
+        #charmSettings .button {
+          margin: 5px;
+        }
+
         #settings img {
           display: block;
           height: 100%;
@@ -182,6 +186,23 @@ Built on the work of JunesiPhone and Matchstic-->
             });
         });
 
+        function showCharms(id){
+            var  charm = $(id).data("charm");
+            if (charm.element.data("opened") === true) {
+                charm.close();
+            } else {
+                charm.open();
+            }
+        }
+
+        function setSearchPlace(el){
+            var a = $(el);
+            var text = a.text();
+            var toggle = a.parents('label').children('.dropdown-toggle');
+
+            toggle.text(text);
+        }
+
         $(function(){
             var current_tile_area_scheme = localStorage.getItem('tile-area-scheme') || "tile-area-scheme-dark";
             $(".tile-area").removeClass (function (index, css) {
@@ -202,10 +223,54 @@ Built on the work of JunesiPhone and Matchstic-->
                         }).addClass(current_tile_area_scheme);
                     }
             );
+
+            $(".schemeButtons .button").on("click", function(){
+                var b = $(this);
+                var scheme = "tile-area-scheme-" +  b.data('scheme');
+
+                $(".tile-area").removeClass (function (index, css) {
+                    return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
+                }).addClass(scheme);
+
+                current_tile_area_scheme = scheme;
+                localStorage.setItem('tile-area-scheme', scheme);
+
+                showSettings();
+            });
         });
+
     </script>
 </head>
 <body style="overflow-y: hidden;">
+  <div data-role="charm" id="charmSettings" data-position="top">
+    <h1 class="text-light">Settings</h1>
+    <hr class="thin"/>
+    <br />
+    <div class="schemeButtons">
+        <div class="button square-button tile-area-scheme-dark" data-scheme="dark"></div>
+        <div class="button square-button tile-area-scheme-darkBrown" data-scheme="darkBrown"></div>
+        <div class="button square-button tile-area-scheme-darkCrimson" data-scheme="darkCrimson"></div>
+        <div class="button square-button tile-area-scheme-darkViolet" data-scheme="darkViolet"></div>
+        <div class="button square-button tile-area-scheme-darkMagenta" data-scheme="darkMagenta"></div>
+        <div class="button square-button tile-area-scheme-darkCyan" data-scheme="darkCyan"></div>
+        <div class="button square-button tile-area-scheme-darkCobalt" data-scheme="darkCobalt"></div>
+        <div class="button square-button tile-area-scheme-darkTeal" data-scheme="darkTeal"></div>
+        <div class="button square-button tile-area-scheme-darkEmerald" data-scheme="darkEmerald"></div>
+        <div class="button square-button tile-area-scheme-darkGreen" data-scheme="darkGreen"></div>
+        <div class="button square-button tile-area-scheme-darkOrange" data-scheme="darkOrange"></div>
+        <div class="button square-button tile-area-scheme-darkRed" data-scheme="darkRed"></div>
+        <div class="button square-button tile-area-scheme-darkPink" data-scheme="darkPink"></div>
+        <div class="button square-button tile-area-scheme-darkIndigo" data-scheme="darkIndigo"></div>
+        <div class="button square-button tile-area-scheme-darkBlue" data-scheme="darkBlue"></div>
+        <div class="button square-button tile-area-scheme-lightBlue" data-scheme="lightBlue"></div>
+        <div class="button square-button tile-area-scheme-lightTeal" data-scheme="lightTeal"></div>
+        <div class="button square-button tile-area-scheme-lightOlive" data-scheme="lightOlive"></div>
+        <div class="button square-button tile-area-scheme-lightOrange" data-scheme="lightOrange"></div>
+        <div class="button square-button tile-area-scheme-lightPink" data-scheme="lightPink"></div>
+        <div class="button square-button tile-area-scheme-grayed" data-scheme="grayed"></div>
+    </div>
+</div>
+
   <div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
     <div class="tile-group triple">
         <div class="tile-container">
@@ -229,10 +294,20 @@ Built on the work of JunesiPhone and Matchstic-->
               <span class="icon mif-cogs"></span>
           </div>
       </div>
-
+      <div class="tile-small bg-darkGray fg-white" data-role="tile">
+          <div class="tile-content iconic">
+              <span class="icon mif-cogs"></span>
+          </div>
+      </div>
+      <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
+          <div class="tile-content iconic" id="pageStartContainer">
+              <img src="images/system/up.svg" style="width: 25px;"/>
+          </div>
+      </div>
     </div>
   </div>
     <div class="tile-group triple">
+      <a id='pageStart' href='#'></a>
         <div class="tile-container">
           <div class="tile bg-darkGreen fg-white" data-role="tile">
             <div class="tile-content iconic">
@@ -277,7 +352,7 @@ Built on the work of JunesiPhone and Matchstic-->
             </div>
             <span class="tile-label">www</span>
           </div>
-          <div class="tile bg-darkPink fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+          <div class="tile bg-darkPink fg-white" data-role="tile" onclick="showCharms('#charmSettings')">
             <div class="tile-content iconic">
               <span class="icon mif-apps"></span>
             </div>
@@ -449,6 +524,7 @@ Built on the work of JunesiPhone and Matchstic-->
       var wxRefresh = 10;
       // Setup of widget
       window.onload = function() {
+        window.location.hash="pageStart";
         [IS2Weather registerForWeatherUpdatesWithIdentifier:widgetIdentifier andCallback:^ void () {
           updateWx();
         }];
@@ -661,24 +737,20 @@ Built on the work of JunesiPhone and Matchstic-->
 
       }
 
-/*
-      document.getElementById("phoneContainer").addEventListener('touchend', function(e) {
-        e.preventDefault();
-	       [IS2System openApplication:@""+phoneBundle];
-       }, false);
-
-       document.getElementById("wxContainer").addEventListener('touchend', function(e) {
-         e.preventDefault();
-          updateWx();
-        }, false);
-
-*/
-
         //function that captures the event
+        var swipePageStart = {
+          itemSwipe: function(direction){
+            if(direction === 'p'){
+              window.location.hash="pageStart";
+
+            }
+          }
+        };
         var swipeWx = {
           itemSwipe: function(direction){
             if(direction === 'p'){
               updateWx();
+              showCharms('#charmSettings');
 
             }
           }
@@ -705,6 +777,7 @@ Built on the work of JunesiPhone and Matchstic-->
           }
         };
         //adds swipe detection to element
+        detectswipe('#pageStartContainer', swipePageStart.itemSwipe);
         detectswipe('#wxContainer', swipeWx.itemSwipe);
         detectswipe('#phoneContainer', swipePhone.itemSwipe);
         detectswipe('#smsContainer', swipeSms.itemSwipe);
