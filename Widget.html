@@ -13,8 +13,15 @@ Built on the work of JunesiPhone and Matchstic-->
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/clock1.0.3.1.js"></script>
     <script src="js/metro.js"></script>
+    <script src="js/swipes.js"></script>
 
     <style>
+        #settings img {
+          display: block;
+          height: 100%;
+          margin: 0 auto;
+        }
+
         #twitter {
           position: relative;
           left: 5px;
@@ -44,16 +51,30 @@ Built on the work of JunesiPhone and Matchstic-->
           font-size: 2em;
         }
 
-        #settings img {
+        #phoneContainer{
+          height:120px;
+          width:120px;
+        }
+
+        #smsContainer{
+          height:120px;
+          width:120px;
+        }
+
+        #mailContainer{
+          height:120px;
+          width:120px;
+        }
+
+        #testDiv img {
           display: block;
           height: 100%;
           margin: 0 auto;
         }
 
         #wxContainer {
-          background-position: top;
-          background-size: 250px;
-          background-image: url('images/3.jpg');
+          background-position: center;
+          background-size: cover;
           width: 250px;
           height: 250px;
         }
@@ -187,19 +208,20 @@ Built on the work of JunesiPhone and Matchstic-->
 <body style="overflow-y: hidden;">
   <div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
     <div class="tile-group triple">
-        <span class="tile-group-title">System</span>
         <div class="tile-container">
       <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
           <div class="tile-content iconic">
-              <img id="phone-signal" src="images/system/loading.svg" style="width: 35px;"/>
+              <img id="phone-signal" src="images/system/loading.svg" style="width: 25px;"/>
           </div>
       </div>
       <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
-              <img id="wifi-signal" src="images/system/loading.svg" style="width: 30px;"/>
+        <div class="tile-content iconic" id="wifiContainer">
+              <img id="wifi-signal" src="images/system/loading.svg" style="width: 25px;"/>
+        </div>
       </div>
       <div class="tile-small bg-darkGray fg-white" data-role="tile" id="settings">
-          <div class="tile-content iconic">
-              <img id="battery" src="images/system/loading.svg" style="width: 30px;"/>
+          <div class="tile-content iconic" id="batteryContainer">
+              <img id="battery" src="images/system/loading.svg" style="width: 25px;"/>
           </div>
       </div>
       <div class="tile-small bg-darkGray fg-white" data-role="tile">
@@ -211,24 +233,23 @@ Built on the work of JunesiPhone and Matchstic-->
     </div>
   </div>
     <div class="tile-group triple">
-      <span class="tile-group-title">Messaging</span>
         <div class="tile-container">
-          <a href="http://calendar.google.com" class="tile bg-darkGreen fg-white" data-role="tile">
+          <div class="tile bg-darkGreen fg-white" data-role="tile">
             <div class="tile-content iconic">
-                <span class="icon mif-phone"></span>
+                <div id="phoneContainer"><span class="icon mif-phone"></span></div>
             </div>
             <div id="phone-count"></div>
-          </a>
+          </div>
 
-            <div class="tile bg-cyan fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+            <div class="tile bg-cyan fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <span class="icon mif-bubbles"></span>
+                <div id="smsContainer"><span class="icon mif-bubbles"></span></div>
               </div>
                 <div id="sms-count"></div>
             </div>
-            <div class="tile bg-darkBlue fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+            <div class="tile bg-darkBlue fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <span class="icon mif-envelop"></span>
+                <div id="mailContainer"><span class="icon mif-envelop"></span></div>
               </div>
                 <div id="mail-count"></div>
             </div>
@@ -242,8 +263,8 @@ Built on the work of JunesiPhone and Matchstic-->
                 <h4 id="city_weather"></h4>
                 <p id="city_weather_daily"></p>
 
-                <p class="no-margin text-shadow">Pressure: <span class="text-bold" id="pressure"></span> mm</p>
-                <p class="no-margin text-shadow">Ozone: <span class="text-bold" id="ozone"></span></p>
+                <p class="no-margin text-shadow">Pressure: <span class="text-bold" id="pressure"></span></p>
+                <p class="no-margin text-shadow">Humidity: <span class="text-bold" id="humidity"></span></p>
                 <p class="no-margin text-shadow">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
                 <p class="no-margin text-shadow">Wind speed: <span class="text-bold" id="wind_speed">0</span> m/s</p>
               </div>
@@ -269,11 +290,11 @@ Built on the work of JunesiPhone and Matchstic-->
         <div class="tile-container">
             <div class="tile-wide" data-role="tile" data-effect="slideLeft">
                 <div class="tile-content">
-                    <a href="http://google.com/search?q=bear" class="live-slide"><img src="images/1.jpg" data-role="fitImage" data-format="fill"></a>
-                    <a href="http://google.com/search?q=cat" class="live-slide"><img src="images/2.jpg" data-role="fitImage" data-format="fill"></a>
-                    <a href="http://google.com/search?q=dog" class="live-slide"><img src="images/3.jpg" data-role="fitImage" data-format="fill"></a>
-                    <a href="http://google.com/search?q=eagle" class="live-slide"><img src="images/4.jpg" data-role="fitImage" data-format="fill"></a>
-                    <a href="http://google.com/search?q=fox" class="live-slide"><img src="images/5.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a class="live-slide"><img src="images/wx/weather1.jpg">
+                    <a class="live-slide"><img data-role="fitImage" data-format="fill"></a>
+                    <a class="live-slide"><img src="images/3.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a class="live-slide"><img src="images/4.jpg" data-role="fitImage" data-format="fill"></a>
+                    <a class="live-slide"><img src="images/5.jpg" data-role="fitImage" data-format="fill"></a>
                 </div>
                 <div class="tile-label">Gallery</div>
             </div>
@@ -484,10 +505,141 @@ Built on the work of JunesiPhone and Matchstic-->
       }
 
       function updateWx(){
+        var flickrCount = Math.floor((Math.random() * 50) + 1);
+        var flickrSort = "relevance";
+        var weatherBg = "flickr";
+        var url;
+        var hours = 12;
+
+        //used to determine day or night
+        var dayNight = "Day";
+        if(hours > 0 && hours < 5){
+          dayNight = "Night"
+        }else if(hours > 5 && hours < 8){
+          dayNight = "Early Morning";
+        }else if(hours >= 8 && hours < 10){
+          dayNight = "Morning";
+        }else if(hours >= 10 && hours < 17){
+          dayNight = "";
+        }else if(hours >= 17 && hours < 20){
+          dayNight = "Evening";
+        }else if(hours >= 20 && hours <= 23){
+          dayNight = "Night";
+        }
+
+        //custom language for better Flickr results
+        function wxConScrub(c){
+          if(c.includes("Tornado")){c = "Tornado Weather"; flickrSort = "interestingness_desc";}
+          if(c.includes("Sleet")){c = "Sleet"; flickrSort = "relevance";}
+          if(c.includes("Rain") || c.includes("Showers")){c = "Rain"; flickrSort = "relevance";}
+          if(c.includes("Snow")){c = "Snow Falling"; flickrSort = "relevance";}
+          if(c.includes("Sunny")){c = "Sunny Sky"; flickrSort = "relevance";}
+          if(c.includes("Hail")){c = "Hailstorm"; flickrSort = "relevance";}
+          if(c.includes("Tropical") || c.includes("Hurricane")){c = "Tropical Storm Weather"; flickrSort = "relevance";}
+          if(c.includes("ThunderStorms") || c.includes("Thundershowers")){c = "Thunderstorm Weather Sky"; flickrSort = "interestingness_desc";}
+          if(c.includes("Dust")){c = "Dust Weather Sky"; flickrSort = "relevance";}
+          if(c.includes("Drizzle")){c = "Freezing Rain"; flickrSort = "interestingness_desc";}
+          if(c.includes("Cold")){c = "Freezing Weather"; flickrSort = "interestingness_desc";}
+          if(c.includes("Cloudy")){c = "Cloudy Weather Sky"; flickrSort = "relevance";}
+          if(c.includes("Foggy")){c = "Foggy Weather Sky"; flickrSort = "relevance";}
+          if(c.includes("Haze")){c = "Hazy Weather Sky"; flickrSort = "relevance";}
+          if(c.includes("Smoky")){c = "Hazy Weather Sky"; flickrSort = "relevance";}
+          if(c.includes("Blustery") || c.includes("Windy")){c = "Wind Field"; flickrSort = "interestingness_desc";}
+          if(c.includes("Fair") || c.includes("Clear")){c = "Cloudless Sky"; flickrSort = "relevance";}
+          if(c.includes("Hot")){c = "Palm Trees"; flickrSort = "relevance";}
+          return c;
+        }
+
+        //converts C to F for temperature
+        function celToFahr(c){
+          return ((c * (9 / 5)) + 32);
+        }
+
+        //converts millibars to inches for air pressure
+        function milliConversion(m){
+          return ((29.92 * m) / (1013.25))
+        }
+
+        //converts degrees to a cardinal point
+        var degToCard = function(deg){
+          if (deg>11.25 && deg<33.75){
+            return "NNE";
+          }else if (deg>33.75 && deg<56.25){
+            return "ENE";
+          }else if (deg>56.25 && deg<78.75){
+            return "E";
+          }else if (deg>78.75 && deg<101.25){
+            return "ESE";
+          }else if (deg>101.25 && deg<123.75){
+            return "ESE";
+          }else if (deg>123.75 && deg<146.25){
+            return "SE";
+          }else if (deg>146.25 && deg<168.75){
+            return "SSE";
+          }else if (deg>168.75 && deg<191.25){
+            return "S";
+          }else if (deg>191.25 && deg<213.75){
+            return "SSW";
+          }else if (deg>213.75 && deg<236.25){
+            return "SW";
+          }else if (deg>236.25 && deg<258.75){
+            return "WSW";
+          }else if (deg>258.75 && deg<281.25){
+            return "W";
+          }else if (deg>281.25 && deg<303.75){
+            return "WNW";
+          }else if (deg>303.75 && deg<326.25){
+            return "NW";
+          }else if (deg>326.25 && deg<348.75){
+            return "NNW";
+          }else{
+            return "N";
+          }
+        }
+
         document.getElementById("city_temp").innerHTML = [IS2Weather currentTemperature];
         document.getElementById("city_name").innerHTML = [IS2Weather currentLocation];
         document.getElementById("city_weather").innerHTML = [IS2Weather currentConditionAsString];
-        document.getElementById("wxContainer")style.backgroundImage = "url(images/4.jpg)";
+        document.getElementById("pressure").innerHTML = [IS2Weather currentPressure].toFixed(2);
+        document.getElementById("humidity").innerHTML = [IS2Weather currentHumidity] + "%";
+        document.getElementById("wind_bearing").innerHTML = degToCard([IS2Weather currentWindDirection]);
+        document.getElementById("wind_speed").innerHTML = [IS2Weather currentWindSpeed];
+
+        //shows either flickr images or stock images
+          if(weatherBg === "flickr"){
+            //gets flickr images
+            $(function (){
+              $.ajax({
+                url: "https://api.flickr.com/services/rest/",
+                data: {
+                  method: "flickr.photos.search",
+                  api_key: "c1955bceeed9a3a76af982daf012c546",
+                  text: "" + wxConScrub([IS2Weather currentConditionAsString]) + " " + dayNight,
+                  sort: flickrSort,
+                  content_type: 1,
+                  safe_search: 2,
+                  media: "photos",
+                  format: "json",
+                  per_page: 50,
+                  nojsoncallback: 1
+                },
+                success: function (response) {
+                  $.each(response.photos.photo, function (index, value) {
+                    url = 'https://farm' + value.farm + '.staticflickr.com/' + value.server + '/' + value.id + '_' + value.secret + '.jpg';
+
+                    if(flickrCount === index || index === response.photos.photo.length){
+                      //fades out old weather picture
+                      document.getElementById("wxContainer").style.backgroundImage = "url(" + url + ")";
+                      return false;
+                    }
+                  });
+                }
+              });
+            })
+          }else{
+              document.getElementById("wxContainer").style.backgroundImage = "url(" + "images/wx/weather" + [IS2Weather currentCondition] + ".jpg" + ")";
+          }
+
       }
 
       function updateSystem(){
@@ -508,6 +660,55 @@ Built on the work of JunesiPhone and Matchstic-->
         document.getElementById("mail-count").innerHTML = [IS2Notifications notificationCountForApplication:mailBundle];
 
       }
+
+/*
+      document.getElementById("phoneContainer").addEventListener('touchend', function(e) {
+        e.preventDefault();
+	       [IS2System openApplication:@""+phoneBundle];
+       }, false);
+
+       document.getElementById("wxContainer").addEventListener('touchend', function(e) {
+         e.preventDefault();
+          updateWx();
+        }, false);
+
+*/
+
+        //function that captures the event
+        var swipeWx = {
+          itemSwipe: function(direction){
+            if(direction === 'p'){
+              updateWx();
+
+            }
+          }
+        };
+        var swipePhone = {
+          itemSwipe: function(direction){
+            if(direction === 'p'){
+              [IS2System openApplication:@""+phoneBundle];
+            }
+          }
+        };
+        var swipeSms = {
+          itemSwipe: function(direction){
+            if(direction === 'p'){
+              [IS2System openApplication:@""+smsBundle];
+            }
+          }
+        };
+        var swipeMail = {
+          itemSwipe: function(direction){
+            if(direction === 'p'){
+              [IS2System openApplication:@""+mailBundle];
+            }
+          }
+        };
+        //adds swipe detection to element
+        detectswipe('#wxContainer', swipeWx.itemSwipe);
+        detectswipe('#phoneContainer', swipePhone.itemSwipe);
+        detectswipe('#smsContainer', swipeSms.itemSwipe);
+        detectswipe('#mailContainer', swipeMail.itemSwipe);
 
       //]]>
     </script>
