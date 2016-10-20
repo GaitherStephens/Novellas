@@ -11,10 +11,6 @@ function detectswipe(el, func) {
         min_y = 50, //min y swipe for vertical swipe
         max_y = 70, //max y difference for horizontal swipe
         direction = "",
-        oldDate = new Date(),
-        oldTimer = oldDate.getTime(),
-        newDate = new Date(),
-        newTimer = newDate.getTime(),
         ele = document.querySelector(el);
     ele.addEventListener('touchstart', function (e) {
         var t = e.touches[0];
@@ -48,11 +44,7 @@ function detectswipe(el, func) {
                 }
             }
         }else{
-          newDate = new Date();
-          newTimer = newDate.getTime();
-          if(newTimer - oldTimer > 100){
             direction = "p";
-          }
         }
         if (direction !== "") {
             if (typeof func === 'function') {

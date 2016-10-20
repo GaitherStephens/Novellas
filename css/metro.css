@@ -187,8 +187,12 @@ a {
 }
 html {
   font-size: 100%;
+  min-width: 414px;
+  min-height: 736px;
 }
 body {
+  width:414px;
+  height:736px;
   font-family: "Segoe UI", "Open Sans", sans-serif, serif;
   font-size: 0.875rem;
   line-height: 1.1;
@@ -11038,7 +11042,8 @@ input[type="submit"].link:active {
   height: 150px;
   display: block;
   float: left;
-  margin: 5px;
+  margin: 2.6px;
+  margin-left: 6px;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
@@ -11309,7 +11314,7 @@ input[type="submit"].link:active {
   height: 150px;
   display: block;
   float: left;
-  margin: 5px;
+  margin: 6px;
   background-color: #eeeeee;
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
@@ -12336,7 +12341,7 @@ input[type="submit"].link:active {
   background-color: #1d1d1d;
 }
 .tile-area-scheme-dark [class*=tile] {
-  outline-color: #373737;
+  outline-color: transparent;
 }
 .tile-area-scheme-darkBrown {
   background-color: #63362f;

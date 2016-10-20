@@ -13,6 +13,8 @@ Built on the work of JunesiPhone and Matchstic-->
 
     <!-- Include own Javascript/jQuery & CSS file for Example 2 -->
     <script type="text/Javascript" src="js/music_slides.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
 
     <link href="css/metro.css" rel="stylesheet">
     <link href="css/metro-icons.css" rel="stylesheet">
@@ -72,7 +74,7 @@ Built on the work of JunesiPhone and Matchstic-->
         }
 
         #cameraContainer, #mapsContainer, #siriContainer, #lockContainer,
-        #settingsContainer, #page2Container{
+        #settingsContainer, #page1Container{
           height:60px;
           width:60px;
         }
@@ -282,9 +284,9 @@ Built on the work of JunesiPhone and Matchstic-->
             </div>
             <span class="tile-label">Apps</span>
           </div>
-            <div class="tile-wide bg-crimson" data-role="tile" style="width:250px">
+            <div class="tile-wide bg-crimson" data-role="tile" data-effect="slideLeft">
                 <div class="tile-content">
-                  <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="766/"></script>
+                  <div id="newsContainer"><script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="766/"></script></div>
                 </div>
             </div>
           </div>
@@ -339,7 +341,7 @@ Built on the work of JunesiPhone and Matchstic-->
             </div>
             <div class="tile-small bg-teal fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="page2Container"><span class="icon mif-chevron-right"></span></div>
+                    <div id="page1Container"><span class="icon mif-chevron-left"></span></div>
                 </div>
             </div>
 
@@ -718,10 +720,10 @@ Built on the work of JunesiPhone and Matchstic-->
             }
           }
         };
-        var swipePage2 = {
+        var swipePage1 = {
           itemSwipe: function(direction){
             if(direction === 'p'){
-              window.open("page2.html", "_self",false);
+              window.open("Widget.html", "_self",false);
             }
           }
         };
@@ -741,7 +743,7 @@ Built on the work of JunesiPhone and Matchstic-->
         detectswipe('#siriContainer', swipeSiri.itemSwipe);
         detectswipe('#lockContainer', swipeLock.itemSwipe);
         detectswipe('#settingsContainer', swipeSettings.itemSwipe);
-        detectswipe('#page2Container', swipePage2.itemSwipe);
+        detectswipe('#page1Container', swipePage1.itemSwipe);
 
       //]]>
     </script>
