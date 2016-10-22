@@ -7,13 +7,15 @@ Built on the work of JunesiPhone and Matchstic-->
     <title>Novellas by SPQRGuyMontag</title>
     <!-- Include Main jQuery library -->
     <script type="text/Javascript" src="js/jquery-1.4.2.min.js"></script>
+
     <!-- Include Main Easy Slides library & default css file-->
     <script type="text/Javascript" src="js/jquery.easyslides.min.v1.1.js"></script>
     <link rel="stylesheet" type="text/css" href="css/easySlides.default.min.css" />
 
     <!-- Include own Javascript/jQuery & CSS file for Example 2 -->
     <script type="text/Javascript" src="js/music_slides.js"></script>
-
+    <script type="text/Javascript" src="js/clock_slides.js"></script>
+    <script src="js/lang.js"></script>
     <link href="css/metro.css" rel="stylesheet">
     <link href="css/metro-icons.css" rel="stylesheet">
     <link href="css/metro-responsive.css" rel="stylesheet">
@@ -23,99 +25,230 @@ Built on the work of JunesiPhone and Matchstic-->
     <script src="js/swipes.js"></script>
 
     <style>
+      .hand-container{
+        text-align: center;
+        moz-transform-origin: center center;
+        -o-transform-origin: center center;
+        -ms-transform-origin: center center;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
 
-        #mainElement {
-          position: absolute;
-          padding-left: 11px;
-          background-color: #1d1d1d;
-          height: 736px;
-          width: 414px;
+      .center-dial {
+        position: absolute;
+        top: 0px;
+        left:0px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        width: 120px;
+        height: 120px;
+        background-color: rgba(255,255,255,.4);
+        border-radius: 50%;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .hand-container {
+        position: absolute;
+        top: 0%;
+        left: calc(50% - 6px);
+        opacity: 0;
+        filter: alpha(opacity=0);
+        width: 12.5px;
+        height: 120px;
+        moz-transform-origin: center center;
+        -o-transform-origin: center center;
+        -ms-transform-origin: center center;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
+
+      .hour-hand {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid black;
+        position: relative;
+        top: calc(50% - 60px);
+        left: calc(50% - 5px);
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+
+      .second-hand {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid red;
+        position: relative;
+        top: calc(50% - 60px);
+        left: calc(50% - 5px);
+      }
+
+      .digital-hour {
+      font-family: 'Open Sans Bold';
+      color: black;
+      font-size:48px;
+      position: absolute;
+      width: 60px;
+      top: 33px;
+      left: -45px;
+      text-align: right;
+      float: right;
+    }
+
+    .digital-minute {
+      font-family: 'Open Sans';
+      color: black;
+      font-size: 30px;
+      position: absolute;
+      top: 48px;
+      left: 15px;
+      text-align: left;
+    }
+
+    .digital-second {
+      font-family: 'Open Sans';
+      color: red;
+      font-size: 18px;
+      position: absolute;
+      top: 85px;
+      left: 0px;
+      text-align: center;
+    }
+
+    #mainElement {
+      position: absolute;
+      padding-left: 0px;
+      height: 736px;
+      width: 414px;
+      font-family: 'Open Sans';
+    }
+
+    #statusBar {
+      display: block;
+      height: 20px;
+    }
+
+    #twitter {
+      position: relative;
+      left: 5px;
+    }
+
+    #phone-count, #sms-count, #mail-count, #facebook-count, #twitter-count {
+      position: absolute;
+      top: 87px;
+      left: 12px;
+      height: 100%;
+      font-size: 2em;
+    }
+
+    #tile1Container, #tile2Container, #tile5Container, #tile6Container,
+    #tile10Container, #tile11Container, #clock, #music, #tile9Container,
+    #tile7Container, #tile3Container{
+      height:120px;
+      width:120px;
+      z-index: 0;
+      border: 0px;
+    }
+
+    #tile4Container {
+      height: 250px;
+      text-shadow: 0px 0px 20px #000000,
+                   0px 0px 30px #000000;
+    }
+    #wxBgDiv{
+      position: absolute;
+      top:0px;
+      height: 250px;
+      width: 250px;
+      z-index: -1;
+    }
+    #wxBgDiv img {
+      position: absolute;
+      top: 0px;
+      height: 250px;
+      display: block;
+      margin: auto;
+      z-index: -1;
+    }
+
+    #wxIcon img {
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      height: 65px;
+    }
+    #daySection{
+      height:35px;
+      z-index: 5;
+    }
+    #daySection p {
+      margin:-2px;
+      font-size:16px
+    }
+    #daySection img {
+      width:35px;
+    }
+    #daySection div {
+      position: relative;
+      top:10px;
+      left:20px;
+      float:left;
+      width:68px;
+      text-shadow: 0px 0px 10px #000000,
+                   0px 0px 20px #000000;
+    }
+    #tile12Container, #tile13Container, #tile14Container, #tile15Container,
+    #tile16Container, #tile17Container{
+      height:60px;
+      width:60px;
+    }
+
+    .tile-area-controls {
+        position: fixed;
+        right: 40px;
+        top: 40px;
+    }
+
+    .tile-group {
+        left: 100px;
+    }
+
+    .tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+        transform: scale(.8);
+
+    }
+
+    .schemeButtons {
+        /*width: 300px;*/
+    }
+
+    @media screen and (max-width: 640px) {
+        .tile-area {
+            overflow-y: scroll;
         }
-
-        #statusBar {
-          display: block;
-          height: 20px;
+        .tile-area-controls {
+            display: none;
         }
+    }
 
-        #twitter {
-          position: relative;
-          left: 5px;
-        }
-
-        #phone-count, #sms-count, #mail-count, #facebook-count, #twitter-count {
-          position: absolute;
-          top: 87px;
-          left: 12px;
-          height: 100%;
-          font-size: 2em;
-        }
-
-        #phoneContainer, #smsContainer, #mailContainer, #wwwContainer,
-        #appsContainer, #musicContainer, #music, #facebookContainer, #twitterContainer{
-          height:120px;
-          width:120px;
-        }
-
-        #wxContainer {
-          background-position: center;
-          background-size: cover;
-          height: 250px;
-          text-shadow: 0px 0px 20px #000000,
-                       0px 0px 30px #000000;
-        }
-
-        #weather_icon img {
-          position: absolute;
-          top: 5px;
-          left: 0px;
-          height: 75px;
-        }
-
-        #cameraContainer, #mapsContainer, #siriContainer, #lockContainer,
-        #settingsContainer, #page2Container{
-          height:60px;
-          width:60px;
+    @media screen and (max-width: 320px) {
+        .tile-area {
+            overflow-y: scroll;
         }
 
         .tile-area-controls {
-            position: fixed;
-            right: 40px;
-            top: 40px;
+            display: none;
         }
 
-        .tile-group {
-            left: 100px;
-        }
-
-        .tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super {
-            opacity: 0;
-            -webkit-transform: scale(.8);
-            transform: scale(.8);
-        }
-
-        .schemeButtons {
-            /*width: 300px;*/
-        }
-
-        @media screen and (max-width: 640px) {
-            .tile-area {
-                overflow-y: scroll;
-            }
-            .tile-area-controls {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 320px) {
-            .tile-area {
-                overflow-y: scroll;
-            }
-
-            .tile-area-controls {
-                display: none;
-            }
-
-        }
+    }
     </style>
 
     <script>
@@ -126,7 +259,6 @@ Built on the work of JunesiPhone and Matchstic-->
 
                 plugin.init = function(){
                     setTilesAreaSize();
-                    if (width > 640) addMouseWheel();
                 };
 
                 var setTilesAreaSize = function(){
@@ -141,15 +273,6 @@ Built on the work of JunesiPhone and Matchstic-->
                     });
                     $(".tile-area").css({
                         width: tileAreaWidth
-                    });
-                };
-
-                var addMouseWheel = function (){
-                    $("body").mousewheel(function(event, delta, deltaX, deltaY){
-                        var page = $(document);
-                        var scroll_value = delta * 50;
-                        page.scrollLeft(page.scrollLeft() - scroll_value);
-                        return false;
                     });
                 };
 
@@ -185,35 +308,6 @@ Built on the work of JunesiPhone and Matchstic-->
             $(".tile-area").removeClass (function (index, css) {
                 return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
             }).addClass(current_tile_area_scheme);
-
-            $(".schemeButtons .button").hover(
-                    function(){
-                        var b = $(this);
-                        var scheme = "tile-area-scheme-" +  b.data('scheme');
-                        $(".tile-area").removeClass (function (index, css) {
-                            return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                        }).addClass(scheme);
-                    },
-                    function(){
-                        $(".tile-area").removeClass (function (index, css) {
-                            return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                        }).addClass(current_tile_area_scheme);
-                    }
-            );
-
-            $(".schemeButtons .button").on("click", function(){
-                var b = $(this);
-                var scheme = "tile-area-scheme-" +  b.data('scheme');
-
-                $(".tile-area").removeClass (function (index, css) {
-                    return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                }).addClass(scheme);
-
-                current_tile_area_scheme = scheme;
-                localStorage.setItem('tile-area-scheme', scheme);
-
-                showSettings();
-            });
         });
 
     </script>
@@ -222,124 +316,211 @@ Built on the work of JunesiPhone and Matchstic-->
 <div id="mainElement">
   <div class="tile-area fg-white" style="height: 100%; max-height: 100% !important;">
     <div id="statusBar"></div>
-    <div class="tile-group triple">
+    <div class="tile-group triple" style="margin-left:12px;">
         <div class="tile-container">
-          <div class="tile bg-darkGreen fg-white" data-role="tile">
+          <div class="tile" data-role="tile">
             <div class="tile-content iconic">
-                <div id="phoneContainer"><span class="icon mif-phone"></span></div>
+                <div id="tile1Container"><span class="icon mif-phone"></span></div>
             </div>
             <div id="phone-count"></div>
           </div>
 
-            <div class="tile bg-cyan fg-white" data-role="tile">
+            <div class="tile fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <div id="smsContainer"><span class="icon mif-bubbles"></span></div>
+                <div id="tile2Container"><span class="icon mif-bubbles"></span></div>
               </div>
                 <div id="sms-count"></div>
             </div>
-            <div class="tile bg-darkBlue fg-white" data-role="tile">
-              <div class="tile-content iconic">
-                <div id="mailContainer"><span class="icon mif-envelop"></span></div>
-              </div>
-                <div id="mail-count"></div>
+            <div id="tile3Container" class="tile" data-role="tile" data-role="tile">
+              <div id="clock" class="easy_slides_container"></div>
+              <div class='center-dial' id="center-dial">
+                  <div class='hand-container' id='hourHand'>
+                    <div class='hour-hand' id='hour-hand'></div>
+                  </div>
+                  <div class='hand-container' id='secondHand'>
+                    <div class='second-hand' id='second-hand'></div>
+                  </div>
+                  <div class='hand-container' id='digital'>
+                    <div class='digital-hour' id="digital-hour">23</div>
+                  </div>
+                  <div class='hand-container' id='digital'>
+                    <div class='digital-minute' id="digital-minute">58</div>
+                  </div>
+                  <div class='hand-container' id='digital'>
+                    <div class='digital-second' id="digital-second">59</div>
+                  </div>
+                </div>
             </div>
+
 
           <div class="tile-large fg-white" data-role="tile">
-            <div class="tile-content" id="wxContainer">
-              <div class="padding10">
-                <h1 id="weather_icon"><img id="wx_icon" src="images/wx/0.svg"></h1>
-                <h1 id="city_temp" style="position:relative; left: 60px; text-align:left;">45&deg</h1>
-                <h2 id="city_name" class="text-light">Port Charlotte</h2>
-                <h4 id="city_weather" style="font-size:20px;">Scattered Thunderstorms</h4>
-                <p id="city_weather_daily"></p>
+            <div class="tile-content" id="tile4Container">
 
-                <p style="margin: 3px;">Pressure: <span class="text-bold" id="pressure"></span></p>
-                <p style="margin: 3px;">Humidity: <span class="text-bold" id="humidity"></span></p>
-                <p style="margin: 3px;">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
-                <p style="margin: 3px;">Wind speed: <span class="text-bold" id="wind_speed">0</span>mph</p>
+
+                <h1 id="wxIcon"><img id="wx_icon" src="images/wx/0.svg"></h1>
+                <h1 id="temp" style="position:relative; left: 60px; text-align:left;">45&deg</h1>
+                <h2 id="city" class="text-light">Port Charlotte</h2>
+                <h4 id="condition" style="font-size:20px;">Scattered Thunderstorms</h4>
+                <p id="condition_daily"></p>
+
+                <p style="margin: 5px;">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
+                <p style="margin: 5px;">Wind speed: <span class="text-bold" id="wind_speed">0</span>mph</p>
+                <section id="daySection">
+
+                  <!-- display next five days -->
+                  <div id="dayZero" style="margin-top:0;">
+                    <center>
+                    <p id="dayZeroDayString"></p>
+                    <img id="dayZeroImg"/>
+                    <p style="width: 50px; text-align:center;"><span id="dayZeroHigh"></span>&nbsp;<span id="dayZeroLow" style="color:#bfbfbf;"></span></p>
+                    </center>
+                  </div>
+                  <div id="dayOne" style="margin-top:0;">
+                    <center>
+                    <p id="dayOneDayString"></p>
+                    <img id="dayOneImg"/>
+                    <p style="width: 50px; text-align:center;"><span id="dayOneHigh"></span>&nbsp;<span id="dayOneLow" style="color:#bfbfbf;"></span></p>
+                    </center>
+                  </div>
+
+            			<div id="dayTwo" style="margin-top:0;">
+            				<center>
+            				<p id="dayTwoDayString"></p>
+            				<img id="dayTwoImg"/>
+                    <p style="width: 50px; text-align:center;"><span id="dayTwoHigh"></span>&nbsp;<span id="dayTwoLow" style="color:#bfbfbf;"></span></p>
+            				</center>
+            			</div>
+                </section>
+                <div id="wxBgDiv">
+                <img id="wxBg">
               </div>
-            </div>
-              <span class="tile-label">Weather</span>
+              </div>
           </div>
-          <div id="musicContainer" class="tile" data-role="tile" data-role="tile">
-              <div id="music" class="easy_slides_container"></div>
-              <div class="tile-label">Music</div>
-          </div>
-          <div class="tile bg-orange fg-white" data-role="tile">
+          <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="wwwContainer"><span class="icon mif-earth2"></span></div>
+              <div id="tile5Container"><span class="icon mif-envelop"></span></div>
             </div>
-            <span class="tile-label">www</span>
+              <div id="mail-count"></div>
+          </div>
+          <div class="tile fg-white" data-role="tile">
+            <div class="tile-content iconic">
+              <div id="tile6Container"><span class="icon mif-earth2"></span></div>
+            </div>
           </div>
         </div>
     </div>
-    <div class="tile-group triple">
-        <span class="tile-group-title">Images</span>
+    <div class="tile-group triple" style="margin-left:12px;">
         <div class="tile-container">
-          <div class="tile bg-darkPink fg-white" data-role="tile">
+          <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="appsContainer"><span class="icon mif-apps"></span></div>
-            </div>
-            <span class="tile-label">Apps</span>
-          </div>
-            <div class="tile-wide bg-crimson" data-role="tile" style="width:250px">
-                <div class="tile-content">
-                  <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="766/"></script>
-                </div>
-            </div>
-          </div>
-          <div class="tile-group triple">
-              <div class="tile-container">
-          <div class="tile bg-darkBlue fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="facebookContainer"><span class="icon mif-facebook"></span></div>
-            </div>
-            <div id="facebook-count"></div>
-          </div>
-          <div class="tile bg-lightBlue fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="twitterContainer"><span class="icon mif-twitter"></span></div>
+              <div id="tile7Container"><span class="icon mif-twitter"></span></div>
             </div>
             <div id="twitter-count"></div>
           </div>
-          <div class="tile bg-darkRed fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="wwwContainer"><span class="icon mif-earth2"></span></div>
+
+            <div class="tile-wide" data-role="tile" style="width:250px">
+                <div class="tile-content">
+                  <!-- start sw-rss-feed code -->
+                  <div id="tile8Container">
+                  <script type="text/javascript">
+                  <!--
+                  rssfeed_url = new Array();
+                  rssfeed_url[0]="http://news.yahoo.com/rss/"; rssfeed_url[1]="http://feeds.gawker.com/gizmodo/full"; rssfeed_url[2]="http://feeds.gawker.com/lifehacker/full";
+                  rssfeed_frame_width="250";
+                  rssfeed_frame_height="120";
+                  rssfeed_scroll="on";
+                  rssfeed_scroll_step="10";
+                  rssfeed_scroll_bar="off";
+                  rssfeed_target="_blank";
+                  rssfeed_font_size="14";
+                  rssfeed_font_face="Roboto";
+                  rssfeed_border="off";
+                  rssfeed_css_url="";
+                  rssfeed_title="off";
+                  rssfeed_title_name="";
+                  rssfeed_title_bgcolor="#fff";
+                  rssfeed_title_color="#fff";
+                  rssfeed_title_bgimage="http://";
+                  rssfeed_footer="off";
+                  rssfeed_footer_name="rss feed";
+                  rssfeed_footer_bgcolor="#fff";
+                  rssfeed_footer_color="";
+                  rssfeed_footer_bgimage="http://";
+                  rssfeed_item_title_length="90";
+                  rssfeed_item_title_color="#fff";
+                  rssfeed_item_bgcolor="";
+                  rssfeed_item_bgimage="http://";
+                  rssfeed_item_border_bottom="off";
+                  rssfeed_item_source_icon="off";
+                  rssfeed_item_date="off";
+                  rssfeed_item_description="on";
+                  rssfeed_item_description_length="0";
+                  rssfeed_item_description_color="#fff";
+                  rssfeed_item_description_link_color="#fff";
+                  rssfeed_item_description_tag="on";
+                  rssfeed_no_items="0";
+                  rssfeed_cache = "5c5ab50d67c8f9baa7e2449f32e4c938";
+                  //-->
+                  </script>
+                  <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
+                  <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
+                  <div style="text-align:right; width:250px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#fff;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#fff;font-size:10px">surfing-waves.com</a></div>
+                  <!-- end sw-rss-feed code -->
+                </div>
+                </div>
             </div>
-            <span class="tile-label">clock</span>
           </div>
-        </div>
-      </div>
           <div class="tile-group triple">
               <div class="tile-container">
-            <div class="tile-small bg-amber fg-white" data-role="tile">
+
+          <div class="tile fg-white" data-role="tile">
+            <div class="tile-content iconic">
+              <div id="tile9Container"><span class="icon mif-facebook"></span></div>
+            </div>
+            <div id="facebook-count"></div>
+          </div>
+          <div class="tile fg-white" data-role="tile">
+            <div class="tile-content iconic">
+              <div id="tile10Container"><span class="icon mif-apps"></span></div>
+            </div>
+            <span class="tile-label">Apps</span>
+          </div>
+          <div id="tile11Container" class="tile" data-role="tile" data-role="tile">
+              <div id="music" class="easy_slides_container"></div>
+          </div>
+
+        </div>
+      </div>
+          <div class="tile-group triple" style="margin-left:2px;">
+              <div class="tile-container">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="cameraContainer"><span class="icon mif-camera"></span></div>
+                    <div id="tile12Container"><span class="icon mif-camera"></span></div>
                 </div>
             </div>
-            <div class="tile-small bg-green fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="mapsContainer"><span class="icon mif-map"></span></div>
+                    <div id="tile13Container"><span class="icon mif-map"></span></div>
                 </div>
             </div>
-            <div class="tile-small bg-pink fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="siriContainer"><span class="icon mif-multitrack-audio"></span></div>
+                    <div id="tile14Container"><span class="icon mif-multitrack-audio"></span></div>
                 </div>
             </div>
-            <div class="tile-small bg-yellow fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="lockContainer"><span class="icon mif-lock"></span></div>
+                    <div id="tile15Container"><span class="icon mif-lock"></span></div>
                 </div>
             </div>
-            <div class="tile-small bg-darkGray fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="settingsContainer"><span class="icon mif-cogs"></span></div>
+                    <div id="tile16Container"><span class="icon mif-cogs"></span></div>
                 </div>
             </div>
-            <div class="tile-small bg-teal fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="page2Container"><span class="icon mif-chevron-right"></span></div>
+                    <div id="tile17Container"><span class="icon mif-chevron-right"></span></div>
                 </div>
             </div>
 
@@ -348,11 +529,19 @@ Built on the work of JunesiPhone and Matchstic-->
 
     </div>
   </div>
+
     <script type="text/cycript">
       //<![CDATA[
       var widgetIdentifier = "com.gaitherstephens.novellas";
-      var wxRefresh = 10;
+      var twentyfourhour = twentyfourhourOp
+      var wxRefresh = wxRefreshOp;
+      var favMusicApp = favMusicAppOp;
+      var favBrowserApp = favBrowserAppOp;
+      var bgColor = bgColorOp;
+      var bgOpacity = bgOpacityOp;
+      var tilesOpacity = tilesOpacityOp;
       var firstMusic = 0;
+      var tilesColor = tilesColorOp;
       // Setup of widget
       window.onload = function() {
         [IS2Weather registerForWeatherUpdatesWithIdentifier:widgetIdentifier andCallback:^ void () {
@@ -382,13 +571,73 @@ Built on the work of JunesiPhone and Matchstic-->
         return null;
       };
 
+      if(bgColor === "transparent"){
+        document.getElementById("mainElement").style.backgroundColor = "rgba(255,255,255,0)";
+      }else{
+        document.getElementById("mainElement").style.backgroundColor = "rgba("+bgColor+bgOpacity+")";
+      }
+
+
+      if(tilesColor === "multicolor"){
+        document.getElementById("tile1Container").style.backgroundColor = "rgba(25,153,0,"+tilesOpacity+")";
+        document.getElementById("tile2Container").style.backgroundColor = "rgba(31,174,255,"+tilesOpacity+")";
+        document.getElementById("tile5Container").style.backgroundColor = "rgba(37,114,114,"+tilesOpacity+")";
+        document.getElementById("tile6Container").style.backgroundColor = "rgba(254,124,34,"+tilesOpacity+")";
+        document.getElementById("tile7Container").style.backgroundColor = "rgba(0,172,237,"+tilesOpacity+")";
+        document.getElementById("tile8Container").style.backgroundColor = "rgba(173,16,60,"+tilesOpacity+")";
+        document.getElementById("tile9Container").style.backgroundColor = "rgba(59,89,152,"+tilesOpacity+")";
+        document.getElementById("tile10Container").style.backgroundColor = "rgba(255,118,188,"+tilesOpacity+")";
+        document.getElementById("tile12Container").style.backgroundColor = "rgba(254,124,34,"+tilesOpacity+")";
+        document.getElementById("tile13Container").style.backgroundColor = "rgba(0,193,63,"+tilesOpacity+")";
+        document.getElementById("tile14Container").style.backgroundColor = "rgba(255,29,119,"+tilesOpacity+")";
+        document.getElementById("tile15Container").style.backgroundColor = "rgba(225,183,0,"+tilesOpacity+")";
+        document.getElementById("tile16Container").style.backgroundColor = "rgba(0,130,135,"+tilesOpacity+")";
+        document.getElementById("tile17Container").style.backgroundColor = "rgba(99,47,0,"+tilesOpacity+")";
+      }else if(tilesColor === "transparent"){
+        document.getElementById("tile1Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile2Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("clock").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("wxBgDiv").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile5Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile6Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile7Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile8Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile9Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile10Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("music").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile12Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile13Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile14Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile15Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile16Container").style.backgroundColor = "rgba(255,255,255,.2)";
+        document.getElementById("tile17Container").style.backgroundColor = "rgba(255,255,255,.2)";
+      }else{
+        document.getElementById("tile1Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile2Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile5Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile6Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile7Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile8Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile9Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile10Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile12Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile13Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile14Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile15Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile16Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        document.getElementById("tile17Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+      }
+
       function updateMedia(){
         if(firstMusic === 0){
           firstMusic = 1;
           $('#music').remove();
           var div = document.createElement('div');
+          if(tilesColor === "transparent"){
+            div.setAttribute("style", "opacity:0.6");
+          }
           div.setAttribute('id', 'music');
-          document.getElementById("musicContainer").appendChild(div);
+          document.getElementById("tile11Container").appendChild(div);
           var elem = document.createElement("img");
           elem.setAttribute("height", "120");
           elem.setAttribute("width", "120");
@@ -454,11 +703,14 @@ Built on the work of JunesiPhone and Matchstic-->
       }
 
       function updateWx(){
-        var flickrCount = Math.floor((Math.random() * 50) + 1);
+        var dayArray = JSON.parse("" + [IS2Weather dayForecastsForCurrentLocationJSON]);
+        var flickrCount = Math.floor((Math.random() * 99) + 1);
         var flickrSort = "relevance";
         var weatherBg = "flickr";
         var url;
-        var hours = 12;
+        var date = new Date();
+        var hours = date.getHours();
+
 
         //used to determine day or night
         var dayNight = "Day";
@@ -547,16 +799,30 @@ Built on the work of JunesiPhone and Matchstic-->
         }
 
         document.getElementById("wx_icon").src = "images/wx/" + [IS2Weather currentCondition] + ".png";
-        document.getElementById("city_temp").innerHTML = [IS2Weather currentTemperature] + "&deg";
-        document.getElementById("city_name").innerHTML = [IS2Weather currentLocation];
-        document.getElementById("city_weather").innerHTML = [IS2Weather currentConditionAsString];
-        document.getElementById("pressure").innerHTML = [IS2Weather currentPressure].toFixed(2);
-        document.getElementById("humidity").innerHTML = [IS2Weather currentHumidity] + "%";
+        document.getElementById("temp").innerHTML = [IS2Weather currentTemperature] + "&deg";
+        document.getElementById("city").innerHTML = [IS2Weather currentLocation];
+        document.getElementById("condition").innerHTML = [IS2Weather currentConditionAsString];
         document.getElementById("wind_bearing").innerHTML = degToCard([IS2Weather currentWindDirection]);
         document.getElementById("wind_speed").innerHTML = [IS2Weather currentWindSpeed];
 
+        //populates forecast elements
+        document.getElementById('dayZeroDayString').innerHTML = translate[current].sday[dayArray[1].dayOfWeek - 1];
+        document.getElementById('dayZeroImg').src = "images/wx/" + dayArray[1].condition + ".png";
+        document.getElementById('dayZeroHigh').innerHTML = "" + dayArray[1].high + "&deg";
+        document.getElementById('dayZeroLow').innerHTML = "" + dayArray[1].low + "&deg";
+
+        document.getElementById('dayOneDayString').innerHTML = translate[current].sday[dayArray[2].dayOfWeek - 1];
+        document.getElementById('dayOneImg').src = "images/wx/" + dayArray[2].condition + ".png";
+        document.getElementById('dayOneHigh').innerHTML = "" + dayArray[2].high + "&deg";
+        document.getElementById('dayOneLow').innerHTML = "" + dayArray[2].low + "&deg";
+
+        document.getElementById('dayTwoDayString').innerHTML = translate[current].sday[dayArray[3].dayOfWeek - 1];
+        document.getElementById('dayTwoImg').src = "images/wx/" + dayArray[3].condition + ".png";
+        document.getElementById('dayTwoHigh').innerHTML = "" + dayArray[3].high + "&deg";
+        document.getElementById('dayTwoLow').innerHTML = "" + dayArray[3].low + "&deg";
+
         //shows either flickr images or stock images
-          if(weatherBg === "flickr"){
+          if(weatherBg === "flickr" && tilesColor !== "transparent"){
             //gets flickr images
             $(function (){
               $.ajax({
@@ -566,11 +832,8 @@ Built on the work of JunesiPhone and Matchstic-->
                   api_key: "c1955bceeed9a3a76af982daf012c546",
                   text: "" + wxConScrub([IS2Weather currentConditionAsString]) + " " + dayNight,
                   sort: flickrSort,
-                  content_type: 1,
-                  safe_search: 2,
-                  media: "photos",
                   format: "json",
-                  per_page: 50,
+                  per_page: 100,
                   nojsoncallback: 1
                 },
                 success: function (response) {
@@ -579,15 +842,15 @@ Built on the work of JunesiPhone and Matchstic-->
 
                     if(flickrCount === index || index === response.photos.photo.length){
                       //fades out old weather picture
-                      document.getElementById("wxContainer").style.backgroundImage = "url(" + url + ")";
+                      document.getElementById("wxBg").src = url;
                       return false;
                     }
                   });
                 }
               });
             })
-          }else{
-              document.getElementById("wxContainer").style.backgroundImage = "url(" + "images/wx/weather" + [IS2Weather currentCondition] + ".jpg" + ")";
+          }else if(weatherBg === "stock" && tilesColor !== "transparent"){
+              document.getElementById("wxBg").src = "images/wx/weather" + [IS2Weather currentCondition] + ".jpg";
           }
 
       }
@@ -614,7 +877,6 @@ Built on the work of JunesiPhone and Matchstic-->
 
       }
 
-      var wwwBundle = "com.apple.mobilesafari";
         var swipeWx = {
           itemSwipe: function(direction){
             if(direction === 'p'){
@@ -653,7 +915,15 @@ Built on the work of JunesiPhone and Matchstic-->
         var swipeWww = {
           itemSwipe: function(direction){
             if(direction === 'p'){
-              [IS2System openApplication:@""+wwwBundle];
+              if(favBrowserApp === "appleSafari"){
+                [IS2System openApplication:@""+"com.apple.mobilesafari"];
+              }else if(favBrowserApp === "googleChrome"){
+                [IS2System openApplication:@""+"com.google.chrome.ios"];
+              }else if(favBrowserApp === "firefox"){
+                [IS2System openApplication:@""+"com.mozilla.ios.Firefox"];
+              }else if(favBrowserApp === "dolphin"){
+                [IS2System openApplication:@""+"com.dolphin.browser.iphone"];
+              }
             }
           }
         };
@@ -664,7 +934,15 @@ Built on the work of JunesiPhone and Matchstic-->
                 [IS2System openApplication:@""+[IS2Media currentPlayingAppIdentifier]];
               }
               else{
-                //launch favorite music app
+                if(favMusicApp === "appleMusic"){
+                  [IS2System openApplication:@""+"com.apple.Music"];
+                }else if(favMusicApp === "iheartRadio"){
+                  [IS2System openApplication:@""+"com.clearchannel.iheartradio"];
+                }else if(favMusicApp === "pandora"){
+                  [IS2System openApplication:@""+"com.pandora"];
+                }else if(favMusicApp === "spotify"){
+                  [IS2System openApplication:@""+"com.spotify.client"];
+                }
               }
             }
           }
@@ -693,7 +971,13 @@ Built on the work of JunesiPhone and Matchstic-->
         var swipeMaps = {
           itemSwipe: function(direction){
             if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.Maps"];
+              if(favMapApp === "appleMaps"){
+                [IS2System openApplication:@""+"com.apple.Maps"];
+              }else if(favMapApp === "googleMaps"){
+                [IS2System openApplication:@""+"com.google.Maps"];
+              }else if(favMapApp === "waze"){
+                [IS2System openApplication:@""+"com.waze.iphone"];
+              }
             }
           }
         };
@@ -727,23 +1011,28 @@ Built on the work of JunesiPhone and Matchstic-->
         };
 
         //adds swipe detection to element
-        detectswipe('#wxContainer', swipeWx.itemSwipe);
-        detectswipe('#phoneContainer', swipePhone.itemSwipe);
-        detectswipe('#smsContainer', swipeSms.itemSwipe);
-        detectswipe('#mailContainer', swipeMail.itemSwipe);
-        detectswipe('#appsContainer', swipeApps.itemSwipe);
-        detectswipe('#wwwContainer', swipeWww.itemSwipe);
-        detectswipe('#musicContainer', swipeMusic.itemSwipe);
-        detectswipe('#facebookContainer', swipeFacebook.itemSwipe);
-        detectswipe('#twitterContainer', swipeTwitter.itemSwipe);
-        detectswipe('#cameraContainer', swipeCamera.itemSwipe);
-        detectswipe('#mapsContainer', swipeMaps.itemSwipe);
-        detectswipe('#siriContainer', swipeSiri.itemSwipe);
-        detectswipe('#lockContainer', swipeLock.itemSwipe);
-        detectswipe('#settingsContainer', swipeSettings.itemSwipe);
-        detectswipe('#page2Container', swipePage2.itemSwipe);
+        detectswipe('#tile4Container', swipeWx.itemSwipe);
+        detectswipe('#tile1Container', swipePhone.itemSwipe);
+        detectswipe('#tile2Container', swipeSms.itemSwipe);
+        detectswipe('#tile5Container', swipeMail.itemSwipe);
+        detectswipe('#tile10Container', swipeApps.itemSwipe);
+        detectswipe('#tile6Container', swipeWww.itemSwipe);
+        detectswipe('#tile11Container', swipeMusic.itemSwipe);
+        detectswipe('#tile9Container', swipeFacebook.itemSwipe);
+        detectswipe('#tile7Container', swipeTwitter.itemSwipe);
+        detectswipe('#tile12Container', swipeCamera.itemSwipe);
+        detectswipe('#tile13Container', swipeMaps.itemSwipe);
+        detectswipe('#tile14Container', swipeSiri.itemSwipe);
+        detectswipe('#tile15Container', swipeLock.itemSwipe);
+        detectswipe('#tile16Container', swipeSettings.itemSwipe);
+        detectswipe('#tile17Container', swipePage2.itemSwipe);
 
       //]]>
     </script>
+    <script src='js/jquery-3.1.1.min.js'></script>
+    <script type="text/javascript">
+      var j3 = $.noConflict(true);
+    </script>
+    <script src="js/clock.js"></script>
   </body>
 </html>

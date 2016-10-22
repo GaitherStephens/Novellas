@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF~8"?>
+<!DOCTYPE plist PUBLIC "~//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList~1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+	<key>default</key>
+	<false/>
+	<key>label</key>
+	<string>24hr</string>
+	<key>name</key>
+	<string>twentyfourhourOp</string>
+	<key>type</key>
+	<string>switch</string>
+</dict>
+	<dict>
+		<key>default</key>
+		<string>EN</string>
+		<key>label</key>
+		<string>Widget Language</string>
+		<key>name</key>
+		<string>widgetLanguageOp</string>
+		<key>options</key>
+		<dict>
+			<key>EN</key>
+			<string>en</string>
+			<key>NL</key>
+			<string>nl</string>
+			<key>RU</key>
+			<string>ru</string>
+			<key>IT</key>
+			<string>it</string>
+			<key>SP</key>
+			<string>sp</string>
+			<key>DE</key>
+			<string>de</string>
+			<key>FR</key>
+			<string>fr</string>
+			<key>PL</key>
+			<string>pl</string>
+			<key>PT</key>
+			<string>pt</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>Multi-Color</string>
+		<key>label</key>
+		<string>Tiles Color</string>
+		<key>name</key>
+		<string>tilesColorOp</string>
+		<key>options</key>
+		<dict>
+			<key>Multi-Color</key>
+			<string>multicolor</string>
+			<key>Transparent</key>
+			<string>transparent</string>
+			<key>White</key>
+			<string>255,255,255,</string>
+			<key>Black</key>
+			<string>0,0,0,</string>
+			<key>Light Green</key>
+			<string>153,180,51</string>
+			<key>Green</key>
+			<string>0,163,0,</string>
+			<key>Dark Green</key>
+			<string>30,113,69,</string>
+			<key>Magenta</key>
+			<string>255,0,151,</string>
+			<key>Light Purple</key>
+			<string>159,0,167,</string>
+			<key>Purple</key>
+			<string>126,56,120,</string>
+			<key>Dark Purple</key>
+			<string>96,60,186,</string>
+			<key>Darken</key>
+			<string>29,29,29,</string>
+			<key>Teal</key>
+			<string>0,171,169,</string>
+			<key>Light Blue</key>
+			<string>239,244,255,</string>
+			<key>Blue</key>
+			<string>45,137,239,</string>
+			<key>Dark Blue</key>
+			<string>43,87,151,</string>
+			<key>Yellow</key>
+			<string>255,196,13,</string>
+			<key>Orange</key>
+			<string>227,162,26,</string>
+			<key>Dark Orange</key>
+			<string>218,83,44,</string>
+			<key>Red</key>
+			<string>238,17,17,</string>
+			<key>Dark Red</key>
+			<string>185,29,71,</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>100%</string>
+		<key>label</key>
+		<string>Tiles Transparency</string>
+		<key>name</key>
+		<string>tilesOpacityOp</string>
+		<key>options</key>
+		<dict>
+			<key>10%</key>
+			<string>.1</string>
+			<key>20%</key>
+			<string>.2</string>
+			<key>30%</key>
+			<string>.3</string>
+			<key>40%</key>
+			<string>.4</string>
+			<key>50%</key>
+			<string>.5</string>
+			<key>60%</key>
+			<string>.6</string>
+			<key>70%</key>
+			<string>.7</string>
+			<key>80%</key>
+			<string>.8</string>
+			<key>90%</key>
+			<string>.9</string>
+			<key>100%</key>
+			<string>1</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>Darken</string>
+		<key>label</key>
+		<string>Background Color</string>
+		<key>name</key>
+		<string>bgColorOp</string>
+		<key>options</key>
+		<dict>
+			<key>Transparent</key>
+			<string>transparent</string>
+			<key>White</key>
+			<string>255,255,255,</string>
+			<key>Black</key>
+			<string>0,0,0,</string>
+			<key>Light Green</key>
+			<string>153,180,51</string>
+			<key>Green</key>
+			<string>0,163,0,</string>
+			<key>Dark Green</key>
+			<string>30,113,69,</string>
+			<key>Magenta</key>
+			<string>255,0,151,</string>
+			<key>Light Purple</key>
+			<string>159,0,167,</string>
+			<key>Purple</key>
+			<string>126,56,120,</string>
+			<key>Dark Purple</key>
+			<string>96,60,186,</string>
+			<key>Darken</key>
+			<string>29,29,29,</string>
+			<key>Teal</key>
+			<string>0,171,169,</string>
+			<key>Light Blue</key>
+			<string>239,244,255,</string>
+			<key>Blue</key>
+			<string>45,137,239,</string>
+			<key>Dark Blue</key>
+			<string>43,87,151,</string>
+			<key>Yellow</key>
+			<string>255,196,13,</string>
+			<key>Orange</key>
+			<string>227,162,26,</string>
+			<key>Dark Orange</key>
+			<string>218,83,44,</string>
+			<key>Red</key>
+			<string>238,17,17,</string>
+			<key>Dark Red</key>
+			<string>185,29,71,</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>100%</string>
+		<key>label</key>
+		<string>Background Transparency</string>
+		<key>name</key>
+		<string>bgOpacityOp</string>
+		<key>options</key>
+		<dict>
+			<key>10%</key>
+			<string>.1</string>
+			<key>20%</key>
+			<string>.2</string>
+			<key>30%</key>
+			<string>.3</string>
+			<key>40%</key>
+			<string>.4</string>
+			<key>50%</key>
+			<string>.5</string>
+			<key>60%</key>
+			<string>.6</string>
+			<key>70%</key>
+			<string>.7</string>
+			<key>80%</key>
+			<string>.8</string>
+			<key>90%</key>
+			<string>.9</string>
+			<key>100%</key>
+			<string>1</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>15</string>
+		<key>label</key>
+		<string>Weather Refresh (Minutes)</string>
+		<key>name</key>
+		<string>wxRefreshOp</string>
+		<key>options</key>
+		<dict>
+			<key>10</key>
+			<string>10</string>
+			<key>15</key>
+			<string>15</string>
+			<key>20</key>
+			<string>20</string>
+			<key>30</key>
+			<string>30</string>
+			<key>60</key>
+			<string>60</string>
+			<key>120</key>
+			<string>120</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>Apple Safari</string>
+		<key>label</key>
+		<string>Favorite Web Browser</string>
+		<key>name</key>
+		<string>favBrowserAppOp</string>
+		<key>options</key>
+		<dict>
+			<key>Apple Safari</key>
+			<string>appleSafari</string>
+			<key>Google Chrome</key>
+			<string>googleChrome</string>
+			<key>Firefox</key>
+			<string>firefox</string>
+			<key>Dolphin</key>
+			<string>dolphin</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>Apple Music</string>
+		<key>label</key>
+		<string>Favorite Music App</string>
+		<key>name</key>
+		<string>favMusicAppOp</string>
+		<key>options</key>
+		<dict>
+			<key>Apple Music</key>
+			<string>appleMusic</string>
+			<key>iHeart Radio</key>
+			<string>iheartRadio</string>
+			<key>Pandora</key>
+			<string>pandora</string>
+			<key>Spotify</key>
+			<string>spotify</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+	<dict>
+		<key>default</key>
+		<string>Apple Maps</string>
+		<key>label</key>
+		<string>Favorite Map App</string>
+		<key>name</key>
+		<string>favMapAppOp</string>
+		<key>options</key>
+		<dict>
+			<key>Apple Maps</key>
+			<string>appleApps</string>
+			<key>Google Maps</key>
+			<string>googleMaps</string>
+			<key>Waze</key>
+			<string>waze</string>
+		</dict>
+		<key>type</key>
+		<string>select</string>
+	</dict>
+</array>
+</plist>
