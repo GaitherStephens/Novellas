@@ -5,120 +5,16 @@ Built on the work of JunesiPhone and Matchstic-->
 <html>
   <head>
     <title>Novellas by SPQRGuyMontag</title>
-    <!-- Include Main jQuery library -->
-    <script type="text/Javascript" src="js/jquery-1.4.2.min.js"></script>
-    <!-- Include Main Easy Slides library & default css file-->
-    <script type="text/Javascript" src="js/jquery.easyslides.min.v1.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/easySlides.default.min.css" />
-
-    <!-- Include own Javascript/jQuery & CSS file for Example 2 -->
-    <script type="text/Javascript" src="js/music_slides.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-
-
+    <script src="js/lang.js"></script>
     <link href="css/metro.css" rel="stylesheet">
     <link href="css/metro-icons.css" rel="stylesheet">
     <link href="css/metro-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <script src="js/prettify/run_prettify.js"></script>
-    <script src="js/clock1.0.3.1.js"></script>
     <script src="js/metro.js"></script>
     <script src="js/swipes.js"></script>
-
-    <style>
-
-        #mainElement {
-          position: absolute;
-          padding-left: 11px;
-          background-color: #1d1d1d;
-          height: 736px;
-          width: 414px;
-        }
-
-        #statusBar {
-          display: block;
-          height: 20px;
-        }
-
-        #twitter {
-          position: relative;
-          left: 5px;
-        }
-
-        #phone-count, #sms-count, #mail-count, #facebook-count, #twitter-count {
-          position: absolute;
-          top: 87px;
-          left: 12px;
-          height: 100%;
-          font-size: 2em;
-        }
-
-        #phoneContainer, #smsContainer, #mailContainer, #wwwContainer,
-        #appsContainer, #musicContainer, #music, #facebookContainer, #twitterContainer{
-          height:120px;
-          width:120px;
-        }
-
-        #wxContainer {
-          background-position: center;
-          background-size: cover;
-          height: 250px;
-          text-shadow: 0px 0px 20px #000000,
-                       0px 0px 30px #000000;
-        }
-
-        #weather_icon img {
-          position: absolute;
-          top: 5px;
-          left: 0px;
-          height: 75px;
-        }
-
-        #cameraContainer, #mapsContainer, #siriContainer, #lockContainer,
-        #settingsContainer, #page1Container{
-          height:60px;
-          width:60px;
-        }
-
-        .tile-area-controls {
-            position: fixed;
-            right: 40px;
-            top: 40px;
-        }
-
-        .tile-group {
-            left: 100px;
-        }
-
-        .tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super {
-            opacity: 0;
-            -webkit-transform: scale(.8);
-            transform: scale(.8);
-        }
-
-        .schemeButtons {
-            /*width: 300px;*/
-        }
-
-        @media screen and (max-width: 640px) {
-            .tile-area {
-                overflow-y: scroll;
-            }
-            .tile-area-controls {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 320px) {
-            .tile-area {
-                overflow-y: scroll;
-            }
-
-            .tile-area-controls {
-                display: none;
-            }
-
-        }
-    </style>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
 
     <script>
         (function($) {
@@ -128,7 +24,6 @@ Built on the work of JunesiPhone and Matchstic-->
 
                 plugin.init = function(){
                     setTilesAreaSize();
-                    if (width > 640) addMouseWheel();
                 };
 
                 var setTilesAreaSize = function(){
@@ -143,15 +38,6 @@ Built on the work of JunesiPhone and Matchstic-->
                     });
                     $(".tile-area").css({
                         width: tileAreaWidth
-                    });
-                };
-
-                var addMouseWheel = function (){
-                    $("body").mousewheel(function(event, delta, deltaX, deltaY){
-                        var page = $(document);
-                        var scroll_value = delta * 50;
-                        page.scrollLeft(page.scrollLeft() - scroll_value);
-                        return false;
                     });
                 };
 
@@ -171,10 +57,8 @@ Built on the work of JunesiPhone and Matchstic-->
                         opacity: 1,
                         "-webkit-transform": "scale(1)",
                         "transform": "scale(1)",
-                        "-webkit-transition": ".3s",
-                        "transition": ".3s"
                     });
-                }, Math.floor(Math.random()*500));
+                }, Math.floor(Math.random()*1));
             });
 
             $(".tile-group").animate({
@@ -187,35 +71,6 @@ Built on the work of JunesiPhone and Matchstic-->
             $(".tile-area").removeClass (function (index, css) {
                 return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
             }).addClass(current_tile_area_scheme);
-
-            $(".schemeButtons .button").hover(
-                    function(){
-                        var b = $(this);
-                        var scheme = "tile-area-scheme-" +  b.data('scheme');
-                        $(".tile-area").removeClass (function (index, css) {
-                            return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                        }).addClass(scheme);
-                    },
-                    function(){
-                        $(".tile-area").removeClass (function (index, css) {
-                            return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                        }).addClass(current_tile_area_scheme);
-                    }
-            );
-
-            $(".schemeButtons .button").on("click", function(){
-                var b = $(this);
-                var scheme = "tile-area-scheme-" +  b.data('scheme');
-
-                $(".tile-area").removeClass (function (index, css) {
-                    return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-                }).addClass(scheme);
-
-                current_tile_area_scheme = scheme;
-                localStorage.setItem('tile-area-scheme', scheme);
-
-                showSettings();
-            });
         });
 
     </script>
@@ -224,124 +79,180 @@ Built on the work of JunesiPhone and Matchstic-->
 <div id="mainElement">
   <div class="tile-area fg-white" style="height: 100%; max-height: 100% !important;">
     <div id="statusBar"></div>
-    <div class="tile-group triple">
+    <div class="tile-group triple" style="margin-left:12px;">
         <div class="tile-container">
-          <div class="tile bg-darkGreen fg-white" data-role="tile">
+          <div class="tile" data-role="tile">
             <div class="tile-content iconic">
-                <div id="phoneContainer"><span class="icon mif-phone"></span></div>
+                <div id="tile18Container"><img id="tile18Icon"></div>
             </div>
-            <div id="phone-count"></div>
+            <div id="tile18Count"></div>
           </div>
 
-            <div class="tile bg-cyan fg-white" data-role="tile">
+            <div class="tile fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <div id="smsContainer"><span class="icon mif-bubbles"></span></div>
+                <div id="tile19Container"><img id="tile19Icon"></div>
               </div>
-                <div id="sms-count"></div>
+                <div id="tile19Count"></div>
             </div>
-            <div class="tile bg-darkBlue fg-white" data-role="tile">
+            <div class="tile fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <div id="mailContainer"><span class="icon mif-envelop"></span></div>
+                <div id="tile20Container"><img id="tile20Icon"></div>
               </div>
-                <div id="mail-count"></div>
+                <div id="tile20Count"></div>
             </div>
 
           <div class="tile-large fg-white" data-role="tile">
-            <div class="tile-content" id="wxContainer">
-              <div class="padding10">
-                <h1 id="weather_icon"><img id="wx_icon" src="images/wx/0.svg"></h1>
-                <h1 id="city_temp" style="position:relative; left: 60px; text-align:left;">45&deg</h1>
-                <h2 id="city_name" class="text-light">Port Charlotte</h2>
-                <h4 id="city_weather" style="font-size:20px;">Scattered Thunderstorms</h4>
-                <p id="city_weather_daily"></p>
+            <div class="tile-content" id="tile21Container">
+              <!-- start sw-rss-feed code -->
+              <script type="text/javascript">
+              <!--
+              rssfeed_url = new Array();
+              rssfeed_url[0]="http://news.yahoo.com/rss/"; rssfeed_url[1]="https://www.engadget.com/tag/rss/"; rssfeed_url[2]="http://feeds.gawker.com/gizmodo/full"; rssfeed_url[3]="http://feeds.gawker.com/lifehacker/full";
+              rssfeed_frame_width="250";
+              rssfeed_frame_height="230";
+              rssfeed_scroll="on";
+              rssfeed_scroll_step="15";
+              rssfeed_scroll_bar="off";
+              rssfeed_target="_blank";
+              rssfeed_font_size="14";
+              rssfeed_font_face="Roboto";
+              rssfeed_border="off";
+              rssfeed_css_url="";
+              rssfeed_title="off";
+              rssfeed_title_name="";
+              rssfeed_title_bgcolor="";
+              rssfeed_title_color="#fff";
+              rssfeed_title_bgimage="http://";
+              rssfeed_footer="off";
+              rssfeed_footer_name="rss feed";
+              rssfeed_footer_bgcolor="";
+              rssfeed_footer_color="#fff";
+              rssfeed_footer_bgimage="";
+              rssfeed_item_title_length="70";
+              rssfeed_item_title_color="#fff";
+              rssfeed_item_bgcolor="";
+              rssfeed_item_bgimage="http://";
+              rssfeed_item_border_bottom="off";
+              rssfeed_item_source_icon="off";
+              rssfeed_item_date="off";
+              rssfeed_item_description="on";
+              rssfeed_item_description_length="120";
+              rssfeed_item_description_color="#fff";
+              rssfeed_item_description_link_color="#fff";
+              rssfeed_item_description_tag="on";
+              rssfeed_no_items="0";
+              rssfeed_cache = "c8659b438668c6c51ead5ebb6d2f9d45";
+              //-->
+              </script>
+              <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
+              <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
+              <div style="text-align:right; width:240px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#fff;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#fff;font-size:10px">surfing-waves.com</a></div>
+              <!-- end sw-rss-feed code -->
 
-                <p style="margin: 3px;">Pressure: <span class="text-bold" id="pressure"></span></p>
-                <p style="margin: 3px;">Humidity: <span class="text-bold" id="humidity"></span></p>
-                <p style="margin: 3px;">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
-                <p style="margin: 3px;">Wind speed: <span class="text-bold" id="wind_speed">0</span>mph</p>
               </div>
-            </div>
-              <span class="tile-label">Weather</span>
           </div>
-          <div id="musicContainer" class="tile" data-role="tile" data-role="tile">
-              <div id="music" class="easy_slides_container"></div>
-              <div class="tile-label">Music</div>
-          </div>
-          <div class="tile bg-orange fg-white" data-role="tile">
+          <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="wwwContainer"><span class="icon mif-earth2"></span></div>
+              <div id="tile22Container"><img id="tile22Icon"></div>
             </div>
-            <span class="tile-label">www</span>
+              <div id="tile22Count"></div>
+          </div>
+          <div class="tile fg-white" data-role="tile">
+            <div class="tile-content iconic">
+              <div id="tile23Container"><img id="tile23Icon"></div>
+            </div>
+              <div id="tile23Count"></div>
           </div>
         </div>
     </div>
-    <div class="tile-group triple">
-        <span class="tile-group-title">Images</span>
+    <div class="tile-group triple" style="margin-left:12px;">
         <div class="tile-container">
-          <div class="tile bg-darkPink fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="appsContainer"><span class="icon mif-apps"></span></div>
-            </div>
-            <span class="tile-label">Apps</span>
-          </div>
-            <div class="tile-wide bg-crimson" data-role="tile" data-effect="slideLeft">
-                <div class="tile-content">
-                  <div id="newsContainer"><script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="766/"></script></div>
+
+          <div id="tile24Container" class="tile-wide" data-role="tile">
+              <div class="tile-content iconic"></div>
+              <div id="eventscontainer">
+
+                  <div id="eventOne" class="event">
+                    <p id="eventOneColour" class="colour"> </p>
+                    <p id="eventOneTitle" class="title">Lorem Ipsum</p>
+                    <p id="eventOneTime" class="time">11:40, Today</p>
+                  </div>
+
+                  <div id="eventTwo" class="event">
+                    <p id="eventTwoColour" class="colour"> </p>
+                    <p id="eventTwoTitle" class="title">Lorem Ipsum</p>
+                    <p id="eventTwoTime" class="time">11:40, Today</p>
+                  </div>
+
+                  <div id="eventThree" class="event">
+                    <p id="eventThreeColour" class="colour"> </p>
+                    <p id="eventThreeTitle" class="title">Lorem Ipsum</p>
+                    <p id="eventThreeTime" class="time">11:40, Today</p>
+                  </div>
+
+                  <div id="eventFour" class="event">
+                    <p id="eventFourColour" class="colour"> </p>
+                    <p id="eventFourTitle" class="title">Lorem Ipsum</p>
+                    <p id="eventFourTime" class="time">11:40, Today</p>
+                  </div>
+
+                  <div id="eventFive" class="event">
+                    <p id="eventFiveColour" class="colour"> </p>
+                    <p id="eventFiveTitle" class="title">Lorem Ipsum</p>
+                    <p id="eventFiveTime" class="time">11:40, Today</p>
+                  </div>
+
+                  <div id="noevents">
+                   <center><p>No Events</p></center>
+                  </div>
                 </div>
-            </div>
-          </div>
-          <div class="tile-group triple">
-              <div class="tile-container">
-          <div class="tile bg-darkBlue fg-white" data-role="tile">
+              </div>
+
+              <div class="tile fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                  <div id="tile25Container"><img id="tile25Icon"></div>
+                </div>
+                <div id="tile25Count"></div>
+              </div>
+
+          <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="facebookContainer"><span class="icon mif-facebook"></span></div>
+              <div id="tile26Container"><img id="tile26Icon"></div>
             </div>
-            <div id="facebook-count"></div>
+            <div id="tile26Count"></div>
           </div>
-          <div class="tile bg-lightBlue fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="twitterContainer"><span class="icon mif-twitter"></span></div>
-            </div>
-            <div id="twitter-count"></div>
-          </div>
-          <div class="tile bg-darkRed fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="wwwContainer"><span class="icon mif-earth2"></span></div>
-            </div>
-            <span class="tile-label">clock</span>
-          </div>
-        </div>
+
       </div>
-          <div class="tile-group triple">
+          <div class="tile-group triple" style="margin-left:2px;">
               <div class="tile-container">
-            <div class="tile-small bg-amber fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="cameraContainer"><span class="icon mif-camera"></span></div>
+                    <div id="tile27Container"><img id="tile27Icon" src="images/tiles/appstore.svg"></div>
                 </div>
             </div>
-            <div class="tile-small bg-green fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="mapsContainer"><span class="icon mif-map"></span></div>
+                    <div id="tile28Container"><img id="tile28Icon" src="images/tiles/cydia.svg"></div>
                 </div>
             </div>
-            <div class="tile-small bg-pink fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="siriContainer"><span class="icon mif-multitrack-audio"></span></div>
+                    <div id="tile29Container"><img id="tile29Icon" src="images/tiles/calendar.svg"></div>
                 </div>
             </div>
-            <div class="tile-small bg-yellow fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="lockContainer"><span class="icon mif-lock"></span></div>
+                    <div id="tile30Container"><img id="tile30Icon" src="images/tiles/reminders.svg"></div>
                 </div>
             </div>
-            <div class="tile-small bg-darkGray fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="settingsContainer"><span class="icon mif-cogs"></span></div>
+                    <div id="tile31Container"><img id="tile31Icon" src="images/tiles/findmyiphone.svg"></div>
                 </div>
             </div>
-            <div class="tile-small bg-teal fg-white" data-role="tile">
+            <div class="tile-small fg-white" data-role="tile">
                 <div class="tile-content iconic">
-                    <div id="page1Container"><span class="icon mif-chevron-left"></span></div>
+                    <div id="tile32Container"><span class="icon mif-chevron-left"></span></div>
                 </div>
             </div>
 
@@ -350,400 +261,382 @@ Built on the work of JunesiPhone and Matchstic-->
 
     </div>
   </div>
+
     <script type="text/cycript">
       //<![CDATA[
       var widgetIdentifier = "com.gaitherstephens.novellas";
-      var wxRefresh = 10;
-      var firstMusic = 0;
+      var tile18 = tile18Op;
+      var tile19 = tile19Op;
+      var tile20 = tile20Op;
+      var tile22 = tile22Op;
+      var tile23 = tile23Op;
+      var tile25 = tile25Op;
+      var tile26 = tile26Op;
+      var twentyfourhour = twentyfourhourOp;
+      var wxRefresh = wxRefreshOp;
+      var wxBg = wxBgOp;
+      var favMusicApp = favMusicAppOp;
+      var favMapApp = favMapAppOp;
+      var bgColor = bgColorOp;
+      var bgOpacity = bgOpacityOp;
+      var tilesOpacity = tilesOpacityOp;
+      var firstTimeMusic = true;
+      var tilesColor = tilesColorOp;
       // Setup of widget
       window.onload = function() {
-        [IS2Weather registerForWeatherUpdatesWithIdentifier:widgetIdentifier andCallback:^ void () {
-          updateWx();
+        // Code to run after calendar data updates.
+        [IS2Calendar registerForCalendarNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
+          // Update onscreen elements
+          updateCalendarData();
         }];
-        updateWx();
-
-        [IS2Weather setWeatherUpdateTimeInterval:wxRefresh forRequester:widgetIdentifier];
-
-        //registers widget for media updates
-        [IS2Media registerForNowPlayingNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
-            updateMedia();
-        }];
+        updateCalendarData();
         [IS2Notifications registerForBulletinNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
             updateNotifications();
         }];
         updateNotifications();
-        updateSystem();
       }
 
       // Make sure to de-register ourselves when removed from the user's screen.
       window.onunload = function() {
-        [IS2Media unregisterForNotificationsWithIdentifier:widgetIdentifier];
-        [IS2Weather unregisterForUpdatesWithIdentifier:widgetIdentifier];
-        [IS2Weather removeRequesterForWeatherTimeInterval:widgetIdentifier];
         [IS2Notifications unregisterForNotificationsWithIdentifier:widgetIdentifier];
         return null;
       };
 
-      function updateMedia(){
-        if(firstMusic === 0){
-          firstMusic = 1;
-          $('#music').remove();
-          var div = document.createElement('div');
-          div.setAttribute('id', 'music');
-          document.getElementById("musicContainer").appendChild(div);
-          var elem = document.createElement("img");
-          elem.setAttribute("height", "120");
-          elem.setAttribute("width", "120");
-          elem.setAttribute("id", "albumArt");
-          elem.setAttribute("src", "" + [IS2Media currentTrackArtworkBase64] + "");
-          document.getElementById("music").appendChild(elem);
-        }else{
-          document.getElementById("albumArt").src = [IS2Media currentTrackArtworkBase64];
-        }
+        document.getElementById("mainElement").style.backgroundColor = "rgba("+bgColor+bgOpacity+")";
 
-      }
 
-      function getNum(n){
-        if(n < 0){
-          return 0;
-        }else if(n >= 0 && n < 10){
-          return 1;
-        }else if(n >= 10 && n < 20){
-          return 2;
-        }else if(n >= 20 && n < 30){
-          return 3;
-        }else if(n >= 30 && n < 40){
-          return 4;
-        }else if(n >= 40 && n < 50){
-          return 5;
-        }else if(n >= 50 && n < 60){
-          return 6;
-        }else if(n >= 60 && n < 70){
-          return 7;
-        }else if(n >= 70 && n < 80){
-          return 8;
-        }else if(n >= 80 && n < 90){
-          return 9;
-        }else if(n >= 90 && n < 100){
-          return 10;
-        }else if(n >= 100){
-          return 10;
+      if(tilesColor === "multicolor"){
+        document.getElementById("tile18Container").style.backgroundColor = getAppColor(tile18)+tilesOpacity+")";
+        document.getElementById("tile19Container").style.backgroundColor = getAppColor(tile19)+tilesOpacity+")";
+        document.getElementById("tile20Container").style.backgroundColor = getAppColor(tile20)+tilesOpacity+")";
+        document.getElementById("tile21Container").style.backgroundColor = "rgba(255,255,255,"+tilesOpacity+")";
+        document.getElementById("tile22Container").style.backgroundColor = getAppColor(tile22)+tilesOpacity+")";
+        document.getElementById("tile23Container").style.backgroundColor = getAppColor(tile23)+tilesOpacity+")";
+        document.getElementById("tile24Container").style.backgroundColor = getAppColor(tile25)+tilesOpacity+")";
+        document.getElementById("tile25Container").style.backgroundColor = "rgba(173,16,60,"+tilesOpacity+")";
+        document.getElementById("tile26Container").style.backgroundColor = getAppColor(tile26)+tilesOpacity+")";
+        document.getElementById("tile27Container").style.backgroundColor = "rgba(254,124,34,"+tilesOpacity+")";
+        document.getElementById("tile28Container").style.backgroundColor = "rgba(0,193,63,"+tilesOpacity+")";
+        document.getElementById("tile29Container").style.backgroundColor = "rgba(255,29,119,"+tilesOpacity+")";
+        document.getElementById("tile30Container").style.backgroundColor = "rgba(225,183,0,"+tilesOpacity+")";
+        document.getElementById("tile31Container").style.backgroundColor = "rgba(0,130,135,"+tilesOpacity+")";
+        document.getElementById("tile32Container").style.backgroundColor = "rgba(99,47,0,"+tilesOpacity+")";
+      }else{
+        for(i = 18; i < 33; i++){
+          document.getElementById("tile"+i+"Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
         }
       }
 
-      function brightnessNum(n){
-        if(n >= 0 && n < .1){
-          return 0;
-        }else if(n >= .1 && n < .2){
-          return 1;
-        }else if(n >= .2 && n < .3){
-          return 2;
-        }else if(n >= .3 && n < .4){
-          return 3;
-        }else if(n >= .4 && n < .5){
-          return 4;
-        }else if(n >= .5 && n < .6){
-          return 5;
-        }else if(n >= .6 && n < .7){
-          return 6;
-        }else if(n >= .7 && n < .8){
-          return 7;
-        }else if(n >= .8 && n < .9){
-          return 8;
-        }else if(n >= .9 && n <= 1){
-          return 9;
-        }
-      }
-
-      function updateWx(){
-        var flickrCount = Math.floor((Math.random() * 50) + 1);
-        var flickrSort = "relevance";
-        var weatherBg = "flickr";
-        var url;
-        var hours = 12;
-
-        //used to determine day or night
-        var dayNight = "Day";
-        if(hours > 0 && hours < 5){
-          dayNight = "Night"
-        }else if(hours > 5 && hours < 8){
-          dayNight = "Early Morning";
-        }else if(hours >= 8 && hours < 10){
-          dayNight = "Morning";
-        }else if(hours >= 10 && hours < 17){
-          dayNight = "";
-        }else if(hours >= 17 && hours < 20){
-          dayNight = "Evening";
-        }else if(hours >= 20 && hours <= 23){
-          dayNight = "Night";
-        }
-
-        //custom language for better Flickr results
-        function wxConScrub(c){
-          if(c.includes("Tornado")){c = "Tornado Weather"; flickrSort = "interestingness_desc";}
-          if(c.includes("Sleet")){c = "Sleet"; flickrSort = "relevance";}
-          if(c.includes("Rain") || c.includes("Showers")){c = "Rain"; flickrSort = "relevance";}
-          if(c.includes("Snow")){c = "Snow Falling"; flickrSort = "relevance";}
-          if(c.includes("Sunny")){c = "Sunny Sky"; flickrSort = "relevance";}
-          if(c.includes("Hail")){c = "Hailstorm"; flickrSort = "relevance";}
-          if(c.includes("Tropical") || c.includes("Hurricane")){c = "Tropical Storm Weather"; flickrSort = "relevance";}
-          if(c.includes("ThunderStorms") || c.includes("Thundershowers")){c = "Thunderstorm Weather Sky"; flickrSort = "interestingness_desc";}
-          if(c.includes("Dust")){c = "Dust Weather Sky"; flickrSort = "relevance";}
-          if(c.includes("Drizzle")){c = "Freezing Rain"; flickrSort = "interestingness_desc";}
-          if(c.includes("Cold")){c = "Freezing Weather"; flickrSort = "interestingness_desc";}
-          if(c.includes("Cloudy")){c = "Cloudy Weather Sky"; flickrSort = "relevance";}
-          if(c.includes("Foggy")){c = "Foggy Weather Sky"; flickrSort = "relevance";}
-          if(c.includes("Haze")){c = "Hazy Weather Sky"; flickrSort = "relevance";}
-          if(c.includes("Smoky")){c = "Hazy Weather Sky"; flickrSort = "relevance";}
-          if(c.includes("Blustery") || c.includes("Windy")){c = "Wind Field"; flickrSort = "interestingness_desc";}
-          if(c.includes("Fair") || c.includes("Clear")){c = "Cloudless Sky"; flickrSort = "relevance";}
-          if(c.includes("Hot")){c = "Palm Trees"; flickrSort = "relevance";}
-          return c;
-        }
-
-        //converts C to F for temperature
-        function celToFahr(c){
-          return ((c * (9 / 5)) + 32);
-        }
-
-        //converts millibars to inches for air pressure
-        function milliConversion(m){
-          return ((29.92 * m) / (1013.25))
-        }
-
-        //converts degrees to a cardinal point
-        var degToCard = function(deg){
-          if (deg>11.25 && deg<33.75){
-            return "NNE";
-          }else if (deg>33.75 && deg<56.25){
-            return "ENE";
-          }else if (deg>56.25 && deg<78.75){
-            return "E";
-          }else if (deg>78.75 && deg<101.25){
-            return "ESE";
-          }else if (deg>101.25 && deg<123.75){
-            return "ESE";
-          }else if (deg>123.75 && deg<146.25){
-            return "SE";
-          }else if (deg>146.25 && deg<168.75){
-            return "SSE";
-          }else if (deg>168.75 && deg<191.25){
-            return "S";
-          }else if (deg>191.25 && deg<213.75){
-            return "SSW";
-          }else if (deg>213.75 && deg<236.25){
-            return "SW";
-          }else if (deg>236.25 && deg<258.75){
-            return "WSW";
-          }else if (deg>258.75 && deg<281.25){
-            return "W";
-          }else if (deg>281.25 && deg<303.75){
-            return "WNW";
-          }else if (deg>303.75 && deg<326.25){
-            return "NW";
-          }else if (deg>326.25 && deg<348.75){
-            return "NNW";
-          }else{
-            return "N";
-          }
-        }
-
-        document.getElementById("wx_icon").src = "images/wx/" + [IS2Weather currentCondition] + ".png";
-        document.getElementById("city_temp").innerHTML = [IS2Weather currentTemperature] + "&deg";
-        document.getElementById("city_name").innerHTML = [IS2Weather currentLocation];
-        document.getElementById("city_weather").innerHTML = [IS2Weather currentConditionAsString];
-        document.getElementById("pressure").innerHTML = [IS2Weather currentPressure].toFixed(2);
-        document.getElementById("humidity").innerHTML = [IS2Weather currentHumidity] + "%";
-        document.getElementById("wind_bearing").innerHTML = degToCard([IS2Weather currentWindDirection]);
-        document.getElementById("wind_speed").innerHTML = [IS2Weather currentWindSpeed];
-
-        //shows either flickr images or stock images
-          if(weatherBg === "flickr"){
-            //gets flickr images
-            $(function (){
-              $.ajax({
-                url: "https://api.flickr.com/services/rest/",
-                data: {
-                  method: "flickr.photos.search",
-                  api_key: "c1955bceeed9a3a76af982daf012c546",
-                  text: "" + wxConScrub([IS2Weather currentConditionAsString]) + " " + dayNight,
-                  sort: flickrSort,
-                  content_type: 1,
-                  safe_search: 2,
-                  media: "photos",
-                  format: "json",
-                  per_page: 50,
-                  nojsoncallback: 1
-                },
-                success: function (response) {
-                  $.each(response.photos.photo, function (index, value) {
-                    url = 'https://farm' + value.farm + '.staticflickr.com/' + value.server + '/' + value.id + '_' + value.secret + '.jpg';
-
-                    if(flickrCount === index || index === response.photos.photo.length){
-                      //fades out old weather picture
-                      document.getElementById("wxContainer").style.backgroundImage = "url(" + url + ")";
-                      return false;
-                    }
-                  });
-                }
-              });
-            })
-          }else{
-              document.getElementById("wxContainer").style.backgroundImage = "url(" + "images/wx/weather" + [IS2Weather currentCondition] + ".jpg" + ")";
-          }
-
-      }
-
-      function updateSystem(){
-        document.getElementById("brightness").src = "images/system/brightness-"+brightnessNum([IS2System getBrightness])+".svg";
-        document.getElementById("phone-signal").src = "images/system/signal-"+[IS2Telephony phoneSignalBars]+".svg";
-        document.getElementById("wifi-signal").src = "images/system/wifi-"+[IS2Telephony wifiSignalBars]+".svg";
-
-        if([IS2System batteryStateAsInteger] === 1){
-          document.getElementById("battery").src = "images/system/battery-"+getNum([IS2System batteryPercent])+".svg";
-        }else{
-          document.getElementById("battery").src = "images/system/batteryC-"+getNum([IS2System batteryPercent])+".svg";
-        }
-        setTimeout(updateSystem, 1000);
-      }
+      document.getElementById("tile18Icon").src = "images/tiles/" + tile18 + ".svg";
+      document.getElementById("tile19Icon").src = "images/tiles/" + tile19 + ".svg";
+      document.getElementById("tile20Icon").src = "images/tiles/" + tile20 + ".svg";
+      document.getElementById("tile22Icon").src = "images/tiles/" + tile22 + ".svg";
+      document.getElementById("tile23Icon").src = "images/tiles/" + tile23 + ".svg";
+      document.getElementById("tile25Icon").src = "images/tiles/" + tile25 + ".svg";
+      document.getElementById("tile26Icon").src = "images/tiles/" + tile26 + ".svg";
 
       function updateNotifications(){
-        document.getElementById("phone-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.mobilephone"];
-        document.getElementById("sms-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.MobileSMS"];
-        document.getElementById("mail-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.mobilemail"];
-        document.getElementById("facebook-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.facebook.Facebook"];
-        document.getElementById("twitter-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.atebits.Tweetie2"];
-
+        document.getElementById("tile18Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile18)];
+        document.getElementById("tile19Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile19)];
+        document.getElementById("tile20Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile20)];
+        document.getElementById("tile22Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile22)];
+        document.getElementById("tile23Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile23)];
+        document.getElementById("tile25Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile25)];
+        document.getElementById("tile26Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile26)];
       }
 
-      var wwwBundle = "com.apple.mobilesafari";
-        var swipeWx = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              updateWx();
-            }
-          }
-        };
-        var swipePhone = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.mobilephone"];
-            }
-          }
-        };
-        var swipeSms = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.MobileSMS"];
-            }
-          }
-        };
-        var swipeMail = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.mobilemail"];
-            }
-          }
-        };
-        var swipeApps = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [[SBUIController sharedInstance] openAppDrawer];
-            }
-          }
-        };
-        var swipeWww = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+wwwBundle];
-            }
-          }
-        };
-        var swipeMusic = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              if([IS2Media isPlaying]){
-                [IS2System openApplication:@""+[IS2Media currentPlayingAppIdentifier]];
-              }
-              else{
-                //launch favorite music app
-              }
-            }
-          }
-        };
-        var swipeFacebook = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.facebook.Facebook"];
-            }
-          }
-        };
-        var swipeTwitter = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.atebits.Tweetie2"];
-            }
-          }
-        };
-        var swipeCamera = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.camera"];
-            }
-          }
-        };
-        var swipeMaps = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.Maps"];
-            }
-          }
-        };
-        var swipeSiri = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openSiri];
-            }
-          }
-        };
-        var swipeLock = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System lockDevice];
-            }
-          }
-        };
-        var swipeSettings = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.Preferences"];
-            }
-          }
-        };
-        var swipePage1 = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              window.open("Widget.html", "_self",false);
-            }
-          }
-        };
+      var ampm;
 
-        //adds swipe detection to element
-        detectswipe('#wxContainer', swipeWx.itemSwipe);
-        detectswipe('#phoneContainer', swipePhone.itemSwipe);
-        detectswipe('#smsContainer', swipeSms.itemSwipe);
-        detectswipe('#mailContainer', swipeMail.itemSwipe);
-        detectswipe('#appsContainer', swipeApps.itemSwipe);
-        detectswipe('#wwwContainer', swipeWww.itemSwipe);
-        detectswipe('#musicContainer', swipeMusic.itemSwipe);
-        detectswipe('#facebookContainer', swipeFacebook.itemSwipe);
-        detectswipe('#twitterContainer', swipeTwitter.itemSwipe);
-        detectswipe('#cameraContainer', swipeCamera.itemSwipe);
-        detectswipe('#mapsContainer', swipeMaps.itemSwipe);
-        detectswipe('#siriContainer', swipeSiri.itemSwipe);
-        detectswipe('#lockContainer', swipeLock.itemSwipe);
-        detectswipe('#settingsContainer', swipeSettings.itemSwipe);
-        detectswipe('#page1Container', swipePage1.itemSwipe);
+      // gets date info
+      var now = new Date();
+      var today = now.toDateString();
+      var time = now.toLocaleTimeString();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      var milliseconds = now.getMilliseconds();
+      var newSeconds = seconds+ (milliseconds/1000);
+
+      function convertHours(h){
+      	if(twentyfourhour){
+      		return h;
+      	}else{
+      		return ((h + 11) % 12 + 1);
+      	}
+      }
+
+      function hideAllAvailableEvents() {
+        for (i = 0; i < 5; i++) {
+          document.getElementById(elementIdForNumber(i) + 'Title').innerHTML = "";
+          document.getElementById(elementIdForNumber(i) + 'Colour').style.backgroundColor = "transparent";
+          document.getElementById(elementIdForNumber(i) + 'Time').innerHTML = "";
+        }
+      }
+
+      function elementIdForNumber(x) {
+        switch (x) {
+          case 0:
+            return "eventOne";
+          case 1:
+            return "eventTwo";
+          case 2:
+            return "eventThree";
+          case 3:
+            return "eventFour";
+          case 4:
+            return "eventFive";
+          default:
+            return "";
+        }
+      }
+
+      function timeValueCorrection(value) {
+         if (value < 10) {
+              return "0" + value;
+         } else {
+              return value;
+         }
+      }
+
+      function timeToDayName(time) {
+          var dayNumber = time.getDay();
+          var today = new Date();
+          var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+
+          if (dayNumber == today.getDay()) {
+                return "Today";
+          } else if (dayNumber == tomorrow.getDay()) {
+                return "Tomorrow";
+          }
+
+          switch(dayNumber) {
+              case 0:
+                return "Sunday";
+              case 1:
+                return "Monday";
+              case 2:
+                return "Tuesday";
+              case 3:
+                return "Wednesday";
+              case 4:
+                return "Thursday";
+              case 5:
+                return "Friday";
+              case 6:
+                return "Saturday";
+              default:
+                return "";
+            }
+      }
+        function timerFiredEventDidEnd() {
+          updateCalendarData();
+
+          // The above will also handle resetting the timer for an event's end.
+      }
+
+      function formatHours(hours) {
+        if(hours >= 12){
+        ampm = "p";
+        }else{
+        ampm = "a";
+          }
+        hours = (hours + 11) % 12 + 1;
+        return hours;
+          // The above will also handle resetting the timer for an event's end.
+      }
+
+      function updateCalendarData() {
+        // First, grab the data between right now and in 7 days' time.
+        var timeNow = new Date();
+        var timeInWeek = timeNow.getTime() + (7 * 24 * 60 * 60 * 1000);
+
+        var firstEndTime = 0;
+
+      var eventsArray = JSON.parse("" + [IS2Calendar calendarEntriesJSONBetweenStartTimeAsTimestamp:timeNow.getTime() andEndTimeAsTimestamp:timeInWeek]);
+
+        if (eventsArray.length > 0) {
+              document.getElementById('noevents').style.display = "none";
+              document.getElementById('eventscontainer').style.display = "inline";
+
+              // Initially, hide all the available events we can show.
+              hideAllAvailableEvents();
+
+              // Go over events available.
+              for (i = 0; i < eventsArray.length; i++) {
+                var event = eventsArray[i];
+
+                // Update title
+                document.getElementById(elementIdForNumber(i) + 'Title').innerHTML = event.title;
+
+                // Also, update the colour to display.
+                document.getElementById(elementIdForNumber(i) + 'Colour').style.backgroundColor = event.associatedCalendarHexColor;
+
+                if (event.allDay == 0) {
+                    // Work out date display.
+                    var timeStart = new Date(event.startTimeTimestamp);
+                    var timeEnd = new Date(event.endTimeTimestamp);
+
+                    if (timeStart.getDay() == timeEnd.getDay()) {
+                        // Event is all on the same day, huzzah.
+                        var timeString = "" + timeToDayName(timeStart) + ": " + formatHours(timeStart.getHours()) + ":" + timeValueCorrection(timeStart.getMinutes()) + ampm;
+                        timeString += " to " + formatHours(timeEnd.getHours()) + ":" + timeValueCorrection(timeEnd.getMinutes()) + ampm;
+
+                        document.getElementById(elementIdForNumber(i) + 'Time').innerHTML = timeString;
+                    } else {
+                          // Event goes over multiple days...
+                          var timeString = "" + timeToDayName(timeStart) + ", " + formatHours(timeStart.getHours()) + ":" + timeValueCorrection(timeStart.getMinutes()) + ampm;
+                          timeString += " to " + timeToDayName(timeEnd) + ", " + formatHours(timeEnd.getHours()) + ":" + timeValueCorrection(timeEnd.getMinutes()) + ampm;
+                          document.getElementById(elementIdForNumber(i) + 'Time').innerHTML = timeString;
+                    }
+                } else {
+                    var timeStart = new Date(event.startTimeTimestamp);
+                    document.getElementById(elementIdForNumber(i) + 'Time').innerHTML = timeToDayName(timeStart) + ": all day";
+                }
+
+                // handle end times for timer.
+                if (firstEndTime == 0 || event.endTimeTimestamp < firstEndTime) {
+                  firstEndTime = event.endTimeTimestamp;
+                }
+
+                if (i == 4) {
+                  // Can't display more than 5 upcoming events!
+                  break;
+                }
+              }
+
+         } else {
+              // Just display that there's no events.
+               document.getElementById('noevents').style.display = "inline";
+               document.getElementById('eventscontainer').style.display = "none";
+         }
+
+          // Also, ensure we refresh when the first end time is reached of events.
+          // Setting timeout is in milliseconds, and both timeNow and firstEndTime are too.
+
+          if (firstEndTime == 0) {
+            // Setup a time for the next midnight instead.
+             timeNow.setDate(timeNow.getDate()+1);
+             firstEndTime = timeNow.getTime();
+          }
+
+          setTimeout(timerFiredEventDidEnd, firstEndTime - timeNow);
+      }
+
+
+      var swipeTile18 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile18)];
+          }
+        }
+      };
+      var swipetile19 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile19)];
+          }
+        }
+      };
+      var swipetile20 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile20)];
+          }
+        }
+      };
+      var swipetile21 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            updateWx();
+          }
+        }
+      };
+      var swipetile22 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile22)];
+          }
+        }
+      };
+      var swipetile23 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile22)];
+          }
+        }
+      };
+      var swipetile25 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile25)];
+          }
+        }
+      };
+      var swipetile26 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile26)];
+          }
+        }
+      };
+      var swipetile27 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.AppStore"];
+          }
+        }
+      };
+      var swipetile28 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.saurik.Cydia"];
+          }
+        }
+      };
+      var swipetile29 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.mobilecal"];
+          }
+        }
+      };
+      var swipetile30 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.reminders"];
+          }
+        }
+      };
+      var swipetile31 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.mobileme.fmip1"];
+          }
+        }
+      };
+      var swipetile32 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            window.history.back()
+          }
+        }
+      };
+
+      //adds swipe detection to element
+      detectswipe('#tile18Container', swipeTile18.itemSwipe);
+      detectswipe('#tile19Container', swipetile19.itemSwipe);
+      detectswipe('#tile20Container', swipetile20.itemSwipe);
+      detectswipe('#tile21Container', swipetile21.itemSwipe);
+      detectswipe('#tile22Container', swipetile22.itemSwipe);
+      detectswipe('#tile23Container', swipetile23.itemSwipe);
+      detectswipe('#tile25Container', swipetile25.itemSwipe);
+      detectswipe('#tile26Container', swipetile26.itemSwipe);
+      detectswipe('#tile27Container', swipetile27.itemSwipe);
+      detectswipe('#tile28Container', swipetile28.itemSwipe);
+      detectswipe('#tile29Container', swipetile29.itemSwipe);
+      detectswipe('#tile30Container', swipetile30.itemSwipe);
+      detectswipe('#tile31Container', swipetile31.itemSwipe);
+      detectswipe('#tile32Container', swipetile32.itemSwipe);
 
       //]]>
     </script>

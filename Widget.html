@@ -5,251 +5,16 @@ Built on the work of JunesiPhone and Matchstic-->
 <html>
   <head>
     <title>Novellas by SPQRGuyMontag</title>
-    <!-- Include Main jQuery library -->
-    <script type="text/Javascript" src="js/jquery-1.4.2.min.js"></script>
-
-    <!-- Include Main Easy Slides library & default css file-->
-    <script type="text/Javascript" src="js/jquery.easyslides.min.v1.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/easySlides.default.min.css" />
-
-    <!-- Include own Javascript/jQuery & CSS file for Example 2 -->
-    <script type="text/Javascript" src="js/music_slides.js"></script>
-    <script type="text/Javascript" src="js/clock_slides.js"></script>
     <script src="js/lang.js"></script>
     <link href="css/metro.css" rel="stylesheet">
     <link href="css/metro-icons.css" rel="stylesheet">
     <link href="css/metro-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <script src="js/prettify/run_prettify.js"></script>
-    <script src="js/clock1.0.3.1.js"></script>
     <script src="js/metro.js"></script>
     <script src="js/swipes.js"></script>
-
-    <style>
-      .hand-container{
-        text-align: center;
-        moz-transform-origin: center center;
-        -o-transform-origin: center center;
-        -ms-transform-origin: center center;
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-      }
-
-      .center-dial {
-        position: absolute;
-        top: 0px;
-        left:0px;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        width: 120px;
-        height: 120px;
-        background-color: rgba(255,255,255,.4);
-        border-radius: 50%;
-        cursor: pointer;
-        overflow: hidden;
-      }
-
-      .hand-container {
-        position: absolute;
-        top: 0%;
-        left: calc(50% - 6px);
-        opacity: 0;
-        filter: alpha(opacity=0);
-        width: 12.5px;
-        height: 120px;
-        moz-transform-origin: center center;
-        -o-transform-origin: center center;
-        -ms-transform-origin: center center;
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-      }
-
-      .hour-hand {
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid black;
-        position: relative;
-        top: calc(50% - 60px);
-        left: calc(50% - 5px);
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-      }
-
-      .second-hand {
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid red;
-        position: relative;
-        top: calc(50% - 60px);
-        left: calc(50% - 5px);
-      }
-
-      .digital-hour {
-      font-family: 'Open Sans Bold';
-      color: black;
-      font-size:48px;
-      position: absolute;
-      width: 60px;
-      top: 33px;
-      left: -45px;
-      text-align: right;
-      float: right;
-    }
-
-    .digital-minute {
-      font-family: 'Open Sans';
-      color: black;
-      font-size: 30px;
-      position: absolute;
-      top: 48px;
-      left: 15px;
-      text-align: left;
-    }
-
-    .digital-second {
-      font-family: 'Open Sans';
-      color: red;
-      font-size: 18px;
-      position: absolute;
-      top: 85px;
-      left: 0px;
-      text-align: center;
-    }
-
-    #mainElement {
-      position: absolute;
-      padding-left: 0px;
-      height: 736px;
-      width: 414px;
-      font-family: 'Open Sans';
-    }
-
-    #statusBar {
-      display: block;
-      height: 20px;
-    }
-
-    #twitter {
-      position: relative;
-      left: 5px;
-    }
-
-    #phone-count, #sms-count, #mail-count, #facebook-count, #twitter-count {
-      position: absolute;
-      top: 87px;
-      left: 12px;
-      height: 100%;
-      font-size: 2em;
-    }
-
-    #tile1Container, #tile2Container, #tile5Container, #tile6Container,
-    #tile10Container, #tile11Container, #clock, #music, #tile9Container,
-    #tile7Container, #tile3Container{
-      height:120px;
-      width:120px;
-      z-index: 0;
-      border: 0px;
-    }
-
-    #tile4Container {
-      height: 250px;
-      text-shadow: 0px 0px 20px #000000,
-                   0px 0px 30px #000000;
-    }
-    #wxBgDiv{
-      position: absolute;
-      top:0px;
-      height: 250px;
-      width: 250px;
-      z-index: -1;
-    }
-    #wxBgDiv img {
-      position: absolute;
-      top: 0px;
-      height: 250px;
-      display: block;
-      margin: auto;
-      z-index: -1;
-    }
-
-    #wxIcon img {
-      position: absolute;
-      top: 5px;
-      left: 0px;
-      height: 65px;
-    }
-    #daySection{
-      height:35px;
-      z-index: 5;
-    }
-    #daySection p {
-      margin:-2px;
-      font-size:16px
-    }
-    #daySection img {
-      width:35px;
-    }
-    #daySection div {
-      position: relative;
-      top:10px;
-      left:20px;
-      float:left;
-      width:68px;
-      text-shadow: 0px 0px 10px #000000,
-                   0px 0px 20px #000000;
-    }
-    #tile12Container, #tile13Container, #tile14Container, #tile15Container,
-    #tile16Container, #tile17Container{
-      height:60px;
-      width:60px;
-    }
-
-    .tile-area-controls {
-        position: fixed;
-        right: 40px;
-        top: 40px;
-    }
-
-    .tile-group {
-        left: 100px;
-    }
-
-    .tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super {
-        opacity: 0;
-        -webkit-transform: scale(.8);
-        transform: scale(.8);
-
-    }
-
-    .schemeButtons {
-        /*width: 300px;*/
-    }
-
-    @media screen and (max-width: 640px) {
-        .tile-area {
-            overflow-y: scroll;
-        }
-        .tile-area-controls {
-            display: none;
-        }
-    }
-
-    @media screen and (max-width: 320px) {
-        .tile-area {
-            overflow-y: scroll;
-        }
-
-        .tile-area-controls {
-            display: none;
-        }
-
-    }
-    </style>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
 
     <script>
         (function($) {
@@ -292,10 +57,8 @@ Built on the work of JunesiPhone and Matchstic-->
                         opacity: 1,
                         "-webkit-transform": "scale(1)",
                         "transform": "scale(1)",
-                        "-webkit-transition": ".3s",
-                        "transition": ".3s"
                     });
-                }, Math.floor(Math.random()*500));
+                }, Math.floor(Math.random()*1));
             });
 
             $(".tile-group").animate({
@@ -320,19 +83,18 @@ Built on the work of JunesiPhone and Matchstic-->
         <div class="tile-container">
           <div class="tile" data-role="tile">
             <div class="tile-content iconic">
-                <div id="tile1Container"><span class="icon mif-phone"></span></div>
+                <div id="tile1Container"><img id="tile1Icon"></div>
             </div>
-            <div id="phone-count"></div>
+            <div id="tile1Count">5</div>
           </div>
 
             <div class="tile fg-white" data-role="tile">
               <div class="tile-content iconic">
-                <div id="tile2Container"><span class="icon mif-bubbles"></span></div>
+                <div id="tile2Container"><img id="tile2Icon"></div>
               </div>
-                <div id="sms-count"></div>
+                <div id="tile2Count"></div>
             </div>
             <div id="tile3Container" class="tile" data-role="tile" data-role="tile">
-              <div id="clock" class="easy_slides_container"></div>
               <div class='center-dial' id="center-dial">
                   <div class='hand-container' id='hourHand'>
                     <div class='hour-hand' id='hour-hand'></div>
@@ -352,19 +114,18 @@ Built on the work of JunesiPhone and Matchstic-->
                 </div>
             </div>
 
-
           <div class="tile-large fg-white" data-role="tile">
             <div class="tile-content" id="tile4Container">
+              <div id="wxWrapper">
 
-
-                <h1 id="wxIcon"><img id="wx_icon" src="images/wx/0.svg"></h1>
-                <h1 id="temp" style="position:relative; left: 60px; text-align:left;">45&deg</h1>
-                <h2 id="city" class="text-light">Port Charlotte</h2>
-                <h4 id="condition" style="font-size:20px;">Scattered Thunderstorms</h4>
+                <h1 id="wxIcon"><img id="wx_icon"></h1>
+                <h1 id="temp" style="position:relative; left: 50px; text-align:left;"></h1>
+                <h2 id="city" class="text-light">Loading...</h2>
+                <h4 id="condition" style="font-size:20px;"></h4>
                 <p id="condition_daily"></p>
 
-                <p style="margin: 5px;">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
-                <p style="margin: 5px;">Wind speed: <span class="text-bold" id="wind_speed">0</span>mph</p>
+                <p style="margin: 5px;"><span class="text-bold" id="wind_bearing"></span></p>
+                <p style="margin: 5px;"><span class="text-bold" id="wind_speed"></span></p>
                 <section id="daySection">
 
                   <!-- display next five days -->
@@ -391,21 +152,21 @@ Built on the work of JunesiPhone and Matchstic-->
             				</center>
             			</div>
                 </section>
-                <div id="wxBgDiv">
-                <img id="wxBg">
               </div>
+                <div id="wxBgDiv"></div>
               </div>
           </div>
           <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="tile5Container"><span class="icon mif-envelop"></span></div>
+              <div id="tile5Container"><img id="tile5Icon"></div>
             </div>
-              <div id="mail-count"></div>
+              <div id="tile5Count"></div>
           </div>
           <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="tile6Container"><span class="icon mif-earth2"></span></div>
+              <div id="tile6Container"><img id="tile6Icon"></div>
             </div>
+              <div id="tile6Count"></div>
           </div>
         </div>
     </div>
@@ -413,80 +174,48 @@ Built on the work of JunesiPhone and Matchstic-->
         <div class="tile-container">
           <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="tile7Container"><span class="icon mif-twitter"></span></div>
+              <div id="tile7Container"><img id="tile7Icon"></div>
             </div>
-            <div id="twitter-count"></div>
+            <div id="tile7Count"></div>
           </div>
 
-            <div class="tile-wide" data-role="tile" style="width:250px">
-                <div class="tile-content">
-                  <!-- start sw-rss-feed code -->
-                  <div id="tile8Container">
-                  <script type="text/javascript">
-                  <!--
-                  rssfeed_url = new Array();
-                  rssfeed_url[0]="http://news.yahoo.com/rss/"; rssfeed_url[1]="http://feeds.gawker.com/gizmodo/full"; rssfeed_url[2]="http://feeds.gawker.com/lifehacker/full";
-                  rssfeed_frame_width="250";
-                  rssfeed_frame_height="120";
-                  rssfeed_scroll="on";
-                  rssfeed_scroll_step="10";
-                  rssfeed_scroll_bar="off";
-                  rssfeed_target="_blank";
-                  rssfeed_font_size="14";
-                  rssfeed_font_face="Roboto";
-                  rssfeed_border="off";
-                  rssfeed_css_url="";
-                  rssfeed_title="off";
-                  rssfeed_title_name="";
-                  rssfeed_title_bgcolor="#fff";
-                  rssfeed_title_color="#fff";
-                  rssfeed_title_bgimage="http://";
-                  rssfeed_footer="off";
-                  rssfeed_footer_name="rss feed";
-                  rssfeed_footer_bgcolor="#fff";
-                  rssfeed_footer_color="";
-                  rssfeed_footer_bgimage="http://";
-                  rssfeed_item_title_length="90";
-                  rssfeed_item_title_color="#fff";
-                  rssfeed_item_bgcolor="";
-                  rssfeed_item_bgimage="http://";
-                  rssfeed_item_border_bottom="off";
-                  rssfeed_item_source_icon="off";
-                  rssfeed_item_date="off";
-                  rssfeed_item_description="on";
-                  rssfeed_item_description_length="0";
-                  rssfeed_item_description_color="#fff";
-                  rssfeed_item_description_link_color="#fff";
-                  rssfeed_item_description_tag="on";
-                  rssfeed_no_items="0";
-                  rssfeed_cache = "5c5ab50d67c8f9baa7e2449f32e4c938";
-                  //-->
-                  </script>
-                  <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
-                  <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
-                  <div style="text-align:right; width:250px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#fff;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#fff;font-size:10px">surfing-waves.com</a></div>
-                  <!-- end sw-rss-feed code -->
-                </div>
-                </div>
-            </div>
+          <div id="tile8Container" class="tile-wide" data-role="tile">
+              <div class="tile-content iconic">
+              </div>
+              <div id="artist"></div>
+              <div id="title"></div>
+              <div id="album"></div>
+              <img id="tile8Icon" src="images/tiles/music.svg">
+              <div id="previousTrackDiv"><img id="previousTrack" src="images/music/previousTrack.svg"></div>
+              <div id="nextTrackDiv"><img id="nextTrack" src="images/music/nextTrack.svg"></div>
+              <div id="playPauseTrackDiv">
+                <img id="playTrack" src="images/music/playTrack.svg">
+                <img id="pauseTrack" src="images/music/pauseTrack.svg">
+              </div>
+                  <div id="musicBgDiv"></div>
+              </div>
+
           </div>
           <div class="tile-group triple">
               <div class="tile-container">
 
           <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="tile9Container"><span class="icon mif-facebook"></span></div>
+              <div id="tile9Container"><img id="tile9Icon"></div>
             </div>
-            <div id="facebook-count"></div>
+            <div id="tile9Count"></div>
           </div>
           <div class="tile fg-white" data-role="tile">
             <div class="tile-content iconic">
-              <div id="tile10Container"><span class="icon mif-apps"></span></div>
+              <div id="tile10Container"><img id="tile10Icon" src="images/tiles/apps.svg"></div>
             </div>
-            <span class="tile-label">Apps</span>
+            <span class="tile-label"></span>
           </div>
-          <div id="tile11Container" class="tile" data-role="tile" data-role="tile">
-              <div id="music" class="easy_slides_container"></div>
+          <div class="tile fg-white" data-role="tile">
+            <div class="tile-content iconic">
+              <div id="tile11Container"><img id="tile11Icon"></div>
+            </div>
+            <div id="tile11Count"></div>
           </div>
 
         </div>
@@ -533,21 +262,28 @@ Built on the work of JunesiPhone and Matchstic-->
     <script type="text/cycript">
       //<![CDATA[
       var widgetIdentifier = "com.gaitherstephens.novellas";
-      var twentyfourhour = twentyfourhourOp
+      var tile1 = tile1Op;
+      var tile2 = tile2Op;
+      var tile5 = tile5Op;
+      var tile6 = tile6Op;
+      var tile7 = tile7Op;
+      var tile9 = tile9Op;
+      var tile11 = tile11Op;
+      var twentyfourhour = twentyfourhourOp;
       var wxRefresh = wxRefreshOp;
+      var wxBg = wxBgOp;
       var favMusicApp = favMusicAppOp;
-      var favBrowserApp = favBrowserAppOp;
+      var favMapApp = favMapAppOp;
       var bgColor = bgColorOp;
       var bgOpacity = bgOpacityOp;
       var tilesOpacity = tilesOpacityOp;
-      var firstMusic = 0;
+      var firstTimeMusic = true;
       var tilesColor = tilesColorOp;
       // Setup of widget
       window.onload = function() {
         [IS2Weather registerForWeatherUpdatesWithIdentifier:widgetIdentifier andCallback:^ void () {
           updateWx();
         }];
-        updateWx();
 
         [IS2Weather setWeatherUpdateTimeInterval:wxRefresh forRequester:widgetIdentifier];
 
@@ -555,11 +291,11 @@ Built on the work of JunesiPhone and Matchstic-->
         [IS2Media registerForNowPlayingNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
             updateMedia();
         }];
+
         [IS2Notifications registerForBulletinNotificationsWithIdentifier:widgetIdentifier andCallback:^ void () {
             updateNotifications();
         }];
         updateNotifications();
-        updateSystem();
       }
 
       // Make sure to de-register ourselves when removed from the user's screen.
@@ -571,146 +307,75 @@ Built on the work of JunesiPhone and Matchstic-->
         return null;
       };
 
-      if(bgColor === "transparent"){
-        document.getElementById("mainElement").style.backgroundColor = "rgba(255,255,255,0)";
-      }else{
         document.getElementById("mainElement").style.backgroundColor = "rgba("+bgColor+bgOpacity+")";
-      }
 
 
       if(tilesColor === "multicolor"){
-        document.getElementById("tile1Container").style.backgroundColor = "rgba(25,153,0,"+tilesOpacity+")";
-        document.getElementById("tile2Container").style.backgroundColor = "rgba(31,174,255,"+tilesOpacity+")";
-        document.getElementById("tile5Container").style.backgroundColor = "rgba(37,114,114,"+tilesOpacity+")";
-        document.getElementById("tile6Container").style.backgroundColor = "rgba(254,124,34,"+tilesOpacity+")";
-        document.getElementById("tile7Container").style.backgroundColor = "rgba(0,172,237,"+tilesOpacity+")";
+        document.getElementById("tile1Container").style.backgroundColor = getAppColor(tile1)+tilesOpacity+")";
+        document.getElementById("tile2Container").style.backgroundColor = getAppColor(tile2)+tilesOpacity+")";
+        document.getElementById("tile3Container").style.backgroundColor = "rgba(102,102,102,"+tilesOpacity+")";
+        document.getElementById("tile4Container").style.backgroundColor = "rgba(255,255,255,"+tilesOpacity+")";
+        document.getElementById("tile5Container").style.backgroundColor = getAppColor(tile5)+tilesOpacity+")";
+        document.getElementById("tile6Container").style.backgroundColor = getAppColor(tile6)+tilesOpacity+")";
+        document.getElementById("tile7Container").style.backgroundColor = getAppColor(tile7)+tilesOpacity+")";
         document.getElementById("tile8Container").style.backgroundColor = "rgba(173,16,60,"+tilesOpacity+")";
-        document.getElementById("tile9Container").style.backgroundColor = "rgba(59,89,152,"+tilesOpacity+")";
+        document.getElementById("tile9Container").style.backgroundColor = getAppColor(tile9)+tilesOpacity+")";
         document.getElementById("tile10Container").style.backgroundColor = "rgba(255,118,188,"+tilesOpacity+")";
+        document.getElementById("tile11Container").style.backgroundColor = getAppColor(tile11)+tilesOpacity+")";
         document.getElementById("tile12Container").style.backgroundColor = "rgba(254,124,34,"+tilesOpacity+")";
         document.getElementById("tile13Container").style.backgroundColor = "rgba(0,193,63,"+tilesOpacity+")";
         document.getElementById("tile14Container").style.backgroundColor = "rgba(255,29,119,"+tilesOpacity+")";
         document.getElementById("tile15Container").style.backgroundColor = "rgba(225,183,0,"+tilesOpacity+")";
         document.getElementById("tile16Container").style.backgroundColor = "rgba(0,130,135,"+tilesOpacity+")";
         document.getElementById("tile17Container").style.backgroundColor = "rgba(99,47,0,"+tilesOpacity+")";
-      }else if(tilesColor === "transparent"){
-        document.getElementById("tile1Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile2Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("clock").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("wxBgDiv").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile5Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile6Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile7Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile8Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile9Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile10Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("music").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile12Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile13Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile14Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile15Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile16Container").style.backgroundColor = "rgba(255,255,255,.2)";
-        document.getElementById("tile17Container").style.backgroundColor = "rgba(255,255,255,.2)";
       }else{
-        document.getElementById("tile1Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile2Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile5Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile6Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile7Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile8Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile9Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile10Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile12Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile13Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile14Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile15Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile16Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
-        document.getElementById("tile17Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        for(i = 1; i < 18; i++){
+          document.getElementById("tile"+i+"Container").style.backgroundColor = "rgba("+tilesColor+tilesOpacity+")";
+        }
       }
+
+      document.getElementById("tile1Icon").src = "images/tiles/" + tile1 + ".svg";
+      document.getElementById("tile2Icon").src = "images/tiles/" + tile2 + ".svg";
+      document.getElementById("tile5Icon").src = "images/tiles/" + tile5 + ".svg";
+      document.getElementById("tile6Icon").src = "images/tiles/" + tile6 + ".svg";
+      document.getElementById("tile7Icon").src = "images/tiles/" + tile7 + ".svg";
+      document.getElementById("tile9Icon").src = "images/tiles/" + tile9 + ".svg";
+      document.getElementById("tile11Icon").src = "images/tiles/" + tile11 + ".svg";
 
       function updateMedia(){
-        if(firstMusic === 0){
-          firstMusic = 1;
-          $('#music').remove();
-          var div = document.createElement('div');
-          if(tilesColor === "transparent"){
-            div.setAttribute("style", "opacity:0.6");
-          }
-          div.setAttribute('id', 'music');
-          document.getElementById("tile11Container").appendChild(div);
-          var elem = document.createElement("img");
-          elem.setAttribute("height", "120");
-          elem.setAttribute("width", "120");
-          elem.setAttribute("id", "albumArt");
-          elem.setAttribute("src", "" + [IS2Media currentTrackArtworkBase64] + "");
-          document.getElementById("music").appendChild(elem);
+        if(firstTimeMusic){
+          firstTimeMusic = false;
+          $('#tile8Icon').remove();
+          document.getElementById("artist").innerHTML = [IS2Media currentTrackArtist];
+          document.getElementById("title").innerHTML = [IS2Media currentTrackTitle];
+          document.getElementById("album").innerHTML = [IS2Media currentTrackAlbum];
+          document.getElementById("previousTrack").style.opacity = 1;
+          document.getElementById("playTrack").style.opacity = 1;
+          document.getElementById("pauseTrack").style.opacity = 1;
+          document.getElementById("nextTrack").style.opacity = 1;
+          document.getElementById("musicBgDiv").style.backgroundImage = "url(" + [IS2Media currentTrackArtworkBase64] + ")";
+          document.getElementById("musicBgDiv").style.opacity = .6;
         }else{
-          document.getElementById("albumArt").src = [IS2Media currentTrackArtworkBase64];
+          document.getElementById("musicBgDiv").style.backgroundImage = "url(" + [IS2Media currentTrackArtworkBase64] + ")";
+          document.getElementById("musicBgDiv").style.opacity = .6;
+          document.getElementById("artist").innerHTML = [IS2Media currentTrackArtist];
+      		document.getElementById("title").innerHTML = [IS2Media currentTrackTitle];
+      		document.getElementById("album").innerHTML = [IS2Media currentTrackAlbum];
         }
-
-      }
-
-      function getNum(n){
-        if(n < 0){
-          return 0;
-        }else if(n >= 0 && n < 10){
-          return 1;
-        }else if(n >= 10 && n < 20){
-          return 2;
-        }else if(n >= 20 && n < 30){
-          return 3;
-        }else if(n >= 30 && n < 40){
-          return 4;
-        }else if(n >= 40 && n < 50){
-          return 5;
-        }else if(n >= 50 && n < 60){
-          return 6;
-        }else if(n >= 60 && n < 70){
-          return 7;
-        }else if(n >= 70 && n < 80){
-          return 8;
-        }else if(n >= 80 && n < 90){
-          return 9;
-        }else if(n >= 90 && n < 100){
-          return 10;
-        }else if(n >= 100){
-          return 10;
-        }
-      }
-
-      function brightnessNum(n){
-        if(n >= 0 && n < .1){
-          return 0;
-        }else if(n >= .1 && n < .2){
-          return 1;
-        }else if(n >= .2 && n < .3){
-          return 2;
-        }else if(n >= .3 && n < .4){
-          return 3;
-        }else if(n >= .4 && n < .5){
-          return 4;
-        }else if(n >= .5 && n < .6){
-          return 5;
-        }else if(n >= .6 && n < .7){
-          return 6;
-        }else if(n >= .7 && n < .8){
-          return 7;
-        }else if(n >= .8 && n < .9){
-          return 8;
-        }else if(n >= .9 && n <= 1){
-          return 9;
-        }
+        document.getElementById("musicBgDiv").style.backgroundImage = "url(" + [IS2Media currentTrackArtworkBase64] + ")";
+        document.getElementById("musicBgDiv").style.opacity = .6;
+        document.getElementById("artist").innerHTML = [IS2Media currentTrackArtist];
+        document.getElementById("title").innerHTML = [IS2Media currentTrackTitle];
+        document.getElementById("album").innerHTML = [IS2Media currentTrackAlbum];
       }
 
       function updateWx(){
         var dayArray = JSON.parse("" + [IS2Weather dayForecastsForCurrentLocationJSON]);
         var flickrCount = Math.floor((Math.random() * 99) + 1);
         var flickrSort = "relevance";
-        var weatherBg = "flickr";
         var url;
         var date = new Date();
-        var hours = date.getHours();
-
+  			var hours = date.getHours();
 
         //used to determine day or night
         var dayNight = "Day";
@@ -751,59 +416,12 @@ Built on the work of JunesiPhone and Matchstic-->
           return c;
         }
 
-        //converts C to F for temperature
-        function celToFahr(c){
-          return ((c * (9 / 5)) + 32);
-        }
-
-        //converts millibars to inches for air pressure
-        function milliConversion(m){
-          return ((29.92 * m) / (1013.25))
-        }
-
-        //converts degrees to a cardinal point
-        var degToCard = function(deg){
-          if (deg>11.25 && deg<33.75){
-            return "NNE";
-          }else if (deg>33.75 && deg<56.25){
-            return "ENE";
-          }else if (deg>56.25 && deg<78.75){
-            return "E";
-          }else if (deg>78.75 && deg<101.25){
-            return "ESE";
-          }else if (deg>101.25 && deg<123.75){
-            return "ESE";
-          }else if (deg>123.75 && deg<146.25){
-            return "SE";
-          }else if (deg>146.25 && deg<168.75){
-            return "SSE";
-          }else if (deg>168.75 && deg<191.25){
-            return "S";
-          }else if (deg>191.25 && deg<213.75){
-            return "SSW";
-          }else if (deg>213.75 && deg<236.25){
-            return "SW";
-          }else if (deg>236.25 && deg<258.75){
-            return "WSW";
-          }else if (deg>258.75 && deg<281.25){
-            return "W";
-          }else if (deg>281.25 && deg<303.75){
-            return "WNW";
-          }else if (deg>303.75 && deg<326.25){
-            return "NW";
-          }else if (deg>326.25 && deg<348.75){
-            return "NNW";
-          }else{
-            return "N";
-          }
-        }
-
         document.getElementById("wx_icon").src = "images/wx/" + [IS2Weather currentCondition] + ".png";
         document.getElementById("temp").innerHTML = [IS2Weather currentTemperature] + "&deg";
         document.getElementById("city").innerHTML = [IS2Weather currentLocation];
         document.getElementById("condition").innerHTML = [IS2Weather currentConditionAsString];
-        document.getElementById("wind_bearing").innerHTML = degToCard([IS2Weather currentWindDirection]);
-        document.getElementById("wind_speed").innerHTML = [IS2Weather currentWindSpeed];
+        document.getElementById("wind_bearing").innerHTML = " Wind Direction: " + degToCard([IS2Weather currentWindDirection]);
+        document.getElementById("wind_speed").innerHTML = " Wind Speed: " + [IS2Weather currentWindSpeed];
 
         //populates forecast elements
         document.getElementById('dayZeroDayString').innerHTML = translate[current].sday[dayArray[1].dayOfWeek - 1];
@@ -822,7 +440,7 @@ Built on the work of JunesiPhone and Matchstic-->
         document.getElementById('dayTwoLow').innerHTML = "" + dayArray[3].low + "&deg";
 
         //shows either flickr images or stock images
-          if(weatherBg === "flickr" && tilesColor !== "transparent"){
+          if(wxBg === "flickr"){
             //gets flickr images
             $(function (){
               $.ajax({
@@ -832,6 +450,9 @@ Built on the work of JunesiPhone and Matchstic-->
                   api_key: "c1955bceeed9a3a76af982daf012c546",
                   text: "" + wxConScrub([IS2Weather currentConditionAsString]) + " " + dayNight,
                   sort: flickrSort,
+                  content_type: 1,
+                  safe_search: 2,
+                  media: "photos",
                   format: "json",
                   per_page: 100,
                   nojsoncallback: 1
@@ -842,190 +463,189 @@ Built on the work of JunesiPhone and Matchstic-->
 
                     if(flickrCount === index || index === response.photos.photo.length){
                       //fades out old weather picture
-                      document.getElementById("wxBg").src = url;
+                      document.getElementById("wxBgDiv").style.backgroundImage = "url(" + url + ")";
+                      document.getElementById("wxBgDiv").style.opacity = .6;
                       return false;
                     }
                   });
                 }
               });
             })
-          }else if(weatherBg === "stock" && tilesColor !== "transparent"){
-              document.getElementById("wxBg").src = "images/wx/weather" + [IS2Weather currentCondition] + ".jpg";
+          }else if(wxBg === "stock"){
+              document.getElementById("wxBgDiv").style.backgroundImage = "url(images/wx/weather" + [IS2Weather currentCondition] + ".jpg)";
+              document.getElementById("wxBgDiv").style.opacity = .6;
           }
-
-      }
-
-      function updateSystem(){
-        document.getElementById("brightness").src = "images/system/brightness-"+brightnessNum([IS2System getBrightness])+".svg";
-        document.getElementById("phone-signal").src = "images/system/signal-"+[IS2Telephony phoneSignalBars]+".svg";
-        document.getElementById("wifi-signal").src = "images/system/wifi-"+[IS2Telephony wifiSignalBars]+".svg";
-
-        if([IS2System batteryStateAsInteger] === 1){
-          document.getElementById("battery").src = "images/system/battery-"+getNum([IS2System batteryPercent])+".svg";
-        }else{
-          document.getElementById("battery").src = "images/system/batteryC-"+getNum([IS2System batteryPercent])+".svg";
-        }
-        setTimeout(updateSystem, 1000);
       }
 
       function updateNotifications(){
-        document.getElementById("phone-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.mobilephone"];
-        document.getElementById("sms-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.MobileSMS"];
-        document.getElementById("mail-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.apple.mobilemail"];
-        document.getElementById("facebook-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.facebook.Facebook"];
-        document.getElementById("twitter-count").innerHTML = [IS2Notifications notificationCountForApplication:"com.atebits.Tweetie2"];
-
+        document.getElementById("tile1Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile1)];
+        document.getElementById("tile2Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile2)];
+        document.getElementById("tile5Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile5)];
+        document.getElementById("tile6Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile6)];
+        document.getElementById("tile7Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile7)];
+        document.getElementById("tile9Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile9)];
+        document.getElementById("tile11Count").innerHTML = [IS2Notifications notificationCountForApplication:getBundleId(tile11)];
       }
 
-        var swipeWx = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              updateWx();
-            }
+      var swipeTile1 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile1)];
           }
-        };
-        var swipePhone = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.mobilephone"];
-            }
+        }
+      };
+      var swipeTile2 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile2)];
           }
-        };
-        var swipeSms = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.MobileSMS"];
-            }
+        }
+      };
+      var swipeTile3 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.mobiletimer"];
           }
-        };
-        var swipeMail = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.mobilemail"];
-            }
+        }
+      };
+      var swipeTile4 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            updateWx();
           }
-        };
-        var swipeApps = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [[SBUIController sharedInstance] openAppDrawer];
-            }
+        }
+      };
+      var swipeTile5 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile5)];
           }
-        };
-        var swipeWww = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              if(favBrowserApp === "appleSafari"){
-                [IS2System openApplication:@""+"com.apple.mobilesafari"];
-              }else if(favBrowserApp === "googleChrome"){
-                [IS2System openApplication:@""+"com.google.chrome.ios"];
-              }else if(favBrowserApp === "firefox"){
-                [IS2System openApplication:@""+"com.mozilla.ios.Firefox"];
-              }else if(favBrowserApp === "dolphin"){
-                [IS2System openApplication:@""+"com.dolphin.browser.iphone"];
-              }
-            }
+        }
+      };
+      var swipeTile6 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile6)];
           }
-        };
-        var swipeMusic = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              if([IS2Media isPlaying]){
-                [IS2System openApplication:@""+[IS2Media currentPlayingAppIdentifier]];
-              }
-              else{
-                if(favMusicApp === "appleMusic"){
-                  [IS2System openApplication:@""+"com.apple.Music"];
-                }else if(favMusicApp === "iheartRadio"){
-                  [IS2System openApplication:@""+"com.clearchannel.iheartradio"];
-                }else if(favMusicApp === "pandora"){
-                  [IS2System openApplication:@""+"com.pandora"];
-                }else if(favMusicApp === "spotify"){
-                  [IS2System openApplication:@""+"com.spotify.client"];
-                }
-              }
-            }
+        }
+      };
+      var swipeTile7 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile7)];
           }
-        };
-        var swipeFacebook = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.facebook.Facebook"];
-            }
-          }
-        };
-        var swipeTwitter = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.atebits.Tweetie2"];
-            }
-          }
-        };
-        var swipeCamera = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.camera"];
-            }
-          }
-        };
-        var swipeMaps = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              if(favMapApp === "appleMaps"){
-                [IS2System openApplication:@""+"com.apple.Maps"];
-              }else if(favMapApp === "googleMaps"){
-                [IS2System openApplication:@""+"com.google.Maps"];
-              }else if(favMapApp === "waze"){
-                [IS2System openApplication:@""+"com.waze.iphone"];
-              }
-            }
-          }
-        };
-        var swipeSiri = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openSiri];
-            }
-          }
-        };
-        var swipeLock = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System lockDevice];
-            }
-          }
-        };
-        var swipeSettings = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              [IS2System openApplication:@""+"com.apple.Preferences"];
-            }
-          }
-        };
-        var swipePage2 = {
-          itemSwipe: function(direction){
-            if(direction === 'p'){
-              window.open("page2.html", "_self",false);
-            }
-          }
-        };
+        }
+      };
 
-        //adds swipe detection to element
-        detectswipe('#tile4Container', swipeWx.itemSwipe);
-        detectswipe('#tile1Container', swipePhone.itemSwipe);
-        detectswipe('#tile2Container', swipeSms.itemSwipe);
-        detectswipe('#tile5Container', swipeMail.itemSwipe);
-        detectswipe('#tile10Container', swipeApps.itemSwipe);
-        detectswipe('#tile6Container', swipeWww.itemSwipe);
-        detectswipe('#tile11Container', swipeMusic.itemSwipe);
-        detectswipe('#tile9Container', swipeFacebook.itemSwipe);
-        detectswipe('#tile7Container', swipeTwitter.itemSwipe);
-        detectswipe('#tile12Container', swipeCamera.itemSwipe);
-        detectswipe('#tile13Container', swipeMaps.itemSwipe);
-        detectswipe('#tile14Container', swipeSiri.itemSwipe);
-        detectswipe('#tile15Container', swipeLock.itemSwipe);
-        detectswipe('#tile16Container', swipeSettings.itemSwipe);
-        detectswipe('#tile17Container', swipePage2.itemSwipe);
+      var swipePreviousTrack = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2Media skipToPreviousTrack];
+          }
+        }
+      };
+      var swipeNextTrack = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2Media skipToNextTrack];
+          }
+        }
+      };
+      var swipePlayPauseTrack = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            if(firstTimeMusic){
+              [IS2System openApplication:@""+getBundleId(favMusicApp)];
+            }else{
+              [IS2Media togglePlayPause];
+            }
+          }
+        }
+      };
+      var swipeTile9 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile9)];
+          }
+        }
+      };
+      var swipeTile10 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [[SBUIController sharedInstance] openAppDrawer];
+          }
+        }
+      };
+      var swipeTile11 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(tile11)];
+          }
+        }
+      };
+      var swipeTile12 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.camera"];
+          }
+        }
+      };
+      var swipeTile13 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+getBundleId(favMapApp)];
+          }
+        }
+      };
+      var swipeTile14 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openSiri];
+          }
+        }
+      };
+      var swipeTile15 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System lockDevice];
+          }
+        }
+      };
+      var swipeTile16 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            [IS2System openApplication:@""+"com.apple.Preferences"];
+          }
+        }
+      };
+      var swipeTile17 = {
+        itemSwipe: function(direction){
+          if(direction === 'p'){
+            window.open("page2.html", "_self");
+          }
+        }
+      };
+
+      //adds swipe detection to element
+      detectswipe('#tile1Container', swipeTile1.itemSwipe);
+      detectswipe('#tile2Container', swipeTile2.itemSwipe);
+      detectswipe('#tile3Container', swipeTile3.itemSwipe);
+      detectswipe('#tile4Container', swipeTile4.itemSwipe);
+      detectswipe('#tile5Container', swipeTile5.itemSwipe);
+      detectswipe('#tile6Container', swipeTile6.itemSwipe);
+      detectswipe('#tile7Container', swipeTile7.itemSwipe);
+      detectswipe('#previousTrackDiv', swipePreviousTrack.itemSwipe);
+      detectswipe('#playPauseTrackDiv', swipePlayPauseTrack.itemSwipe);
+      detectswipe('#nextTrackDiv', swipeNextTrack.itemSwipe);
+      detectswipe('#tile9Container', swipeTile9.itemSwipe);
+      detectswipe('#tile10Container', swipeTile10.itemSwipe);
+      detectswipe('#tile11Container', swipeTile11.itemSwipe);
+      detectswipe('#tile12Container', swipeTile12.itemSwipe);
+      detectswipe('#tile13Container', swipeTile13.itemSwipe);
+      detectswipe('#tile14Container', swipeTile14.itemSwipe);
+      detectswipe('#tile15Container', swipeTile15.itemSwipe);
+      detectswipe('#tile16Container', swipeTile16.itemSwipe);
+      detectswipe('#tile17Container', swipeTile17.itemSwipe);
 
       //]]>
     </script>
