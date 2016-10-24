@@ -1,262 +1,160 @@
 <!--Novellas by SPQRGuyMontag
 Based on Metro-UI-CSS by Sergey Pimenov
-Built on the work of JunesiPhone and Matchstic-->
+Based on the work of JunesiPhone and Matchstic-->
 <!DOCTYPE html>
 <html>
   <head>
     <title>Novellas by SPQRGuyMontag</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="js/lang.js"></script>
-    <link href="css/metro.css" rel="stylesheet">
-    <link href="css/metro-icons.css" rel="stylesheet">
-    <link href="css/metro-responsive.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="js/prettify/run_prettify.js"></script>
     <script src="js/metro.js"></script>
     <script src="js/swipes.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery-2.1.3.min.js"></script>
 
-    <script>
-        (function($) {
-            $.StartScreen = function(){
-                var plugin = this;
-                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-
-                plugin.init = function(){
-                    setTilesAreaSize();
-                };
-
-                var setTilesAreaSize = function(){
-                    var groups = $(".tile-group");
-                    var tileAreaWidth = 80;
-                    $.each(groups, function(i, t){
-                        if (width <= 640) {
-                            tileAreaWidth = width;
-                        } else {
-                            tileAreaWidth += $(t).outerWidth() + 80;
-                        }
-                    });
-                    $(".tile-area").css({
-                        width: tileAreaWidth
-                    });
-                };
-
-                plugin.init();
-            }
-        })(jQuery);
-
-        $(function(){
-            $.StartScreen();
-
-            var tiles = $(".tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super");
-
-            $.each(tiles, function(){
-                var tile = $(this);
-                setTimeout(function(){
-                    tile.css({
-                        opacity: 1,
-                        "-webkit-transform": "scale(1)",
-                        "transform": "scale(1)",
-                    });
-                }, Math.floor(Math.random()*1));
-            });
-
-            $(".tile-group").animate({
-                left: 0
-            });
-        });
-
-        $(function(){
-            var current_tile_area_scheme = localStorage.getItem('tile-area-scheme') || "tile-area-scheme-dark";
-            $(".tile-area").removeClass (function (index, css) {
-                return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-            }).addClass(current_tile_area_scheme);
-        });
-
-    </script>
 </head>
 <body style="overflow-y: hidden;">
-<div id="mainElement">
-  <div class="tile-area fg-white" style="height: 100%; max-height: 100% !important;">
+  <div id="mainElement">
     <div id="statusBar"></div>
-    <div class="tile-group triple" style="margin-left:12px;">
-        <div class="tile-container">
-          <div class="tile" data-role="tile">
-            <div class="tile-content iconic">
-                <div id="tile1Container"><img id="tile1Icon"></div>
-            </div>
-            <div id="tile1Count">5</div>
+
+    <div id="tile1Container">
+      <img id="tile1Icon">
+      <div id="tile1Count"></div>
+    </div>
+
+    <div id="tile2Container">
+      <img id="tile2Icon">
+      <div id="tile2Count"></div>
+    </div>
+
+    <div id="tile3Container">
+      <div class='center-dial' id="center-dial">
+          <div class='hand-container' id='hourHand'>
+            <div class='hour-hand' id='hour-hand'></div>
           </div>
-
-            <div class="tile fg-white" data-role="tile">
-              <div class="tile-content iconic">
-                <div id="tile2Container"><img id="tile2Icon"></div>
-              </div>
-                <div id="tile2Count"></div>
-            </div>
-            <div id="tile3Container" class="tile" data-role="tile" data-role="tile">
-              <div class='center-dial' id="center-dial">
-                  <div class='hand-container' id='hourHand'>
-                    <div class='hour-hand' id='hour-hand'></div>
-                  </div>
-                  <div class='hand-container' id='secondHand'>
-                    <div class='second-hand' id='second-hand'></div>
-                  </div>
-                  <div class='hand-container' id='digital'>
-                    <div class='digital-hour' id="digital-hour">23</div>
-                  </div>
-                  <div class='hand-container' id='digital'>
-                    <div class='digital-minute' id="digital-minute">58</div>
-                  </div>
-                  <div class='hand-container' id='digital'>
-                    <div class='digital-second' id="digital-second">59</div>
-                  </div>
-                </div>
-            </div>
-
-          <div class="tile-large fg-white" data-role="tile">
-            <div class="tile-content" id="tile4Container">
-              <div id="wxWrapper">
-
-                <h1 id="wxIcon"><img id="wx_icon"></h1>
-                <h1 id="temp" style="position:relative; left: 50px; text-align:left;"></h1>
-                <h2 id="city" class="text-light">Loading...</h2>
-                <h4 id="condition" style="font-size:20px;"></h4>
-                <p id="condition_daily"></p>
-
-                <p style="margin: 5px;"><span class="text-bold" id="wind_bearing"></span></p>
-                <p style="margin: 5px;"><span class="text-bold" id="wind_speed"></span></p>
-                <section id="daySection">
-
-                  <!-- display next five days -->
-                  <div id="dayZero" style="margin-top:0;">
-                    <center>
-                    <p id="dayZeroDayString"></p>
-                    <img id="dayZeroImg"/>
-                    <p style="width: 50px; text-align:center;"><span id="dayZeroHigh"></span>&nbsp;<span id="dayZeroLow" style="color:#bfbfbf;"></span></p>
-                    </center>
-                  </div>
-                  <div id="dayOne" style="margin-top:0;">
-                    <center>
-                    <p id="dayOneDayString"></p>
-                    <img id="dayOneImg"/>
-                    <p style="width: 50px; text-align:center;"><span id="dayOneHigh"></span>&nbsp;<span id="dayOneLow" style="color:#bfbfbf;"></span></p>
-                    </center>
-                  </div>
-
-            			<div id="dayTwo" style="margin-top:0;">
-            				<center>
-            				<p id="dayTwoDayString"></p>
-            				<img id="dayTwoImg"/>
-                    <p style="width: 50px; text-align:center;"><span id="dayTwoHigh"></span>&nbsp;<span id="dayTwoLow" style="color:#bfbfbf;"></span></p>
-            				</center>
-            			</div>
-                </section>
-              </div>
-                <div id="wxBgDiv"></div>
-              </div>
+          <div class='hand-container' id='secondHand'>
+            <div class='second-hand' id='second-hand'></div>
           </div>
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile5Container"><img id="tile5Icon"></div>
-            </div>
-              <div id="tile5Count"></div>
+          <div class='hand-container' id='digital'>
+            <div class='digital-hour' id="digital-hour">23</div>
           </div>
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile6Container"><img id="tile6Icon"></div>
-            </div>
-              <div id="tile6Count"></div>
+          <div class='hand-container' id='digital'>
+            <div class='digital-minute' id="digital-minute">58</div>
+          </div>
+          <div class='hand-container' id='digital'>
+            <div class='digital-second' id="digital-second">59</div>
           </div>
         </div>
     </div>
-    <div class="tile-group triple" style="margin-left:12px;">
-        <div class="tile-container">
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile7Container"><img id="tile7Icon"></div>
-            </div>
-            <div id="tile7Count"></div>
+
+    <div id="tile4Container">
+      <div id="wxWrapper">
+
+        <div id="wxIcon"><img id="wx_icon" src="images/wx/32.png"></div>
+        <div id="wxTemp"></div>
+        <div id="wxCity">Loading...</div>
+        <div id="wxCondition"></div>
+        <div id="wxWindDirection"></div>
+        <div id="wxWindSpeed"></div>
+        <section id="daySection">
+
+          <!-- display next three days -->
+          <div id="dayZero" style="margin-top:0;">
+            <center>
+            <p id="dayZeroDayString"></p>
+            <img id="dayZeroImg" src="images/wx/32.png"/>
+            <p style="width: 50px; text-align:center;"><span id="dayZeroHigh"></span>&nbsp;<span id="dayZeroLow" style="color:#bfbfbf;"></span></p>
+            </center>
+          </div>
+          <div id="dayOne" style="margin-top:0;">
+            <center>
+            <p id="dayOneDayString"></p>
+            <img id="dayOneImg"/>
+            <p style="width: 50px; text-align:center;"><span id="dayOneHigh"></span>&nbsp;<span id="dayOneLow" style="color:#bfbfbf;"></span></p>
+            </center>
           </div>
 
-          <div id="tile8Container" class="tile-wide" data-role="tile">
-              <div class="tile-content iconic">
-              </div>
-              <div id="artist"></div>
-              <div id="title"></div>
-              <div id="album"></div>
-              <img id="tile8Icon" src="images/tiles/music.svg">
-              <div id="previousTrackDiv"><img id="previousTrack" src="images/music/previousTrack.svg"></div>
-              <div id="nextTrackDiv"><img id="nextTrack" src="images/music/nextTrack.svg"></div>
-              <div id="playPauseTrackDiv">
-                <img id="playTrack" src="images/music/playTrack.svg">
-                <img id="pauseTrack" src="images/music/pauseTrack.svg">
-              </div>
-                  <div id="musicBgDiv"></div>
-              </div>
-
-          </div>
-          <div class="tile-group triple">
-              <div class="tile-container">
-
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile9Container"><img id="tile9Icon"></div>
-            </div>
-            <div id="tile9Count"></div>
-          </div>
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile10Container"><img id="tile10Icon" src="images/tiles/apps.svg"></div>
-            </div>
-            <span class="tile-label"></span>
-          </div>
-          <div class="tile fg-white" data-role="tile">
-            <div class="tile-content iconic">
-              <div id="tile11Container"><img id="tile11Icon"></div>
-            </div>
-            <div id="tile11Count"></div>
-          </div>
-
-        </div>
+    			<div id="dayTwo" style="margin-top:0;">
+    				<center>
+    				<p id="dayTwoDayString"></p>
+    				<img id="dayTwoImg"/>
+            <p style="width: 50px; text-align:center;"><span id="dayTwoHigh"></span>&nbsp;<span id="dayTwoLow" style="color:#bfbfbf;"></span></p>
+    				</center>
+    			</div>
+        </section>
       </div>
-          <div class="tile-group triple" style="margin-left:2px;">
-              <div class="tile-container">
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile12Container"><span class="icon mif-camera"></span></div>
-                </div>
-            </div>
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile13Container"><span class="icon mif-map"></span></div>
-                </div>
-            </div>
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile14Container"><span class="icon mif-multitrack-audio"></span></div>
-                </div>
-            </div>
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile15Container"><span class="icon mif-lock"></span></div>
-                </div>
-            </div>
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile16Container"><span class="icon mif-cogs"></span></div>
-                </div>
-            </div>
-            <div class="tile-small fg-white" data-role="tile">
-                <div class="tile-content iconic">
-                    <div id="tile17Container"><span class="icon mif-chevron-right"></span></div>
-                </div>
-            </div>
-
-          </div>
-        </div>
-
+        <div id="wxBgDiv"></div>
     </div>
+
+  <div id="tile5Container">
+    <img id="tile5Icon">
+    <div id="tile5Count"></div>
+  </div>
+
+  <div id="tile6Container">
+    <img id="tile6Icon">
+    <div id="tile6Count"></div>
+  </div>
+
+  <div id="tile7Container">
+    <img id="tile7Icon">
+    <div id="tile7Count"></div>
+  </div>
+
+  <div id="tile8Container">
+    <div id="artist"></div>
+    <div id="title"></div>
+    <div id="album"></div>
+      <img id="tile8Icon" src="images/tiles/music.svg">
+    <div id="previousTrackDiv"><img id="previousTrack" src="images/music/previousTrack.svg"></div>
+    <div id="nextTrackDiv"><img id="nextTrack" src="images/music/nextTrack.svg"></div>
+    <div id="playPauseTrackDiv">
+      <img id="playTrack" src="images/music/playTrack.svg">
+      <img id="pauseTrack" src="images/music/pauseTrack.svg">
+    </div>
+        <div id="musicBgDiv"></div>
+    </div>
+
+    <div id="tile9Container">
+      <img id="tile9Icon">
+      <div id="tile9Count"></div>
+    </div>
+
+    <div id="tile10Container">
+      <img id="tile10Icon" src="images/tiles/apps.svg">
+      <div id="tile10Count"></div>
+    </div>
+
+    <div id="tile11Container">
+      <img id="tile11Icon">
+      <div id="tile11Count"></div>
+    </div>
+
+    <div id="tile12Container">
+      <img id="tile12Icon" src="images/tiles/camera.svg">
+    </div>
+
+    <div id="tile13Container">
+      <img id="tile13Icon" src="images/tiles/maps.svg">
+    </div>
+
+    <div id="tile14Container">
+      <img id="tile14Icon" src="images/tiles/siri.svg">
+    </div>
+
+    <div id="tile15Container">
+      <img id="tile15Icon" src="images/tiles/lock.svg">
+    </div>
+
+    <div id="tile16Container">
+      <img id="tile16Icon" src="images/tiles/settings.svg">
+    </div>
+
+    <div id="tile17Container">
+      <img id="tile17Icon" src="images/tiles/chevron-right.svg">
+    </div>
+
   </div>
 
     <script type="text/cycript">
@@ -416,12 +314,12 @@ Built on the work of JunesiPhone and Matchstic-->
           return c;
         }
 
-        document.getElementById("wx_icon").src = "images/wx/" + [IS2Weather currentCondition] + ".png";
-        document.getElementById("temp").innerHTML = [IS2Weather currentTemperature] + "&deg";
-        document.getElementById("city").innerHTML = [IS2Weather currentLocation];
-        document.getElementById("condition").innerHTML = [IS2Weather currentConditionAsString];
-        document.getElementById("wind_bearing").innerHTML = " Wind Direction: " + degToCard([IS2Weather currentWindDirection]);
-        document.getElementById("wind_speed").innerHTML = " Wind Speed: " + [IS2Weather currentWindSpeed];
+        document.getElementById("wxIcon").src = "images/wx/" + [IS2Weather currentCondition] + ".png";
+        document.getElementById("wxTemp").innerHTML = [IS2Weather currentTemperature] + "&deg";
+        document.getElementById("wxCity").innerHTML = [IS2Weather currentLocation];
+        document.getElementById("wxCondition").innerHTML = [IS2Weather currentConditionAsString];
+        document.getElementById("wxWindDirection").innerHTML = " Wind Direction: " + degToCard([IS2Weather currentWindDirection]);
+        document.getElementById("wxWindSpeed").innerHTML = " Wind Speed: " + [IS2Weather currentWindSpeed];
 
         //populates forecast elements
         document.getElementById('dayZeroDayString').innerHTML = translate[current].sday[dayArray[1].dayOfWeek - 1];

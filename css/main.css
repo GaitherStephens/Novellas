@@ -1,10 +1,43 @@
+@media screen and (min-device-width : 350px) and (max-device-width : 400px){
+  body{
+    -webkit-transform:scale(0.906);
+    -webkit-transform-origin: top left;
+  }
+}
+
+@media screen and (min-device-width : 300px) and (max-device-width : 349px){
+  body{
+    -webkit-transform:scale(0.77299);
+    -webkit-transform-origin: top left;
+  }
+}
+
+@font-face {
+  font-family:"Segoe UI";
+  src: url(../fonts/SEGOEUI.TTF);
+}
+
+@font-face {
+  font-family:"Segoe UI Bold";
+  src: url(../fonts/SEGOEUIB.TTF);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 #mainElement {
   background-color: grey;
   position: absolute;
+  width: 100%;
+  height: 100%;
+  margin:0px;
   padding-left: 0px;
-  height: 736px;
-  width: 414px;
-  font-family: 'Open Sans';
+  font-family: 'Segoe UI';
+  color: white;
 }
 .hand-container{
   text-align: center;
@@ -17,8 +50,8 @@
 
 .center-dial {
   position: absolute;
-  top: 1px;
-  left:1px;
+  top: 0.5px;
+  left:0.5px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -104,6 +137,8 @@
 
 #statusBar {
   display: block;
+  margin:0px;
+  padding:0px;
   height: 20px;
 }
 
@@ -112,19 +147,443 @@
 #tile26Count {
   position: absolute;
   top: 93px;
-  left: 10px;
+  left: 17px;
   height: 100%;
   font-size: 18px;
 }
 
-#tile1Container, #tile2Container, #tile3Container, #tile5Container, #tile6Container,
-#tile7Container, #tile9Container, #tile10Container, #tile11Container, #tile18Container,
-#tile19Container, #tile20Container, #tile22Container, #tile23Container,
-#tile25Container, #tile26Container {
+#tile1Container {
+  position: absolute;
+  left:17px;
   height:120px;
   width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
   z-index: 0;
-  border: 0px;
+  }
+
+#tile2Container{
+  position: absolute;
+  left:147px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+  }
+
+#tile3Container{
+  position: absolute;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile4Container{
+  position: absolute;
+  padding:0px;
+  margin: 0px;
+  top:150px;
+  left:17px;
+  height:250px;
+  width:250px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#wxIcon {
+  position: absolute;
+  left:15px
+  top:0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#wxTemp {
+  position: absolute;
+  top:10px;
+  left: 70px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#wxCity {
+  position: absolute;
+  top:60px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#wxCondition {
+  position: absolute;
+  top:100px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#wxWindDirection {
+  position: absolute;
+  top:127px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#wxWindSpeed {
+  position: absolute;
+  top:145px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#tile5Container{
+  position: absolute;
+  top:150px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile6Container{
+  position: absolute;
+  top:280px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile7Container{
+  position: absolute;
+  top:410px;
+  left:17px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile8Container{
+  position: absolute;
+  top:410px;
+  left:147px;
+  height:120px;
+  width:250px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile9Container{
+  position: absolute;
+  top:540px;
+  left:17px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile10Container{
+  position: absolute;
+  top:540px;
+  left:147px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile11Container{
+  position: absolute;
+  top:540px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile12Container{
+  position: absolute;
+  top:670px;
+  left:17px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile13Container{
+  position: absolute;
+  top:670px;
+  left:80.5px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile14Container{
+  position: absolute;
+  top:670px;
+  left:145px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile15Container{
+  position: absolute;
+  top:670px;
+  left:209px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile16Container{
+  position: absolute;
+  top:670px;
+  left:273px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile17Container{
+  position: absolute;
+  top:670px;
+  left:337px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile18Container {
+  position: absolute;
+  left:17px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+  }
+
+  #tile19Container{
+  position: absolute;
+  left:147px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+  }
+
+  #tile20Container{
+  position: absolute;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile21Container{
+  position: absolute;
+  padding:0px;
+  margin: 0px;
+  top:150px;
+  left:17px;
+  height:250px;
+  width:250px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile22Container{
+  position: absolute;
+  top:150px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile23Container{
+  position: absolute;
+  top:280px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile24Container{
+  position: absolute;
+  padding:0px;
+  margin: 0px;
+  top:410px;
+  left:17px;
+  height:250px;
+  width:250px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile25Container{
+  position: absolute;
+  top:410px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+
+#tile26Container{
+  position: absolute;
+  top:540px;
+  left:277px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile27Container{
+  position: absolute;
+  top:670px;
+  left:17px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile28Container{
+  position: absolute;
+  top:670px;
+  left:80.5px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile29Container{
+  position: absolute;
+  top:670px;
+  left:145px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile30Container{
+  position: absolute;
+  top:670px;
+  left:209px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile31Container{
+  position: absolute;
+  top:670px;
+  left:273px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
+}
+#tile32Container{
+  position: absolute;
+  top:670px;
+  left:337px;
+  height:120px;
+  width:120px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
 }
 
 #tile1Icon, #tile2Icon, #tile5Icon, #tile6Icon, #tile7Icon,
@@ -133,6 +592,20 @@
   max-height: 100%;
   max-width: 100%;
   width: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#tile12Icon, #tile13Icon, #tile14Icon, #tile15Icon, #tile16Icon,
+#tile17Icon, #tile27Icon, #tile128Icon, #tile29Icon, #tile30Icon, #tile31Icon,
+#tile32Icon {
+  max-height: 100%;
+  max-width: 100%;
+  width: 30px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -164,15 +637,10 @@
 }
 
 #wxWrapper {
+  margin: 0px;
   height: 250px;
-  padding: 10px;
+  padding: 0px;
   z-index: 10;
-}
-
-#tile8Container {
-  height: 120px;
-  width: 250px;
-  z-index: 0;
 }
 
 #tile24Container {
@@ -300,6 +768,9 @@
 }
 
 #daySection{
+  position:absolute;
+  left: 10px;
+  top:160px;
   height:35px;
   z-index: 5;
 }
@@ -383,7 +854,7 @@ p {
 .time {
   height: 15px;
   width: 200px;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 100;
   color: white;
   position: relative;
@@ -394,43 +865,4 @@ p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.tile-area-controls {
-  position: fixed;
-  right: 40px;
-  top: 40px;
-}
-
-.tile-group {
-  left: 100px;
-}
-
-.tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super {
-  -webkit-transform: scale(.8);
-  transform: scale(.8);
-
-}
-
-.schemeButtons {
-  /*width: 300px;*/
-}
-
-@media screen and (max-width: 640px) {
-  .tile-area {
-      overflow-y: scroll;
-  }
-  .tile-area-controls {
-      display: none;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .tile-area {
-      overflow-y: scroll;
-  }
-
-  .tile-area-controls {
-      display: none;
-  }
 }
