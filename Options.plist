@@ -354,6 +354,8 @@
 		<string>pandora</string>
 		<key>Spotify</key>
 		<string>spotify</string>
+		<key>Google Play Music</key>
+		<string>googleplaymusic</string>
 	</dict>
 	<key>type</key>
 	<string>select</string>

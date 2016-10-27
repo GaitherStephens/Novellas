@@ -363,67 +363,31 @@ body {
   position: absolute;
   top:670px;
   left:17px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
 }
 #tile13Container{
   position: absolute;
   top:670px;
-  left:80.5px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:82px;
 }
 #tile14Container{
   position: absolute;
   top:670px;
-  left:145px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:147px;
 }
 #tile15Container{
   position: absolute;
   top:670px;
-  left:209px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:212px;
 }
 #tile16Container{
   position: absolute;
   top:670px;
-  left:273px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:277px;
 }
 #tile17Container{
   position: absolute;
   top:670px;
-  left:337px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:342px;
 }
 
 #tile18Container {
@@ -540,67 +504,31 @@ body {
   position: absolute;
   top:670px;
   left:17px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
 }
 #tile28Container{
   position: absolute;
   top:670px;
-  left:80.5px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:82px;
 }
 #tile29Container{
   position: absolute;
   top:670px;
-  left:145px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:147px;
 }
 #tile30Container{
   position: absolute;
   top:670px;
-  left:209px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:212px;
 }
 #tile31Container{
   position: absolute;
   top:670px;
-  left:273px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:277px;
 }
 #tile32Container{
   position: absolute;
   top:670px;
-  left:337px;
-  height:120px;
-  width:120px;
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: white;
-  z-index: 0;
+  left:342px;
 }
 
 #tile1Icon, #tile2Icon, #tile5Icon, #tile6Icon, #tile7Icon,
@@ -618,7 +546,7 @@ body {
 }
 
 #tile12Icon, #tile13Icon, #tile14Icon, #tile15Icon, #tile16Icon,
-#tile17Icon, #tile27Icon, #tile128Icon, #tile29Icon, #tile30Icon, #tile31Icon,
+#tile17Icon, #tile27Icon, #tile28Icon, #tile29Icon, #tile30Icon, #tile31Icon,
 #tile32Icon {
   max-height: 100%;
   max-width: 100%;
@@ -825,8 +753,12 @@ body {
 #tile12Container, #tile13Container, #tile14Container, #tile15Container,
 #tile16Container, #tile17Container, #tile27Container, #tile28Container,
 #tile29Container, #tile30Container, #tile31Container, #tile32Container {
-  height:60px;
-  width:60px;
+  height:55px;
+  width:55px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: white;
+  z-index: 0;
 }
 #eventsContainer {
   width: 100%;

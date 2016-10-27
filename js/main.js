@@ -68,7 +68,9 @@ function getBundleId(expr){
   }else if(expr === "whatsapp"){
     return "net.whatsapp.WhatsApp";
   }else if(expr === "google"){
-    return "net.google.GoogleMobile";
+    return "com.google.GoogleMobile";
+  }else if(expr === "googleplaymusic"){
+    return "com.google.PlayMusic";
   }
 }
 
@@ -137,6 +139,8 @@ function getAppColor(expr){
     return "rgba(77,194,71,";
   }else if(expr === "google"){
     return "rgba(221,75,57,";
+  }else if(expr === "googleplaymusic"){
+    return "rgba(244,82,43,";
   }
 }
 
