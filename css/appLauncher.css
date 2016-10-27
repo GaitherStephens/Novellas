@@ -1,0 +1,105 @@
+.appContainer{
+  position: absolute;
+  width: 414px;
+  height: 738px;
+  background-color: rgba(0,0,0,0.3);
+  -webkit-backdrop-filter:blur(20px);
+  z-index: 9;
+}
+.appContainer .iconHolder{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  pointer-events:none;
+}
+.appContainer ul{
+  width: 100%;
+  height: 690px;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+.appContainer li{
+  margin-top: 40px;
+}
+.appContainer li:last-child{
+  margin-bottom: 40px;
+}
+.appContainer img{
+  position: absolute;
+  right: 40px;
+  width: 60px;
+}
+.appContainer label{
+  position: absolute;
+  color:white;
+  left:40px;
+  font-size: 20px;
+  line-height: 60px;
+}
+.appOptions{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  background-color: white;
+  color:black;
+}
+.appOptions span{
+  position: relative;
+  width: 23%;
+  text-align: center;
+  top: 40px;
+  display: inline-block;
+  font-size: 20px;
+}
+@font-face{
+  font-family: 'Material1';
+  src:url('../fonts/Material1.ttf');
+}
+@font-face{
+  font-family: 'Material5';
+  src:url('../fonts/Material5.ttf');
+}
+#close,#edit{
+  position: relative;
+  font-family: 'Material5';
+  font-size: 25px;
+  top: 45px;
+}
+#edit{
+  font-family: 'Material5';
+}
+#close{
+  -webkit-transform:rotate(45deg);
+}
+.check{
+  position: relative;
+  font-family: 'Material1';
+  line-height: 60px;
+  font-size: 30px;
+  left:5px;
+  color:white;
+  display: none;
+}
+#fav,#all{
+  border-radius: 2px;
+  padding: 2px;
+}
+.moveup, .movedown{
+    position: absolute;
+  font-family: 'Material1';
+  font-size: 40px;
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  display: inline-block;
+  pointer-events:auto;
+  display: none;
+  color:white;
+}
+.movedown{
+  right:10;
+}

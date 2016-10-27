@@ -1,0 +1,109 @@
+.appContainer{
+  position: absolute;
+  width: 414px;
+  height: 738px;
+  top:738px;
+  background-color: rgba(0,0,0,0.6);
+/*  background-color: #242424;*/
+  -webkit-backdrop-filter:blur(30px);
+  z-index: 9;
+  color:white;
+  -webkit-transition: top 0.3s;
+  -webkit-transform: translate3d(0,0,0);
+}
+.appContainer .iconHolder{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  pointer-events:none;
+}
+.appContainer ul{
+  width: 100%;
+  height: 690px;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+.appContainer li{
+  margin-top: 40px;
+}
+.appContainer li:last-child{
+  margin-bottom: 40px;
+}
+.appContainer img{
+  position: absolute;
+  right: 40px;
+  width: 60px;
+}
+.appContainer label{
+  position: absolute;
+  left:40px;
+  font-size: 20px;
+  line-height: 60px;
+  color:white;
+}
+.appOptions{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  background-color: #242424;
+  color:black;
+}
+.appOptions span{
+  position: relative;
+  width: 23%;
+  text-align: center;
+  top: 40px;
+  display: inline-block;
+  font-size: 20px;
+  color:white;
+}
+@font-face{
+  font-family: 'Material1';
+  src:url('../fonts/Material1.ttf');
+}
+@font-face{
+  font-family: 'Material5';
+  src:url('../fonts/Material5.ttf');
+}
+#close,#edit{
+  position: relative;
+  font-family: 'material5';
+  font-size: 25px;
+  top: 45px;
+}
+#edit{
+  font-family: 'material5';
+}
+#close{
+  -webkit-transform:rotate(45deg);
+}
+.check{
+  position: relative;
+  font-family: 'material1';
+  line-height: 60px;
+  font-size: 30px;
+  left:5px;
+  display: none;
+}
+#fav,#all{
+  border-radius: 2px;
+  padding: 2px;
+}
+.moveup, .movedown{
+    position: absolute;
+  font-family: 'material1';
+  font-size: 40px;
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  display: inline-block;
+  pointer-events:auto;
+  display: none;
+}
+.movedown{
+  right:10;
+}

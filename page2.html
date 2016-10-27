@@ -5,223 +5,164 @@ Built on the work of JunesiPhone and Matchstic-->
 <html>
   <head>
     <title>Novellas by SPQRGuyMontag</title>
-    <meta name="viewport" content="width=device-width"/>
-    <script src="js/lang.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="css/main.css" rel="stylesheet">
-    <script src="js/metro.js"></script>
+    <script src="js/lang.js"></script>
     <script src="js/swipes.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/jquery-2.1.3.min.js"></script>
+  </head>
+  <body style="overflow-y: hidden;">
+    <div id="mainElement">
+      <div id="statusBar"></div>
 
-    <script>
-        (function($) {
-            $.StartScreen = function(){
-                var plugin = this;
-                var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+      <div id="tile18Container">
+        <img id="tile18Icon">
+        <div id="tile18Count"></div>
+      </div>
 
-                plugin.init = function(){
-                    setTilesAreaSize();
-                };
+      <div id="tile19Container">
+        <img id="tile19Icon">
+        <div id="tile19Count"></div>
+      </div>
 
-                var setTilesAreaSize = function(){
-                    var groups = $(".tile-group");
-                    var tileAreaWidth = 80;
-                    $.each(groups, function(i, t){
-                        if (width <= 640) {
-                            tileAreaWidth = width;
-                        } else {
-                            tileAreaWidth += $(t).outerWidth() + 80;
-                        }
-                    });
-                    $(".tile-area").css({
-                        width: tileAreaWidth
-                    });
-                };
+      <div id="tile20Container">
+        <img id="tile20Icon">
+        <div id="tile20Count"></div>
+      </div>
 
-                plugin.init();
-            }
-        })(jQuery);
+      <div id="tile21Container">
+        <!-- start sw-rss-feed code -->
+        <script type="text/javascript">
+        <!--
+        rssfeed_url = new Array();
+        rssfeed_url[0]="http://news.yahoo.com/rss/"; rssfeed_url[1]="https://www.engadget.com/tag/rss/"; rssfeed_url[2]="http://feeds.gawker.com/gizmodo/full"; rssfeed_url[3]="http://feeds.gawker.com/lifehacker/full";
+        rssfeed_frame_width="250";
+        rssfeed_frame_height="220";
+        rssfeed_scroll="on";
+        rssfeed_scroll_step="5";
+        rssfeed_scroll_bar="off";
+        rssfeed_target="_blank";
+        rssfeed_font_size="14";
+        rssfeed_font_face="Segoe UI";
+        rssfeed_border="off";
+        rssfeed_css_url="";
+        rssfeed_title="off";
+        rssfeed_title_name="";
+        rssfeed_title_bgcolor="";
+        rssfeed_title_color="#fff";
+        rssfeed_title_bgimage="http://";
+        rssfeed_footer="off";
+        rssfeed_footer_name="rss feed";
+        rssfeed_footer_bgcolor="";
+        rssfeed_footer_color="#fff";
+        rssfeed_footer_bgimage="";
+        rssfeed_item_title_length="70";
+        rssfeed_item_title_color="#fff";
+        rssfeed_item_bgcolor="";
+        rssfeed_item_bgimage="http://";
+        rssfeed_item_border_bottom="off";
+        rssfeed_item_source_icon="off";
+        rssfeed_item_date="off";
+        rssfeed_item_description="on";
+        rssfeed_item_description_length="120";
+        rssfeed_item_description_color="#fff";
+        rssfeed_item_description_link_color="#fff";
+        rssfeed_item_description_tag="on";
+        rssfeed_no_items="0";
+        rssfeed_cache = "c8659b438668c6c51ead5ebb6d2f9d45";
+        //-->
+        </script>
+        <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
+        <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
+        <div style="text-align:right; width:240px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#fff;font-size:8px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#fff;font-size:8px">surfing-waves.com</a></div>
+        <!-- end sw-rss-feed code -->
+      </div>
 
-        $(function(){
-            $.StartScreen();
+      <div id="tile22Container">
+        <img id="tile22Icon">
+        <div id="tile22Count"></div>
+      </div>
 
-            var tiles = $(".tile, .tile-small, .tile-sqaure, .tile-wide, .tile-large, .tile-big, .tile-super");
+      <div id="tile23Container">
+        <img id="tile23Icon">
+        <div id="tile23Count"></div>
+      </div>
 
-            $.each(tiles, function(){
-                var tile = $(this);
-                setTimeout(function(){
-                    tile.css({
-                        opacity: 1,
-                        "-webkit-transform": "scale(1)",
-                        "transform": "scale(1)",
-                    });
-                }, Math.floor(Math.random()*1));
-            });
+      <div id="tile24Container">
+          <div id="eventscontainer">
 
-            $(".tile-group").animate({
-                left: 0
-            });
-        });
+            <div style="padding:5px;"></div>
 
-        $(function(){
-            var current_tile_area_scheme = localStorage.getItem('tile-area-scheme') || "tile-area-scheme-dark";
-            $(".tile-area").removeClass (function (index, css) {
-                return (css.match (/(^|\s)tile-area-scheme-\S+/g) || []).join(' ');
-            }).addClass(current_tile_area_scheme);
-        });
+              <div id="eventOne" class="event">
+                <p id="eventOneColour" class="colour"></p>
+                <p id="eventOneTitle" class="title"></p>
+                <p id="eventOneTime" class="time"></p>
+              </div>
 
-    </script>
-</head>
-<body style="overflow-y: hidden;">
-  <div id="mainElement">
-    <div id="statusBar"></div>
+              <div id="eventTwo" class="event">
+                <p id="eventTwoColour" class="colour"></p>
+                <p id="eventTwoTitle" class="title"></p>
+                <p id="eventTwoTime" class="time"></p>
+              </div>
 
-    <div id="tile18Container">
-      <img id="tile18Icon">
-      <div id="tile18Count"></div>
-    </div>
+              <div id="eventThree" class="event">
+                <p id="eventThreeColour" class="colour"></p>
+                <p id="eventThreeTitle" class="title"></p>
+                <p id="eventThreeTime" class="time"></p>
+              </div>
 
-    <div id="tile19Container">
-      <img id="tile19Icon">
-      <div id="tile19Count"></div>
-    </div>
+              <div id="eventFour" class="event">
+                <p id="eventFourColour" class="colour"></p>
+                <p id="eventFourTitle" class="title"></p>
+                <p id="eventFourTime" class="time"></p>
+              </div>
 
-    <div id="tile20Container">
-      <img id="tile20Icon">
-      <div id="tile20Count"></div>
-    </div>
+              <div id="eventFive" class="event">
+                <p id="eventFiveColour" class="colour"></p>
+                <p id="eventFiveTitle" class="title"></p>
+                <p id="eventFiveTime" class="time"></p>
+              </div>
 
-    <div id="tile21Container">
-      <!-- start sw-rss-feed code -->
-      <script type="text/javascript">
-      <!--
-      rssfeed_url = new Array();
-      rssfeed_url[0]="http://news.yahoo.com/rss/"; rssfeed_url[1]="https://www.engadget.com/tag/rss/"; rssfeed_url[2]="http://feeds.gawker.com/gizmodo/full"; rssfeed_url[3]="http://feeds.gawker.com/lifehacker/full";
-      rssfeed_frame_width="250";
-      rssfeed_frame_height="230";
-      rssfeed_scroll="on";
-      rssfeed_scroll_step="15";
-      rssfeed_scroll_bar="off";
-      rssfeed_target="_blank";
-      rssfeed_font_size="14";
-      rssfeed_font_face="Roboto";
-      rssfeed_border="off";
-      rssfeed_css_url="";
-      rssfeed_title="off";
-      rssfeed_title_name="";
-      rssfeed_title_bgcolor="";
-      rssfeed_title_color="#fff";
-      rssfeed_title_bgimage="http://";
-      rssfeed_footer="off";
-      rssfeed_footer_name="rss feed";
-      rssfeed_footer_bgcolor="";
-      rssfeed_footer_color="#fff";
-      rssfeed_footer_bgimage="";
-      rssfeed_item_title_length="70";
-      rssfeed_item_title_color="#fff";
-      rssfeed_item_bgcolor="";
-      rssfeed_item_bgimage="http://";
-      rssfeed_item_border_bottom="off";
-      rssfeed_item_source_icon="off";
-      rssfeed_item_date="off";
-      rssfeed_item_description="on";
-      rssfeed_item_description_length="120";
-      rssfeed_item_description_color="#fff";
-      rssfeed_item_description_link_color="#fff";
-      rssfeed_item_description_tag="on";
-      rssfeed_no_items="0";
-      rssfeed_cache = "c8659b438668c6c51ead5ebb6d2f9d45";
-      //-->
-      </script>
-      <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
-      <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
-      <div style="text-align:right; width:240px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#fff;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#fff;font-size:10px">surfing-waves.com</a></div>
-      <!-- end sw-rss-feed code -->
-    </div>
-
-    <div id="tile22Container">
-      <img id="tile22Icon">
-      <div id="tile22Count"></div>
-    </div>
-
-    <div id="tile23Container">
-      <img id="tile23Icon">
-      <div id="tile23Count"></div>
-    </div>
-
-    <div id="tile24Container">
-        <div id="eventscontainer">
-
-          <div style="padding:5px;"></div>
-
-            <div id="eventOne" class="event">
-              <p id="eventOneColour" class="colour"> </p>
-              <p id="eventOneTitle" class="title">Lorem Ipsum</p>
-              <p id="eventOneTime" class="time">11:40, Today</p>
-            </div>
-
-            <div id="eventTwo" class="event">
-              <p id="eventTwoColour" class="colour"> </p>
-              <p id="eventTwoTitle" class="title">Lorem Ipsum</p>
-              <p id="eventTwoTime" class="time">11:40, Today</p>
-            </div>
-
-            <div id="eventThree" class="event">
-              <p id="eventThreeColour" class="colour"> </p>
-              <p id="eventThreeTitle" class="title">Lorem Ipsum</p>
-              <p id="eventThreeTime" class="time">11:40, Today</p>
-            </div>
-
-            <div id="eventFour" class="event">
-              <p id="eventFourColour" class="colour"> </p>
-              <p id="eventFourTitle" class="title">Lorem Ipsum</p>
-              <p id="eventFourTime" class="time">11:40, Today</p>
-            </div>
-
-            <div id="eventFive" class="event">
-              <p id="eventFiveColour" class="colour"> </p>
-              <p id="eventFiveTitle" class="title">Lorem Ipsum</p>
-              <p id="eventFiveTime" class="time">11:40, Today</p>
-            </div>
-
-            <div id="noevents">
-             <center><p>No Events</p></center>
+              <div id="noevents">
+               <center><p>No Events</p></center>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="tile25Container">
-          <img id="tile25Icon">
-        </div>
+          <div id="tile25Container">
+            <img id="tile25Icon">
+            <div id="tile25Count"></div>
+          </div>
 
-        <div id="tile26Container">
-          <img id="tile26Icon">
-        </div>
+          <div id="tile26Container">
+            <img id="tile26Icon">
+            <div id="tile26Count"></div>
+          </div>
 
-        <div id="tile27Container">
-          <img id="tile27Icon" src="images/tiles/appstore.svg">
-        </div>
+          <div id="tile27Container">
+            <img id="tile27Icon" src="images/tiles/appstore.svg">
+          </div>
 
-        <div id="tile28Container">
-          <img id="tile28Icon" src="images/tiles/cydia.svg">
-        </div>
+          <div id="tile28Container">
+            <img id="tile28Icon" src="images/tiles/cydia.svg">
+          </div>
 
-        <div id="tile29Container">
-          <img id="tile29Icon" src="images/tiles/calendar.svg">
-        </div>
+          <div id="tile29Container">
+            <img id="tile29Icon" src="images/tiles/calendar.svg">
+          </div>
 
-        <div id="tile30Container">
-          <img id="tile30Icon" src="images/tiles/reminders.svg">
-        </div>
+          <div id="tile30Container">
+            <img id="tile30Icon" src="images/tiles/reminders.svg">
+          </div>
 
-        <div id="tile31Container">
-          <img id="tile31Icon" src="images/tiles/findmyiphone.svg">
-        </div>
+          <div id="tile31Container">
+            <img id="tile31Icon" src="images/tiles/findmyiphone.svg">
+          </div>
 
-        <div id="tile32Container">
-          <img id="tile32Icon" src="images/tiles/chevron-left.svg">
+          <div id="tile32Container">
+            <img id="tile32Icon" src="images/tiles/chevron-left.svg">
+          </div>
         </div>
-      </div>
 
     <script type="text/cycript">
       //<![CDATA[
@@ -234,14 +175,9 @@ Built on the work of JunesiPhone and Matchstic-->
       var tile25 = tile25Op;
       var tile26 = tile26Op;
       var twentyfourhour = twentyfourhourOp;
-      var wxRefresh = wxRefreshOp;
-      var wxBg = wxBgOp;
-      var favMusicApp = favMusicAppOp;
-      var favMapApp = favMapAppOp;
       var bgColor = bgColorOp;
       var bgOpacity = bgOpacityOp;
       var tilesOpacity = tilesOpacityOp;
-      var firstTimeMusic = true;
       var tilesColor = tilesColorOp;
       // Setup of widget
       window.onload = function() {
@@ -505,13 +441,6 @@ Built on the work of JunesiPhone and Matchstic-->
           }
         }
       };
-      var swipetile21 = {
-        itemSwipe: function(direction){
-          if(direction === 'p'){
-            updateWx();
-          }
-        }
-      };
       var swipetile22 = {
         itemSwipe: function(direction){
           if(direction === 'p'){
@@ -522,7 +451,7 @@ Built on the work of JunesiPhone and Matchstic-->
       var swipetile23 = {
         itemSwipe: function(direction){
           if(direction === 'p'){
-            [IS2System openApplication:@""+getBundleId(tile22)];
+            [IS2System openApplication:@""+getBundleId(tile23)];
           }
         }
       };
@@ -587,7 +516,6 @@ Built on the work of JunesiPhone and Matchstic-->
       detectswipe('#tile18Container', swipeTile18.itemSwipe);
       detectswipe('#tile19Container', swipetile19.itemSwipe);
       detectswipe('#tile20Container', swipetile20.itemSwipe);
-      detectswipe('#tile21Container', swipetile21.itemSwipe);
       detectswipe('#tile22Container', swipetile22.itemSwipe);
       detectswipe('#tile23Container', swipetile23.itemSwipe);
       detectswipe('#tile25Container', swipetile25.itemSwipe);

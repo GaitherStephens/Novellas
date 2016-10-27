@@ -12,1258 +12,1357 @@
 	<key>type</key>
 	<string>switch</string>
 </dict>
-	<dict>
-		<key>default</key>
-		<string>EN</string>
-		<key>label</key>
-		<string>Widget Language</string>
-		<key>name</key>
-		<string>widgetLanguageOp</string>
-		<key>options</key>
-		<dict>
-			<key>EN</key>
-			<string>en</string>
-			<key>NL</key>
-			<string>nl</string>
-			<key>RU</key>
-			<string>ru</string>
-			<key>IT</key>
-			<string>it</string>
-			<key>SP</key>
-			<string>sp</string>
-			<key>DE</key>
-			<string>de</string>
-			<key>FR</key>
-			<string>fr</string>
-			<key>PL</key>
-			<string>pl</string>
-			<key>PT</key>
-			<string>pt</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
-	</dict>
-	<dict>
-		<key>default</key>
-		<string>White</string>
-		<key>label</key>
-		<string>Tiles Color</string>
-		<key>name</key>
-		<string>tilesColorOp</string>
-		<key>options</key>
-		<dict>
-			<key>Multi-Color</key>
-			<string>multicolor</string>
-			<key>White</key>
-			<string>255,255,255,</string>
-			<key>Black</key>
-			<string>0,0,0,</string>
-			<key>Light Green</key>
-			<string>153,180,51,</string>
-			<key>Green</key>
-			<string>0,163,0,</string>
-			<key>Dark Green</key>
-			<string>30,113,69,</string>
-			<key>Magenta</key>
-			<string>255,0,151,</string>
-			<key>Light Purple</key>
-			<string>159,0,167,</string>
-			<key>Purple</key>
-			<string>126,56,120,</string>
-			<key>Dark Purple</key>
-			<string>96,60,186,</string>
-			<key>Darken</key>
-			<string>29,29,29,</string>
-			<key>Teal</key>
-			<string>0,171,169,</string>
-			<key>Light Blue</key>
-			<string>239,244,255,</string>
-			<key>Blue</key>
-			<string>45,137,239,</string>
-			<key>Dark Blue</key>
-			<string>43,87,151,</string>
-			<key>Yellow</key>
-			<string>255,196,13,</string>
-			<key>Orange</key>
-			<string>227,162,26,</string>
-			<key>Dark Orange</key>
-			<string>218,83,44,</string>
-			<key>Red</key>
-			<string>238,17,17,</string>
-			<key>Dark Red</key>
-			<string>185,29,71,</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
-	</dict>
-	<dict>
-		<key>default</key>
-		<string>20%</string>
-		<key>label</key>
-		<string>Tiles Transparency</string>
-		<key>name</key>
-		<string>tilesOpacityOp</string>
-		<key>options</key>
-		<dict>
-			<key>0%</key>
-			<string>0</string>
-			<key>10%</key>
-			<string>.1</string>
-			<key>20%</key>
-			<string>.2</string>
-			<key>30%</key>
-			<string>.3</string>
-			<key>40%</key>
-			<string>.4</string>
-			<key>50%</key>
-			<string>.5</string>
-			<key>60%</key>
-			<string>.6</string>
-			<key>70%</key>
-			<string>.7</string>
-			<key>80%</key>
-			<string>.8</string>
-			<key>90%</key>
-			<string>.9</string>
-			<key>100%</key>
-			<string>1</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
-	</dict>
-	<dict>
-		<key>default</key>
-		<string>White</string>
-		<key>label</key>
-		<string>Background Color</string>
-		<key>name</key>
-		<string>bgColorOp</string>
-		<key>options</key>
-		<dict>
-			<key>White</key>
-			<string>255,255,255,</string>
-			<key>Black</key>
-			<string>0,0,0,</string>
-			<key>Light Green</key>
-			<string>153,180,51</string>
-			<key>Green</key>
-			<string>0,163,0,</string>
-			<key>Dark Green</key>
-			<string>30,113,69,</string>
-			<key>Magenta</key>
-			<string>255,0,151,</string>
-			<key>Light Purple</key>
-			<string>159,0,167,</string>
-			<key>Purple</key>
-			<string>126,56,120,</string>
-			<key>Dark Purple</key>
-			<string>96,60,186,</string>
-			<key>Darken</key>
-			<string>29,29,29,</string>
-			<key>Teal</key>
-			<string>0,171,169,</string>
-			<key>Light Blue</key>
-			<string>239,244,255,</string>
-			<key>Blue</key>
-			<string>45,137,239,</string>
-			<key>Dark Blue</key>
-			<string>43,87,151,</string>
-			<key>Yellow</key>
-			<string>255,196,13,</string>
-			<key>Orange</key>
-			<string>227,162,26,</string>
-			<key>Dark Orange</key>
-			<string>218,83,44,</string>
-			<key>Red</key>
-			<string>238,17,17,</string>
-			<key>Dark Red</key>
-			<string>185,29,71,</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
-	</dict>
-	<dict>
-		<key>default</key>
-		<string>0%</string>
-		<key>label</key>
-		<string>Background Opacity</string>
-		<key>name</key>
-		<string>bgOpacityOp</string>
-		<key>options</key>
-		<dict>
-			<key>0%</key>
-			<string>0</string>
-			<key>10%</key>
-			<string>.1</string>
-			<key>20%</key>
-			<string>.2</string>
-			<key>30%</key>
-			<string>.3</string>
-			<key>40%</key>
-			<string>.4</string>
-			<key>50%</key>
-			<string>.5</string>
-			<key>60%</key>
-			<string>.6</string>
-			<key>70%</key>
-			<string>.7</string>
-			<key>80%</key>
-			<string>.8</string>
-			<key>90%</key>
-			<string>.9</string>
-			<key>100%</key>
-			<string>1</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
-	</dict>
-	<dict>
+<dict>
 	<key>default</key>
-	<string>Flickr</string>
+	<string>EN</string>
 	<key>label</key>
-	<string>Weather Background</string>
+	<string>Widget Language</string>
 	<key>name</key>
-	<string>wxBgOp</string>
+	<string>widgetLanguageOp</string>
 	<key>options</key>
 	<dict>
-		<key>Flickr</key>
-		<string>flickr</string>
-		<key>None</key>
-		<string>None</string>
+		<key>EN</key>
+		<string>en</string>
+		<key>NL</key>
+		<string>nl</string>
+		<key>RU</key>
+		<string>ru</string>
+		<key>IT</key>
+		<string>it</string>
+		<key>SP</key>
+		<string>sp</string>
+		<key>DE</key>
+		<string>de</string>
+		<key>FR</key>
+		<string>fr</string>
+		<key>PL</key>
+		<string>pl</string>
+		<key>PT</key>
+		<string>pt</string>
 	</dict>
 	<key>type</key>
 	<string>select</string>
 </dict>
+<dict>
+	<key>default</key>
+	<string>White</string>
+	<key>label</key>
+	<string>Tiles Color</string>
+	<key>name</key>
+	<string>tilesColorOp</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
+		<key>Multi-Color</key>
+		<string>multicolor</string>
+		<key>White</key>
+		<string>255,255,255,</string>
+		<key>Black</key>
+		<string>0,0,0,</string>
+		<key>Light Green</key>
+		<string>153,180,51,</string>
+		<key>Green</key>
+		<string>0,163,0,</string>
+		<key>Dark Green</key>
+		<string>30,113,69,</string>
+		<key>Magenta</key>
+		<string>255,0,151,</string>
+		<key>Light Purple</key>
+		<string>159,0,167,</string>
+		<key>Purple</key>
+		<string>126,56,120,</string>
+		<key>Dark Purple</key>
+		<string>96,60,186,</string>
+		<key>Darken</key>
+		<string>29,29,29,</string>
+		<key>Teal</key>
+		<string>0,171,169,</string>
+		<key>Light Blue</key>
+		<string>239,244,255,</string>
+		<key>Blue</key>
+		<string>45,137,239,</string>
+		<key>Dark Blue</key>
+		<string>43,87,151,</string>
+		<key>Yellow</key>
+		<string>255,196,13,</string>
+		<key>Orange</key>
+		<string>227,162,26,</string>
+		<key>Dark Orange</key>
+		<string>218,83,44,</string>
+		<key>Red</key>
+		<string>238,17,17,</string>
+		<key>Dark Red</key>
+		<string>185,29,71,</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>White</string>
+	<key>label</key>
+	<string>Border Color</string>
+	<key>name</key>
+	<string>borderColorOp</string>
+	<key>options</key>
+	<dict>
+		<key>None</key>
+		<string>255,255,255,0</string>
+		<key>White</key>
+		<string>255,255,255,1</string>
+		<key>Black</key>
+		<string>0,0,0,1</string>
+		<key>Light Green</key>
+		<string>153,180,51,1</string>
+		<key>Green</key>
+		<string>0,163,0,1</string>
+		<key>Dark Green</key>
+		<string>30,113,69,1</string>
+		<key>Magenta</key>
+		<string>255,0,151,1</string>
+		<key>Light Purple</key>
+		<string>159,0,167,1</string>
+		<key>Purple</key>
+		<string>126,56,120,1</string>
+		<key>Dark Purple</key>
+		<string>96,60,186,1</string>
+		<key>Darken</key>
+		<string>29,29,29,1</string>
+		<key>Teal</key>
+		<string>0,171,169,1</string>
+		<key>Light Blue</key>
+		<string>239,244,255,1</string>
+		<key>Blue</key>
+		<string>45,137,239,1</string>
+		<key>Dark Blue</key>
+		<string>43,87,151,1</string>
+		<key>Yellow</key>
+		<string>255,196,13,1</string>
+		<key>Orange</key>
+		<string>227,162,26,1</string>
+		<key>Dark Orange</key>
+		<string>218,83,44,1</string>
+		<key>Red</key>
+		<string>238,17,17,1</string>
+		<key>Dark Red</key>
+		<string>185,29,71,1</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>0px</string>
+	<key>label</key>
+	<string>Border Radius</string>
+	<key>name</key>
+	<string>borderRadiusOp</string>
+	<key>options</key>
+	<dict>
+		<key>0px</key>
+		<string>0px</string>
+		<key>10px</key>
+		<string>10px</string>
+		<key>20px</key>
+		<string>20px</string>
+		<key>30px</key>
+		<string>30px</string>
+		<key>40px</key>
+		<string>40px</string>
+		<key>50px</key>
+		<string>50px</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>20%</string>
+	<key>label</key>
+	<string>Tiles Opacity</string>
+	<key>name</key>
+	<string>tilesOpacityOp</string>
+	<key>options</key>
+	<dict>
+		<key>0%</key>
+		<string>0</string>
+		<key>10%</key>
+		<string>.1</string>
+		<key>20%</key>
+		<string>.2</string>
+		<key>30%</key>
+		<string>.3</string>
+		<key>40%</key>
+		<string>.4</string>
+		<key>50%</key>
+		<string>.5</string>
+		<key>60%</key>
+		<string>.6</string>
+		<key>70%</key>
+		<string>.7</string>
+		<key>80%</key>
+		<string>.8</string>
+		<key>90%</key>
+		<string>.9</string>
+		<key>100%</key>
+		<string>1</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>White</string>
+	<key>label</key>
+	<string>Background Color</string>
+	<key>name</key>
+	<string>bgColorOp</string>
+	<key>options</key>
+	<dict>
+		<key>White</key>
+		<string>255,255,255,</string>
+		<key>Black</key>
+		<string>0,0,0,</string>
+		<key>Light Green</key>
+		<string>153,180,51</string>
+		<key>Green</key>
+		<string>0,163,0,</string>
+		<key>Dark Green</key>
+		<string>30,113,69,</string>
+		<key>Magenta</key>
+		<string>255,0,151,</string>
+		<key>Light Purple</key>
+		<string>159,0,167,</string>
+		<key>Purple</key>
+		<string>126,56,120,</string>
+		<key>Dark Purple</key>
+		<string>96,60,186,</string>
+		<key>Darken</key>
+		<string>29,29,29,</string>
+		<key>Teal</key>
+		<string>0,171,169,</string>
+		<key>Light Blue</key>
+		<string>239,244,255,</string>
+		<key>Blue</key>
+		<string>45,137,239,</string>
+		<key>Dark Blue</key>
+		<string>43,87,151,</string>
+		<key>Yellow</key>
+		<string>255,196,13,</string>
+		<key>Orange</key>
+		<string>227,162,26,</string>
+		<key>Dark Orange</key>
+		<string>218,83,44,</string>
+		<key>Red</key>
+		<string>238,17,17,</string>
+		<key>Dark Red</key>
+		<string>185,29,71,</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>0%</string>
+	<key>label</key>
+	<string>Background Opacity</string>
+	<key>name</key>
+	<string>bgOpacityOp</string>
+	<key>options</key>
+	<dict>
+		<key>0%</key>
+		<string>0</string>
+		<key>10%</key>
+		<string>.1</string>
+		<key>20%</key>
+		<string>.2</string>
+		<key>30%</key>
+		<string>.3</string>
+		<key>40%</key>
+		<string>.4</string>
+		<key>50%</key>
+		<string>.5</string>
+		<key>60%</key>
+		<string>.6</string>
+		<key>70%</key>
+		<string>.7</string>
+		<key>80%</key>
+		<string>.8</string>
+		<key>90%</key>
+		<string>.9</string>
+		<key>100%</key>
+		<string>1</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+<key>default</key>
+<string>Flickr</string>
+<key>label</key>
+<string>Weather Background</string>
+<key>name</key>
+<string>wxBgOp</string>
+<key>options</key>
+<dict>
+	<key>Flickr</key>
+	<string>flickr</string>
+	<key>None</key>
+	<string>None</string>
+</dict>
+<key>type</key>
+<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>15</string>
+	<key>label</key>
+	<string>Weather Refresh (Minutes)</string>
+	<key>name</key>
+	<string>wxRefreshOp</string>
+	<key>options</key>
+	<dict>
+		<key>10</key>
+		<string>10</string>
+		<key>15</key>
 		<string>15</string>
-		<key>label</key>
-		<string>Weather Refresh (Minutes)</string>
-		<key>name</key>
-		<string>wxRefreshOp</string>
-		<key>options</key>
-		<dict>
-			<key>10</key>
-			<string>10</string>
-			<key>15</key>
-			<string>15</string>
-			<key>20</key>
-			<string>20</string>
-			<key>30</key>
-			<string>30</string>
-			<key>60</key>
-			<string>60</string>
-			<key>120</key>
-			<string>120</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>20</key>
+		<string>20</string>
+		<key>30</key>
+		<string>30</string>
+		<key>60</key>
+		<string>60</string>
+		<key>120</key>
+		<string>120</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Apple Music</string>
+	<key>label</key>
+	<string>Favorite Music App</string>
+	<key>name</key>
+	<string>favMusicAppOp</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Apple Music</string>
-		<key>label</key>
-		<string>Favorite Music App</string>
-		<key>name</key>
-		<string>favMusicAppOp</string>
-		<key>options</key>
-		<dict>
-			<key>Apple Music</key>
-			<string>appleMusic</string>
-			<key>iHeart Radio</key>
-			<string>iheart</string>
-			<key>Pandora</key>
-			<string>pandora</string>
-			<key>Spotify</key>
-			<string>spotify</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Apple Music</key>
+		<string>appleMusic</string>
+		<key>iHeart Radio</key>
+		<string>iheart</string>
+		<key>Pandora</key>
+		<string>pandora</string>
+		<key>Spotify</key>
+		<string>spotify</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Apple Maps</string>
+	<key>label</key>
+	<string>Favorite Map App</string>
+	<key>name</key>
+	<string>favMapAppOp</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Apple Maps</string>
-		<key>label</key>
-		<string>Favorite Map App</string>
-		<key>name</key>
-		<string>favMapAppOp</string>
-		<key>options</key>
-		<dict>
-			<key>Apple Maps</key>
-			<string>appleMaps</string>
-			<key>Google Maps</key>
-			<string>googleMaps</string>
-			<key>Waze</key>
-			<string>waze</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Apple Maps</key>
+		<string>appleMaps</string>
+		<key>Google Maps</key>
+		<string>googleMaps</string>
+		<key>Waze</key>
+		<string>waze</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Phone</string>
+	<key>label</key>
+	<string>Page 1 Tile 1 App</string>
+	<key>name</key>
+	<string>tile1Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Phone</string>
-		<key>label</key>
-		<string>Page 1 Tile 1 App</string>
-		<key>name</key>
-		<string>tile1Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>SMS</string>
+	<key>label</key>
+	<string>Page 1 Tile 2 App</string>
+	<key>name</key>
+	<string>tile2Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>SMS</string>
-		<key>label</key>
-		<string>Page 1 Tile 2 App</string>
-		<key>name</key>
-		<string>tile2Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Mail</string>
+	<key>label</key>
+	<string>Page 1 Tile 5 App</string>
+	<key>name</key>
+	<string>tile5Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Mail</string>
-		<key>label</key>
-		<string>Page 1 Tile 5 App</string>
-		<key>name</key>
-		<string>tile5Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Safari</string>
+	<key>label</key>
+	<string>Page 1 Tile 6 App</string>
+	<key>name</key>
+	<string>tile6Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Safari</string>
-		<key>label</key>
-		<string>Page 1 Tile 6 App</string>
-		<key>name</key>
-		<string>tile6Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Twitter</string>
+	<key>label</key>
+	<string>Page 1 Tile 7 App</string>
+	<key>name</key>
+	<string>tile7Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Twitter</string>
-		<key>label</key>
-		<string>Page 1 Tile 7 App</string>
-		<key>name</key>
-		<string>tile7Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Facebook</string>
+	<key>label</key>
+	<string>Page 1 Tile 9 App</string>
+	<key>name</key>
+	<string>tile9Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Facebook</string>
-		<key>label</key>
-		<string>Page 1 Tile 9 App</string>
-		<key>name</key>
-		<string>tile9Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>YouTube</string>
+	<key>label</key>
+	<string>Page 1 Tile 11 App</string>
+	<key>name</key>
+	<string>tile11Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>YouTube</string>
-		<key>label</key>
-		<string>Page 1 Tile 11 App</string>
-		<key>name</key>
-		<string>tile11Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Notes</string>
+	<key>label</key>
+	<string>Page 2 Tile 1 App</string>
+	<key>name</key>
+	<string>tile18Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Notes</string>
-		<key>label</key>
-		<string>Page 2 Tile 1 App</string>
-		<key>name</key>
-		<string>tile18Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Compass</string>
+	<key>label</key>
+	<string>Page 2 Tile 2 App</string>
+	<key>name</key>
+	<string>tile19Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Compass</string>
-		<key>label</key>
-		<string>Page 2 Tile 2 App</string>
-		<key>name</key>
-		<string>tile19Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>FaceTime</string>
+	<key>label</key>
+	<string>Page 2 Tile 3 App</string>
+	<key>name</key>
+	<string>tile20Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>FaceTime</string>
-		<key>label</key>
-		<string>Page 2 Tile 3 App</string>
-		<key>name</key>
-		<string>tile20Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Contacts</string>
+	<key>label</key>
+	<string>Page 2 Tile 5 App</string>
+	<key>name</key>
+	<string>tile22Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Contacts</string>
-		<key>label</key>
-		<string>Page 2 Tile 5 App</string>
-		<key>name</key>
-		<string>tile22Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>Health</string>
+	<key>label</key>
+	<string>Page 2 Tile 6 App</string>
+	<key>name</key>
+	<string>tile23Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>Health</string>
-		<key>label</key>
-		<string>Page 2 Tile 6 App</string>
-		<key>name</key>
-		<string>tile23Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>iBooks</string>
+	<key>label</key>
+	<string>Page 2 Tile 8 App</string>
+	<key>name</key>
+	<string>tile25Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>iBooks</string>
-		<key>label</key>
-		<string>Page 2 Tile 8 App</string>
-		<key>name</key>
-		<string>tile25Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>News</string>
+	<key>label</key>
+	<string>Page 2 Tile 9 App</string>
+	<key>name</key>
+	<string>tile26Op</string>
+	<key>options</key>
 	<dict>
-		<key>default</key>
-		<string>News</string>
-		<key>label</key>
-		<string>Page 2 Tile 9 App</string>
-		<key>name</key>
-		<string>tile26Op</string>
-		<key>options</key>
-		<dict>
-			<key>Phone</key>
-			<string>phone</string>
-			<key>SMS</key>
-			<string>sms</string>
-			<key>Mail</key>
-			<string>mail</string>
-			<key>Safari</key>
-			<string>safari</string>
-			<key>Google Chrome</key>
-			<string>chrome</string>
-			<key>Firefox</key>
-			<string>firefox</string>
-			<key>Dolphin</key>
-			<string>dolphin</string>
-			<key>Twitter</key>
-			<string>twitter</string>
-			<key>Facebook</key>
-			<string>facebook</string>
-			<key>YouTube</key>
-			<string>youtube</string>
-			<key>Snapchat</key>
-			<string>snapchat</string>
-			<key>Mouse Pro</key>
-			<string>mousepro</string>
-			<key>Compass</key>
-			<string>compass</string>
-			<key>Contacts</key>
-			<string>contacts</string>
-			<key>FaceTime</key>
-			<string>facetime</string>
-			<key>Health</key>
-			<string>health</string>
-			<key>Game Center</key>
-			<string>gamecenter</string>
-			<key>iBooks</key>
-			<string>ibooks</string>
-			<key>iTunes Store</key>
-			<string>itunesstore</string>
-			<key>News</key>
-			<string>news</string>
-			<key>Notes</key>
-			<string>notes</string>
-			<key>Apple Watch</key>
-			<string>watch</string>
-			<key>Inoreader</key>
-			<string>inoreader</string>
-			<key>Instagram</key>
-			<string>instagram</string>
-			<key>Dropbox</key>
-			<string>dropbox</string>
-			<key>Prowl</key>
-			<string>prowl</string>
-			<key>WhatsApp</key>
-			<string>whatsapp</string>
-			<key>Google</key>
-			<string>google</string>
-		</dict>
-		<key>type</key>
-		<string>select</string>
+		<key>Phone</key>
+		<string>phone</string>
+		<key>SMS</key>
+		<string>sms</string>
+		<key>Mail</key>
+		<string>mail</string>
+		<key>Safari</key>
+		<string>safari</string>
+		<key>Google Chrome</key>
+		<string>chrome</string>
+		<key>Firefox</key>
+		<string>firefox</string>
+		<key>Dolphin</key>
+		<string>dolphin</string>
+		<key>Twitter</key>
+		<string>twitter</string>
+		<key>Facebook</key>
+		<string>facebook</string>
+		<key>YouTube</key>
+		<string>youtube</string>
+		<key>Snapchat</key>
+		<string>snapchat</string>
+		<key>Mouse Pro</key>
+		<string>mousepro</string>
+		<key>Compass</key>
+		<string>compass</string>
+		<key>Contacts</key>
+		<string>contacts</string>
+		<key>FaceTime</key>
+		<string>facetime</string>
+		<key>Health</key>
+		<string>health</string>
+		<key>Game Center</key>
+		<string>gamecenter</string>
+		<key>iBooks</key>
+		<string>ibooks</string>
+		<key>iTunes Store</key>
+		<string>itunesstore</string>
+		<key>News</key>
+		<string>news</string>
+		<key>Notes</key>
+		<string>notes</string>
+		<key>Apple Watch</key>
+		<string>watch</string>
+		<key>Inoreader</key>
+		<string>inoreader</string>
+		<key>Instagram</key>
+		<string>instagram</string>
+		<key>Dropbox</key>
+		<string>dropbox</string>
+		<key>Prowl</key>
+		<string>prowl</string>
+		<key>WhatsApp</key>
+		<string>whatsapp</string>
+		<key>Google</key>
+		<string>google</string>
 	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
+<dict>
+	<key>default</key>
+	<string>JunesDrawer</string>
+	<key>label</key>
+	<string>Favorite App Launcher</string>
+	<key>name</key>
+	<string>favAppLauncherOp</string>
+	<key>options</key>
+	<dict>
+		<key>JunesDrawer</key>
+		<string>junesdrawer</string>
+		<key>Fern</key>
+		<string>fern</string>
+		<key>InstaLauncher</key>
+		<string>instalauncher</string>
+		<key>AppDrawer</key>
+		<string>appdrawer</string>
+	</dict>
+	<key>type</key>
+	<string>select</string>
+</dict>
 </array>
 </plist>
